@@ -4,14 +4,14 @@ An interactive atlas of scientific discoveries and philosophical ideas. Built wi
 
 ## Current release
 
-- **112 sourced profiles**: 45 scientists and 67 philosophers, spanning antiquity through modern science, with historical portraits and attribution.
+- **125 sourced profiles**: 51 scientists and 74 philosophers, spanning antiquity through modern science, with historical portraits and attribution.
 - **7 physics experiences**: orbits, radioactive decay, the gold-foil reconstruction, a nonlinear pendulum, photoelectric emission, induction, and wave superposition.
 - **8 interactive argument maps**, including Stoic agency, Epicurus on death, and Wollstonecraft on education.
-- **236 contributions** in a searchable idea index with field filters, chronology, expandable significance, and pagination.
-- **6 science guides** and an ideal two-qubit quantum circuit playground with gates, phase, entanglement, and measurement.
+- **262 contributions** in a searchable idea index with field filters, chronology, expandable significance, and pagination.
+- **7 science guides** and an ideal two-qubit quantum circuit playground with gates, phase, entanglement, and measurement.
 - **75 philosophical schools and positions**, searchable by question/term and area, with a two-school comparison.
 - **13 cultural tradition guides** and **21 Hindu text/text-family introductions**, including the four Vedas, principal Upanishads, Gītā, and the six darśanas with competing Vedānta interpretations.
-- **45 scientist outlook entries**, distinguishing documented beliefs, methodological readings, and gaps in personal evidence.
+- **51 scientist outlook entries**, distinguishing documented beliefs, methodological readings, and gaps in personal evidence.
 - **Matter and sound animations**: surface overlap/energy, quantum exclusion explanations, a longitudinal air-wave model, and user-initiated electronic tones and a four-note phrase.
 - Search by people and ideas; combine discipline, field, era, birth region, and interactive filters. Search state is shareable in the URL.
 - Historical timeline, 14 guided learning paths, experiment guides, and knowledge checks.
@@ -37,7 +37,7 @@ npm run astro -- dev stop
 ```sh
 npm test                 # physics, chronology, argument, and content-link checks
 npm run check            # Astro + TypeScript diagnostics
-npm run build            # schema and cross-reference validation; 229 static pages
+npm run build            # schema and cross-reference validation; 243 static pages
 npm run preview -- --host 127.0.0.1 --port 4322
 npm run verify:app       # production regression suite on port 4322
 npm run verify:catalogue # idea index, quantum lab, new arguments, and responsive layouts
@@ -51,7 +51,7 @@ npm run verify:atlas     # schools, traditions, scientist views, matter, sound, 
 - `src/content/people/*.mdx`: individual profiles, structured contributions, timelines, and sources.
 - `src/content.config.ts`: schema validation. Unknown simulation/argument IDs fail validation.
 - `src/lib/people.ts`: collection helpers, portraits, related-person validation.
-- `src/data/topics.ts`: six topic guides, glossaries, quizzes, and references.
+- `src/data/topics.ts`: seven topic guides, glossaries, quizzes, and references.
 - `src/data/schools.ts`, `traditions.ts`, `scientist-views.ts`: the philosophy atlas and sourced scientist outlooks.
 - `src/components/MatterSoundLab.tsx`: interactive contact and audio experiences; `src/lib/matter-sound.ts` holds pure model functions.
 - `src/lib/quantum.ts`: pure two-qubit state-vector operations and measurement.

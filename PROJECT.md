@@ -9,7 +9,7 @@ The original aspiration is an expandable archive of 100+ figures. Content and co
 ## Implemented September 2026
 
 - Rebuilt the home page and global navigation around the two wings and laboratory.
-- Expanded to 112 profiles (67 philosophers and 45 scientists), preserving the original four long biographies.
+- Expanded to 125 profiles (74 philosophers and 51 scientists), preserving the original four long biographies.
 - Added historical portraits and repaired the portrait fetcher’s handling of generated thumbnail filenames.
 - Added four physics models and four argument reconstructions to the existing engines.
 - Added standalone lab pages with model limits, a sequence of prompts, and immediate-feedback quizzes.
@@ -22,14 +22,14 @@ The original aspiration is an expandable archive of 100+ figures. Content and co
 
 - Keep Astro static output and React islands. No backend is needed for the current personal learning workflows.
 - All scientific canvas visuals are functional models with stated limits. The homepage solar system calculates approximate current heliocentric positions using JPL Table 1 (1800–2050), with real-time and explicit time-lapse modes. Textures, globe lighting, sizes and ring presentation are illustrative.
-- Seven canvas simulations, eight argument maps, and a two-qubit quantum circuit playground are available. The catalogue contains 236 contributions and six topic guides.
+- Seven canvas simulations, eight argument maps, and a two-qubit quantum circuit playground are available. The catalogue contains 262 contributions and seven topic guides.
 - Saved state is scoped to browser + origin. Storage failures are surfaced; there is no implicit cloud sync.
 - Region means birth region. Categories are navigation aids, not exclusive intellectual identities.
 - Introductory argument maps are labelled reconstructions, not historical quotations or automated truth judges.
 
 ## Remaining scope
 
-1. Deepen and broaden the 112-profile catalogue in reviewable batches. See CATALOGUE.md for coverage gaps; the collection is not exhaustive.
+1. Deepen and broaden the 125-profile catalogue in reviewable batches. See CATALOGUE.md for coverage gaps; the collection is not exhaustive.
 2. Deepen the new introductory biographies with primary-source-led discovery narratives and additional objections/replies.
 3. Add narrated historical reconstructions beyond the original Rutherford experience. The new physics additions currently illustrate concepts rather than reconstruct historical apparatus.
 4. Consider a separate playable thought-experiment format after reviewing the current argument interactions.
@@ -46,11 +46,11 @@ The Ideas page searches every contribution independently of its author. New entr
 
 ## Philosophy atlas and sensory learning
 
-Added 75 school/position entries, 13 cultural introductions, 21 guides to Hindu texts/textual families, and 45 evidence-labeled scientist outlooks linked from their profiles and a comparison index. The atlas supports search, area filtering, URL restoration, and side-by-side comparison. Top navigation now opens the Philosophy atlas; the philosophers directory is linked prominently from it.
+Added 75 school/position entries, 13 cultural introductions, 21 guides to Hindu texts/textual families, and 51 evidence-labeled scientist outlooks linked from their profiles and a comparison index. The atlas supports search, area filtering, URL restoration, and side-by-side comparison. Top navigation now opens the Philosophy atlas; the philosophers directory is linked prominently from it.
 
 `/lab/matter-and-sound` contains a narrated contact/energy illustration and a playable electronic sound model with pitch, harmonics, amplitude, vacuum, pause, and manual-step controls. Audio is synthesized locally with Web Audio and no microphone, account, or network service. This is a simplified scientific explanation, not direct sensory access to individual atoms.
 
-New validation: `npm run verify:atlas`; model and catalogue integrity checks are included in `npm test`. Build count is 229 static pages. No hosting deployment or database provisioning occurred.
+New validation: `npm run verify:atlas`; model and catalogue integrity checks are included in `npm test`. Build count is 243 static pages. No hosting deployment or database provisioning occurred.
 
 ## Solar-system homepage and reading languages
 
@@ -58,4 +58,4 @@ The homepage now contains all eight planets, current UTC positions, selectable p
 
 English/Hinglish preference persists across routes. Curated Hinglish currently covers the home introduction, navigation, planet descriptions and an Oppenheimer reading note; it does not translate the entire catalogue. More languages offers user-initiated Google website translation on public hosts and browser-translation instructions on localhost. No external translation script is loaded. Full reviewed article translations remain editorial work.
 
-Oppenheimer brings the catalogue to 112 people, 236 contributions and 45 scientist outlooks. He is identified as Los Alamos scientific director, not the sole inventor of the bomb. Solar checks: npm run verify:solar. Model tests are included in npm test.
+Oppenheimer brought the catalogue to 112 people; the October expansion now brings it to 125 people, 262 contributions and 51 scientist outlooks. He is identified as Los Alamos scientific director, not the sole inventor of the bomb. Solar checks: npm run verify:solar. Model tests are included in npm test.

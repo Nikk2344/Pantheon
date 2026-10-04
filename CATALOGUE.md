@@ -1,6 +1,6 @@
 # Catalogue coverage and editorial workflow
 
-September 2026: 112 profiles, comprising 67 philosophers and 45 scientists/mathematicians. This is a substantial curated catalogue, not an exhaustive list of important thinkers. Four original profiles are longer studies; the other entries are introductions.
+October 2026: 125 profiles, comprising 74 philosophers and 51 scientists/mathematicians. This is a substantial curated catalogue, not an exhaustive list of important thinkers. Four original profiles are longer studies; the other entries are introductions.
 
 The collection spans ancient, medieval, early modern, Enlightenment, and modern work. New coverage includes Jain, Buddhist, Vedānta, Confucian, Daoist, Mohist, Islamic, Jewish, Christian, Greek, feminist, analytic, and continental traditions, alongside chemistry, genetics, computing, quantum theory, and mathematical astronomy. Categories help navigation and do not claim that a person belongs to only one discipline.
 
@@ -8,12 +8,12 @@ The collection spans ancient, medieval, early modern, Enlightenment, and modern 
 
 - Browse every profile at `/explore`, or either disciplinary wing.
 - Search individual contributions at `/discoveries`, filter by field, sort chronologically, and expand their significance.
-- Follow 14 paths at `/paths`, six science guides at `/topics`, and a contribution timeline at `/timeline`.
+- Follow 14 paths at `/paths`, seven science guides at `/topics`, and a contribution timeline at `/timeline`.
 - Inspect eight argument maps, seven canvas experiments, and the two-qubit circuit playground.
 - Save profiles and personal notes in the current browser.
 - Read or export the public structured catalogue at `/catalogue.json`.
 - Search 75 philosophical schools/positions and compare two at `/philosophy`; explore 13 cultural tradition introductions and 21 Hindu text/text-family guides.
-- Read evidence-labeled philosophical outlooks alongside discoveries on all 45 scientist profiles, or browse `/philosophy/scientists`.
+- Read evidence-labeled philosophical outlooks alongside discoveries on all 51 scientist profiles, or browse `/philosophy/scientists`.
 - Explore why solids resist overlap and how electronic sound reaches the ear at `/lab/matter-and-sound`.
 
 ## Adding and deepening records
