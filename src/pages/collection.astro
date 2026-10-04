@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import BrowseDirectory from '../components/BrowseDirectory.astro';
+import { allPeople } from '../lib/people';
+const people=await allPeople();
+---
+<Base title="Your collection" description="Keep the minds and ideas you want to return to, with private notes and reading progress."><div class="shell page-intro"><p class="eyebrow">YOUR CORNER OF THE PANTHEON</p><h1>Curiosity, <em>collected.</em></h1><p>Save people you want to return to. Your notes and reading progress stay on this browser and device. Open any saved profile to revisit your notebook.</p></div><section class="shell"><BrowseDirectory people={people} savedOnly/></section></Base>

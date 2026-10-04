@@ -1,0 +1,842 @@
+{
+  "marie-curie": {
+    "file": "marie-curie.jpg",
+    "description": "Polish-French physicist and chemist (1867–1934)",
+    "credit": "Henri Manuel",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Curie_c._1920s.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Marie_Curie"
+  },
+  "ernest-rutherford": {
+    "file": "ernest-rutherford.jpg",
+    "description": "New Zealand physicist and chemist (1871–1937)",
+    "credit": "Bain News Service, publisher Restored by: Bammesk",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_Ernest_Rutherford_LCCN2014716719_-_restoration1.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ernest_Rutherford"
+  },
+  "isaac-newton": {
+    "file": "isaac-newton.jpg",
+    "description": "English polymath (1642–1727)",
+    "credit": "Godfrey Kneller",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Sir_Isaac_Newton,_1689_(brightened).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Isaac_Newton"
+  },
+  "rene-descartes": {
+    "file": "rene-descartes.jpg",
+    "description": "French polymath (1596–1650)",
+    "credit": "After Frans Hals",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/René_Descartes"
+  },
+  "albert-einstein": {
+    "file": "albert-einstein.jpg",
+    "description": "German-born theoretical physicist (1879–1955)",
+    "credit": "Oren Jack Turner",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head_cleaned.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Albert_Einstein"
+  },
+  "galileo-galilei": {
+    "file": "galileo-galilei.jpg",
+    "description": "Italian physicist and astronomer (1564–1642)",
+    "credit": "Justus Sustermans",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galileo_Galilei_(1564-1642)_RMG_BHC2700.tiff",
+    "wikipedia": "https://en.wikipedia.org/wiki/Galileo_Galilei"
+  },
+  "michael-faraday": {
+    "file": "michael-faraday.jpg",
+    "description": "English chemist and physicist (1791–1867)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Faraday_sitting_crop.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Michael_Faraday"
+  },
+  "james-clerk-maxwell": {
+    "file": "james-clerk-maxwell.jpg",
+    "description": "Scottish physicist and mathematician (1831–1879)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:James-Clerk-Maxwell-1831-1879.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/James_Clerk_Maxwell"
+  },
+  "charles-darwin": {
+    "file": "charles-darwin.jpg",
+    "description": "English naturalist and biologist (1809–1882)",
+    "credit": "Charles_Darwin_seated.jpg: Henry Maull (1829–1914) and John Fox (1832–1907) (Maull & Fox) [3] derivative work: Beao",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_seated_crop.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Charles_Darwin"
+  },
+  "ada-lovelace": {
+    "file": "ada-lovelace.png",
+    "description": "English mathematician (1815–1852)",
+    "credit": "Antoine Claudet",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ada_Lovelace"
+  },
+  "cv-raman": {
+    "file": "cv-raman.jpg",
+    "description": "Indian physicist (1888–1970)",
+    "credit": "Nobel Foundation",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_CV_Raman.JPG",
+    "wikipedia": "https://en.wikipedia.org/wiki/C._V._Raman"
+  },
+  "ibn-al-haytham": {
+    "file": "ibn-al-haytham.jpg",
+    "description": "Arab physicist, mathematician and astronomer (c.965–c.1040)",
+    "credit": "Adolph Boÿ, engraved by Jeremias Falck. Used as the frontispiece to Johannes Hevelius, Selenographia, 1647",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_al-Haytham_crop.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ibn_al-Haytham"
+  },
+  "aristotle": {
+    "file": "aristotle.jpg",
+    "description": "Ancient Greek philosopher and polymath (384–322 BC)",
+    "credit": "After Lysippos",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Aristotle"
+  },
+  "confucius": {
+    "file": "confucius.jpg",
+    "description": "Chinese philosopher (c. 551 – c. 479 BCE)",
+    "credit": "Anonymous Chinese painter of the Western Han period",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Confucius,_fresco_from_a_Western_Han_tomb_of_Dongping_County,_Shandong_province,_China.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Confucius"
+  },
+  "david-hume": {
+    "file": "david-hume.jpg",
+    "description": "Scottish philosopher, historian, economist and essayist (1711–1776)",
+    "credit": "Allan Ramsay",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Hume_Ramsay.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/David_Hume"
+  },
+  "john-stuart-mill": {
+    "file": "john-stuart-mill.jpg",
+    "description": "English politician and philosopher (1806–1873)",
+    "credit": "London Stereoscopic Company",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Stuart_Mill_by_London_Stereoscopic_Company,_c1870.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/John_Stuart_Mill"
+  },
+  "plato": {
+    "file": "plato.png",
+    "description": "Ancient Greek philosopher (c. 428-347 BC)",
+    "credit": "Marie-Lan Nguyen",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plato_Silanion_Musei_Capitolini_MC1377.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Plato"
+  },
+  "nagarjuna": {
+    "file": "nagarjuna.jpg",
+    "description": "Indian Mahayana Buddhist philosopher (c. 150–c. 250)",
+    "credit": "Unknown | Recovered from Himalayan Art Resources",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nagarjuna_with_84_mahasiddha_cropped.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Nagarjuna"
+  },
+  "socrates": {
+    "file": "socrates.jpg",
+    "description": "Ancient Greek philosopher (c. 470–399 BC)",
+    "credit": "Copy of Lysippos (?)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Socrates"
+  },
+  "epicurus": {
+    "file": "epicurus.jpg",
+    "description": "Ancient Greek philosopher (341–270 BC)",
+    "credit": "Unknown artistUnknown artist",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Epikouros_BM_1843.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Epicurus"
+  },
+  "epictetus": {
+    "file": "epictetus.jpg",
+    "description": "Greek Stoic philosopher (c. 50 – c. 135)",
+    "credit": "William Sonmans / Michael Burghers",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Epicteti_Enchiridion_Latinis_versibus_adumbratum_(Oxford_1715)_frontispiece_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Epictetus"
+  },
+  "marcus-aurelius": {
+    "file": "marcus-aurelius.jpg",
+    "description": "Stoic philosopher, Roman emperor from 161 to 180",
+    "credit": "Daniel Martin",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MSR-ra-61-b-1-DM.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Marcus_Aurelius"
+  },
+  "laozi": {
+    "file": "laozi.jpg",
+    "description": "Ancient Chinese philosopher associated with Taoism",
+    "credit": "White whirlwind",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laozi_(Chinese_characters).svg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Laozi"
+  },
+  "zhuangzi": {
+    "file": "zhuangzi.jpg",
+    "description": "Chinese philosopher (4th century BCE)",
+    "credit": "Hua Zili (華祖立)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%8E%84%E9%96%80%E5%8D%81%E5%AD%90%E5%9C%96_%E8%8E%8A%E5%AD%90.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Zhuang_Zhou"
+  },
+  "buddha": {
+    "file": "buddha.jpg",
+    "description": "Founder of Buddhism",
+    "credit": "พระมหาเทวประภาส วชิรญาณเมธี (ผู้ถ่าย-ปล่อยสัญญาอนุญาตภาพให้นำไปใช้ได้เพื่อการศึกษาโดยอยู่ภา่ยใต้ cc-by-sa-3.0) ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส มากคล้าย",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buddha_in_Sarnath_Museum_(Dhammajak_Mutra).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/The_Buddha"
+  },
+  "avicenna": {
+    "file": "avicenna.jpg",
+    "description": "Persian polymath, physician and philosopher (c. 980–1037)",
+    "credit": "National Library of Medicine",
+    "license": "No restrictions",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Avicenna_Bust,_left_profile_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Avicenna"
+  },
+  "spinoza": {
+    "file": "spinoza.jpg",
+    "description": "Portuguese-Dutch philosopher (1632–1677)",
+    "credit": "anonymous",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spinoza.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Baruch_Spinoza"
+  },
+  "john-locke": {
+    "file": "john-locke.jpg",
+    "description": "English philosopher and physician (1632–1704)",
+    "credit": "Godfrey Kneller",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Godfrey_Kneller_-_Portrait_of_John_Locke_(Hermitage).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/John_Locke"
+  },
+  "immanuel-kant": {
+    "file": "immanuel-kant.jpg",
+    "description": "German philosopher (1724–1804)",
+    "credit": "Johann Gottlieb Becker (1720-1782)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Immanuel_Kant_-_Gemaelde_1.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Immanuel_Kant"
+  },
+  "georg-hegel": {
+    "file": "georg-hegel.jpg",
+    "description": "German philosopher (1770–1831)",
+    "credit": "Jakob Schlesinger",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jakob_Schlesinger_-_Hegel_1831.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Georg_Wilhelm_Friedrich_Hegel"
+  },
+  "arthur-schopenhauer": {
+    "file": "arthur-schopenhauer.jpg",
+    "description": "German philosopher (1788–1860)",
+    "credit": "Johann Schäfer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer,_1859b.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Arthur_Schopenhauer"
+  },
+  "karl-marx": {
+    "file": "karl-marx.png",
+    "description": "German philosopher and socialist (1818–1883)",
+    "credit": "John Jabez Edwin Mayall",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Karl_Marx"
+  },
+  "mary-wollstonecraft": {
+    "file": "mary-wollstonecraft.jpg",
+    "description": "English writer and philosopher (1759–1797)",
+    "credit": "John Opie",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Wollstonecraft_Portrait.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mary_Wollstonecraft"
+  },
+  "simone-de-beauvoir": {
+    "file": "simone-de-beauvoir.jpg",
+    "description": "French philosopher, social theorist and activist (1908–1986)",
+    "credit": "Moshe Milner",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simone_De_Beauvoir_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Simone_de_Beauvoir"
+  },
+  "ludwig-wittgenstein": {
+    "file": "ludwig-wittgenstein.jpg",
+    "description": "Austrian philosopher and logician (1889–1951)",
+    "credit": "Moritz Nähr",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ludwig_Wittgenstein_1929.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ludwig_Wittgenstein"
+  },
+  "br-ambedkar": {
+    "file": "br-ambedkar.jpg",
+    "description": "Indian jurist, economist, politician and social reformer (1891–1956)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dr._Bhimrao_Ambedkar.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/B._R._Ambedkar"
+  },
+  "adi-shankara": {
+    "file": "adi-shankara.jpg",
+    "description": "8th-century Indian Vedic scholar",
+    "credit": "Raja Ravi Varma",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Adi_Shankara"
+  },
+  "averroes": {
+    "file": "averroes.jpg",
+    "description": "Andalusian Muslim polymath (1126–1198)",
+    "credit": "Sailko",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrea_di_bonaiuto,_apoteosi_di_san_tommaso_d%27aquino,_11_averro%C3%A8.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Averroes"
+  },
+  "thomas-aquinas": {
+    "file": "thomas-aquinas.jpg",
+    "description": "Italian Dominican friar and philosopher (1225–1274)",
+    "credit": "Carlo Crivelli",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:St-thomas-aquinasFXD.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Thomas_Aquinas"
+  },
+  "soren-kierkegaard": {
+    "file": "soren-kierkegaard.jpg",
+    "description": "Danish philosopher and theologian (1813–1855)",
+    "credit": "La Biblioteca Real de Dinamarca",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%B8ren_Kierkegaard_(1813-1855)_-_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Søren_Kierkegaard"
+  },
+  "friedrich-nietzsche": {
+    "file": "friedrich-nietzsche.jpg",
+    "description": "German philosopher (1844–1900)",
+    "credit": "Friedrich Hermann Hartmann",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nietzsche187a.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Friedrich_Nietzsche"
+  },
+  "hannah-arendt": {
+    "file": "hannah-arendt.jpg",
+    "description": "German, Jewish, and American historian and philosopher (1906–1975)",
+    "credit": "Barbara Niggl Radloff",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hannah_Arendt_auf_dem_1._Kulturkritikerkongress,_Barbara_Niggl_Radloff,_FM-2019-1-5-9-16_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Hannah_Arendt"
+  },
+  "richard-feynman": {
+    "file": "richard-feynman.jpg",
+    "description": "American theoretical physicist (1918–1988)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Richard_Feynman_Nobel.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Richard_Feynman"
+  },
+  "david-deutsch": {
+    "file": "david-deutsch.jpg",
+    "description": "British theoretical physicist (born 1953)",
+    "credit": "Simon Benjamin",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Deutsch_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/David_Deutsch"
+  },
+  "peter-shor": {
+    "file": "peter-shor.png",
+    "description": "American mathematician",
+    "credit": "International Centre for Theoretical Physics",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Shor_2017_Dirac_Medal_Award_Ceremony.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Peter_Shor"
+  },
+  "democritus": {
+    "file": "democritus.jpg",
+    "description": "Greek philosopher (c. 460–c. 370 BC)",
+    "credit": "user:shakko",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unknown_greek_pushkin.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Democritus"
+  },
+  "diogenes": {
+    "file": "diogenes.jpg",
+    "description": "4th-century BC Greek Cynic philosopher",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diogenes_Mosaic_R%C3%B6misch-Germanisches_Museum.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Diogenes"
+  },
+  "zeno-of-citium": {
+    "file": "zeno-of-citium.jpg",
+    "description": "Hellenistic philosopher, founder of Stoicism (c. 334–c. 262 BC)",
+    "credit": "Paolo Monti",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paolo_Monti_-_Servizio_fotografico_(Napoli,_1969)_-_BEIC_6353768.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Zeno_of_Citium"
+  },
+  "plotinus": {
+    "file": "plotinus.jpg",
+    "description": "Hellenistic Greek philosopher (c. 204/5–270)",
+    "credit": "AnonymousUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plotinos.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Plotinus"
+  },
+  "augustine": {
+    "file": "augustine.jpg",
+    "description": "Christian philosopher and theologian (354–430)",
+    "credit": "Philippe de Champaigne",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Augustine_of_Hippo"
+  },
+  "anselm": {
+    "file": "anselm.jpg",
+    "description": "Archbishop of Canterbury from 1093 to 1109",
+    "credit": "Anselm_of_Canterbury,_seal.jpg: The original uploader was Srnec at English Wikipedia. derivative work: MLWatts",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anselm_of_Canterbury,_seal.svg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Anselm_of_Canterbury"
+  },
+  "maimonides": {
+    "file": "maimonides.jpg",
+    "description": "Medieval Jewish philosopher (1135/1138–1204)",
+    "credit": "Blaisio Ugolino",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Moses_Maimonides_in_Thesaurus_antiquitatum_sacrarum.tif",
+    "wikipedia": "https://en.wikipedia.org/wiki/Maimonides"
+  },
+  "al-farabi": {
+    "file": "al-farabi.png",
+    "description": "Islamic philosopher and music theorist (c. 870 – 950/951)",
+    "credit": "Mr.Nostalgic",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alpharabius_in_Liber_Chronicarum_1493_AD.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Al-Farabi"
+  },
+  "al-ghazali": {
+    "file": "al-ghazali.png",
+    "description": "Sunni Muslim polymath (c. 1058–1111)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Ghaz%C4%81l%C4%AB,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Al-Ghazali"
+  },
+  "ibn-khaldun": {
+    "file": "ibn-khaldun.jpg",
+    "description": "Arab Islamic scholar, historian and philosopher (1332–1406)",
+    "credit": "Reda Kerbush",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bust_of_Ibn_Khaldun_(Casbah_of_Bejaia,_Algeria).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ibn_Khaldun"
+  },
+  "mozi": {
+    "file": "mozi.jpg",
+    "description": "Chinese philosopher and logician (c. 470 – c. 391 BCE)",
+    "credit": "Vjacheslav Rublevskiy",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84_%D0%9C%D0%BE-%D0%A6%D0%B7%D1%8B.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mozi"
+  },
+  "mencius": {
+    "file": "mencius.jpg",
+    "description": "Confucian philosopher (c. 371 – c. 289 BC)",
+    "credit": "Anonymous, Yuan dynasty / National Palace Museum",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Meng_Ke_(孟軻).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mencius"
+  },
+  "wang-yangming": {
+    "file": "wang-yangming.jpg",
+    "description": "Chinese official and philosopher (1472–1529)",
+    "credit": "Shen Junhui (沈俊繪)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%8E%8B%E5%AE%88%E4%BB%81.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Wang_Yangming"
+  },
+  "ramanuja": {
+    "file": "ramanuja.jpg",
+    "description": "11th-12th century Indian philosopher",
+    "credit": "Chitrashala Press",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ramanuja1920s.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ramanuja"
+  },
+  "mahavira": {
+    "file": "mahavira.jpg",
+    "description": "Indian spiritual leader and the 24th Tirthankara of Jainism",
+    "credit": "Dayodaya",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahavir.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mahavira"
+  },
+  "francis-bacon": {
+    "file": "francis-bacon.jpg",
+    "description": "English philosopher and statesman (1561–1626)",
+    "credit": "Paul van Somer I / Formerly attributed to Frans Pourbus the Younger",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Somer_Francis_Bacon.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Francis_Bacon"
+  },
+  "thomas-hobbes": {
+    "file": "thomas-hobbes.jpg",
+    "description": "English philosopher and political theorist (1588–1679)",
+    "credit": "John Michael Wright",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Hobbes_by_John_Michael_Wright_(colour)_(3x4_cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Thomas_Hobbes"
+  },
+  "gottfried-leibniz": {
+    "file": "gottfried-leibniz.jpg",
+    "description": "German polymath (1646–1716)",
+    "credit": "Christoph Bernhard Francke",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz"
+  },
+  "george-berkeley": {
+    "file": "george-berkeley.jpg",
+    "description": "Anglo-Irish philosopher and bishop (1685–1753)",
+    "credit": "John Smibert",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Smibert_-_Bishop_George_Berkeley_-_Google_Art_Project_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/George_Berkeley"
+  },
+  "jean-jacques-rousseau": {
+    "file": "jean-jacques-rousseau.jpg",
+    "description": "Genevan philosopher, writer, and composer (1712–1778)",
+    "credit": "Maurice Quentin de La Tour (Life time: 1788)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maurice_Quentin_de_La_Tour_-_Portrait_of_Jean-Jacques_Rousseau_-_adjusted.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jean-Jacques_Rousseau"
+  },
+  "jeremy-bentham": {
+    "file": "jeremy-bentham.jpg",
+    "description": "English philosopher and jurist (1748–1832)",
+    "credit": "Henry William Pickersgill",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jeremy_Bentham_by_Henry_William_Pickersgill.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jeremy_Bentham"
+  },
+  "edmund-husserl": {
+    "file": "edmund-husserl.jpg",
+    "description": "Austrian-German philosopher and mathematician (1859–1938)",
+    "credit": "Unknown (Mondadori Publishers)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edmund_Husserl_1910s.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Edmund_Husserl"
+  },
+  "martin-heidegger": {
+    "file": "martin-heidegger.jpg",
+    "description": "German philosopher (1889–1976)",
+    "credit": "Willy Pragher",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Freiburg,_Z%C3%A4hringen-_Jahnhalle,_Prof._Martin_Heidegger_w%C3%A4hrend_eines_Vortrags_-_LABW_-_Staatsarchiv_Freiburg_W_134_Nr._023740f_(cropped).jpeg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Martin_Heidegger"
+  },
+  "jean-paul-sartre": {
+    "file": "jean-paul-sartre.jpg",
+    "description": "French philosopher (1905–1980)",
+    "credit": "Unknown photographer / Nationaal Archief, ANEFO collection",
+    "license": "CC BY-SA 3.0 NL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1965.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jean-Paul_Sartre"
+  },
+  "albert-camus": {
+    "file": "albert-camus.jpg",
+    "description": "French philosopher and writer (1913–1960)",
+    "credit": "Photograph by United Press International",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albert_Camus,_gagnant_de_prix_Nobel,_portrait_en_buste,_pos%C3%A9_au_bureau,_faisant_face_%C3%A0_gauche,_cigarette_de_tabagisme.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Albert_Camus"
+  },
+  "bertrand-russell": {
+    "file": "bertrand-russell.jpg",
+    "description": "English philosopher and logician (1872–1970)",
+    "credit": "Bassano Ltd",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bertrand_Russell_in_1936.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Bertrand_Russell"
+  },
+  "karl-popper": {
+    "file": "karl-popper.jpg",
+    "description": "Austrian–British philosopher of science (1902–1994)",
+    "credit": "Franz Barta",
+    "license": "No restrictions",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Karl_Popper.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Karl_Popper"
+  },
+  "john-rawls": {
+    "file": "john-rawls.jpg",
+    "description": "American philosopher (1921–2002)",
+    "credit": "Published by the Belknap Press of Harvard University Press. Photograph taken by Alec Rawls, John's son. The portrait was uncredited on the original dust jacket, but Alec is identified as its photographer on the copyright page of the 1994 German-language first edition of the book John Rawls by Thomas Pogge.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Rawls_(1971_photo_portrait).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/John_Rawls"
+  },
+  "michel-foucault": {
+    "file": "michel-foucault.jpg",
+    "description": "French philosopher (1926–1984)",
+    "credit": "Jerry Bauer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photo_of_Michel_Foucault_on_1970_dustjacket_of_The_Order_of_Things.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Michel_Foucault"
+  },
+  "simone-weil": {
+    "file": "simone-weil.jpg",
+    "description": "French philosopher (1909–1943)",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simone_Weil_1943.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Simone_Weil"
+  },
+  "judith-butler": {
+    "file": "judith-butler.jpg",
+    "description": "American feminist and queer philosopher (born 1956)",
+    "credit": "University of California, Berkeley",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JudithButler2013.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Judith_Butler"
+  },
+  "angela-davis": {
+    "file": "angela-davis.jpg",
+    "description": "American academic and political activist (born 1944)",
+    "credit": "Philippe Halsman",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angela_Davis,_1974_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Angela_Davis"
+  },
+  "martha-nussbaum": {
+    "file": "martha-nussbaum.jpg",
+    "description": "American philosopher and academic (born 1947)",
+    "credit": "Sally Ryan, photographer, www.sallyryanphoto.com",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martha_Nussbaum_2010_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Martha_Nussbaum"
+  },
+  "archimedes": {
+    "file": "archimedes.jpg",
+    "description": "Greek mathematician and physicist (c. 287 – 212 BC)",
+    "credit": "Domenico Fetti",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico-Fetti_Archimedes_1620.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Archimedes"
+  },
+  "hippocrates": {
+    "file": "hippocrates.jpg",
+    "description": "Ancient Greek physician (c. 460 – c. 370 BCE)",
+    "credit": "Unidentified engraver",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippocrates.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Hippocrates"
+  },
+  "euclid": {
+    "file": "euclid.jpg",
+    "description": "Ancient Greek mathematician (fl. 300 BC)",
+    "credit": "Jusepe de Ribera (Spanish / Italian, 1591 - 1652) (1591 - 1652) – artist (Spanish / Italian) Details on Google Art Project",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Italian_-_Euclid_-_Google_Art_Project.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Euclid"
+  },
+  "al-khwarizmi": {
+    "file": "al-khwarizmi.jpg",
+    "description": "Islamic mathematician (c. 780 – c. 850)",
+    "credit": "Zarateman",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madrid_-_Ciudad_Universitaria,_Monumento_a_Muhammad_al-Juarismi_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Al-Khwarizmi"
+  },
+  "al-biruni": {
+    "file": "al-biruni.jpg",
+    "description": "Khwarazmian-Persian polymath (973–1048)",
+    "credit": "The original uploader was Romanm at Slovenian Wikipedia.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biruni-russian.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Al-Biruni"
+  },
+  "aryabhata": {
+    "file": "aryabhata.jpg",
+    "description": "Indian mathematician-astronomer (476–550)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aryabhatta_of_Bihar.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Aryabhata"
+  },
+  "nicolaus-copernicus": {
+    "file": "nicolaus-copernicus.jpg",
+    "description": "Mathematician and astronomer (1473–1543)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikolaus_Kopernikus_MOT.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Nicolaus_Copernicus"
+  },
+  "johannes-kepler": {
+    "file": "johannes-kepler.jpg",
+    "description": "German astronomer and mathematician (1571–1630)",
+    "credit": "August Köhler [1]",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JKepler.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Johannes_Kepler"
+  },
+  "robert-boyle": {
+    "file": "robert-boyle.jpg",
+    "description": "Anglo-Irish scientist (1627–1691)",
+    "credit": "Johann Kerseboom",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Shannon_Portrait_of_the_Hon_Robert_Boyle.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Robert_Boyle"
+  },
+  "antoine-lavoisier": {
+    "file": "antoine-lavoisier.jpg",
+    "description": "French nobleman and chemist (1743–1794)",
+    "credit": "Jacques-Louis David",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_-_Portrait_of_Monsieur_Lavoisier_(cropped)2.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Antoine_Lavoisier"
+  },
+  "john-dalton": {
+    "file": "john-dalton.jpg",
+    "description": "British chemist and physicist (1766–1844)",
+    "credit": "Thomas Phillips",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Dalton_by_Thomas_Phillips,_1835.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/John_Dalton"
+  },
+  "dmitri-mendeleev": {
+    "file": "dmitri-mendeleev.jpg",
+    "description": "Russian chemist (1834–1907)",
+    "credit": "Original: Unknown authorUnknown author Upload: Germansociety2014",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dmitri_Mendeleev.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Dmitri_Mendeleev"
+  },
+  "max-planck": {
+    "file": "max-planck.jpg",
+    "description": "German physicist (1858–1947)",
+    "credit": "Hugo Erfurth",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Max_Planck_by_Hugo_Erfurth_1938cr_-_restoration1.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Max_Planck"
+  },
+  "niels-bohr": {
+    "file": "niels-bohr.jpg",
+    "description": "Danish physicist (1885–1962)",
+    "credit": "The American Institute of Physics credits the photo [1] to AB Lagrelius & Westphal, which is the Swedish company used by the Nobel Foundation for most photos of its book series Les Prix Nobel.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Niels_Bohr.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Niels_Bohr"
+  },
+  "erwin-schrodinger": {
+    "file": "erwin-schrodinger.jpg",
+    "description": "Austrian physicist (1887–1961)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erwin_Schr%C3%B6dinger_-_Narodowe_Archiwum_Cyfrowe_(1-E-939).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Erwin_Schrödinger"
+  },
+  "werner-heisenberg": {
+    "file": "werner-heisenberg.jpg",
+    "description": "German physicist (1901–1976)",
+    "credit": "Unknown authorUnknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Werner_Heisenberg_Portrait_(3x4_cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Werner_Heisenberg"
+  },
+  "paul-dirac": {
+    "file": "paul-dirac.jpg",
+    "description": "British physicist (1902–1984)",
+    "credit": "Nobel Foundation",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Dirac,_1933.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Paul_Dirac"
+  },
+  "lise-meitner": {
+    "file": "lise-meitner.jpg",
+    "description": "Austrian-Swedish nuclear physicist (1878–1968)",
+    "credit": "Harris & Ewing",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lise_Meitner_NatGeo.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Lise_Meitner"
+  },
+  "emmy-noether": {
+    "file": "emmy-noether.jpg",
+    "description": "German mathematician (1882–1935)",
+    "credit": "Unknown authorUnknown author Publisher: Mathematical Association of America [3], Brooklyn Museum [4], Agnes Scott College [5], [6]",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emmy_Noether_(3x4_cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Emmy_Noether"
+  },
+  "rosalind-franklin": {
+    "file": "rosalind-franklin.jpg",
+    "description": "British X-ray crystallographer (1920–1958)",
+    "credit": "MRC Laboratory of Molecular Biology",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosalind_Franklin_(retouched).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Rosalind_Franklin"
+  },
+  "barbara-mcclintock": {
+    "file": "barbara-mcclintock.jpg",
+    "description": "American scientist and cytogeneticist (1902–1992)",
+    "credit": "Smithsonian Institution/Science Service; Restored by Adam Cuerden",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barbara_McClintock_(1902-1992)_shown_in_her_laboratory_in_1947.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Barbara_McClintock"
+  },
+  "chien-shiung-wu": {
+    "file": "chien-shiung-wu.jpg",
+    "description": "Chinese-American physicist (1912–1997)",
+    "credit": "Smithsonian Institution",
+    "license": "No restrictions",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chien-shiung_Wu_(1912-1997)_C.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Chien-Shiung_Wu"
+  },
+  "alan-turing": {
+    "file": "alan-turing.jpg",
+    "description": "English computer scientist (1912–1954)",
+    "credit": "Elliott & Fry",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alan_turing_header.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Alan_Turing"
+  },
+  "john-von-neumann": {
+    "file": "john-von-neumann.jpg",
+    "description": "Hungarian and American mathematician and physicist (1903–1957)",
+    "credit": "LANL",
+    "license": "Attribution",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JohnvonNeumann-LosAlamos.gif",
+    "wikipedia": "https://en.wikipedia.org/wiki/John_von_Neumann"
+  },
+  "elizabeth-anscombe": {
+    "file": "elizabeth-anscombe.jpg",
+    "description": "British analytic philosopher (1919–2001)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gertrude_Elizabeth_Margaret_Anscombe.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/G._E._M._Anscombe"
+  },
+  "satyendra-nath-bose": {
+    "file": "satyendra-nath-bose.jpg",
+    "description": "Indian theoretical physicist (1894–1974)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SatyenBose1925.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Satyendra_Nath_Bose"
+  },
+  "j-robert-oppenheimer": {
+    "file": "j-robert-oppenheimer.jpg",
+    "description": "American theoretical physicist (1904–1967)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oppenheimer_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/J._Robert_Oppenheimer"
+  }
+}

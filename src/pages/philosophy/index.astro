@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import SchoolAtlas from '../../components/SchoolAtlas';
+import {SCHOOLS} from '../../data/schools';
+import {TRADITIONS,HINDU_TEXTS} from '../../data/traditions';
+---
+<Base title="Philosophy atlas" description="Explore philosophical schools, cultural traditions, and the essence of foundational texts." wing="wing-philosophy">
+ <section class="shell page-intro"><p class="eyebrow">THE PHILOSOPHY ATLAS / {SCHOOLS.length} SCHOOLS & POSITIONS</p><h1>Many ways<br/>to <em>question everything.</em></h1><p>From Stoicism and existentialism to Nyāya and Daoism. Explore what a school claims, what it asks, and where others disagree.</p><nav class="atlas-jumps" aria-label="Atlas sections"><a href="#schools">Schools & “isms” ↓</a><a href="#traditions">Cultural traditions ↓</a><a href="/philosophy/texts">Vedas & Upanishads ↗</a><a href="#compare">Compare two schools ↓</a><a href="/philosophy/scientists">Scientists’ beliefs ↗</a><a href="/philosophers">Meet the philosophers ↗</a></nav></section>
+ <section class="shell"><a class="atlas-feature" href="/philosophy/traditions/hindu"><div><p class="eyebrow">A DEDICATED READING ROOM</p><h2>Vedas. Upanishads.<br/>Many Vedāntas.</h2><p>Explore the six classical darśanas, rival accounts of self and reality, and {HINDU_TEXTS.length} concise guides to texts and textual families.</p><span class="inline-link">Enter Hindu philosophical traditions ↗</span></div><div class="atlas-feature-symbol" aria-hidden="true">आत्मन्<small>SELF · KNOWLEDGE · LIBERATION</small></div></a></section>
+ <section class="shell section-space" id="schools"><div class="section-heading"><h2>Find an idea to think with.</h2></div><p class="atlas-note">A broad, growing catalogue—not a final list of every “ism.” Some entries are movements, others are positions or methods. They overlap, change over time, and do not define every belief of their associated thinkers.</p><SchoolAtlas client:load/></section>
+ <section class="shell section-space" id="traditions"><div class="section-heading"><h2>Philosophy across cultures.</h2><span class="eyebrow">{TRADITIONS.length} INTRODUCTORY GUIDES</span></div><p class="atlas-note">These are plural traditions, not fixed cultural personalities. Read named texts and thinkers, notice internal disagreement, and follow the sources.</p><div class="atlas-grid">{TRADITIONS.map(t=><a class="atlas-card" href={`/philosophy/traditions/${t.id}`}><span class="eyebrow">{t.region}</span><h3>{t.name} ↗</h3><p>{t.essence}</p></a>)}</div></section>
+</Base>

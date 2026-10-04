@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import pendulum from '../src/sims/defs/pendulum.ts';
+import { photonEnergy } from '../src/sims/defs/photoelectric.ts';
+import { inducedEmf } from '../src/sims/defs/induction.ts';
+import { chronologicalYear, LABS, PATHS } from '../src/data/learning.ts';
+import { resolve, validate } from '../src/arguments/kernel/graph.ts';
+import syllogism from '../src/arguments/defs/syllogism.ts';
+import induction from '../src/arguments/defs/induction-problem.ts';
+import harm from '../src/arguments/defs/harm-principle.ts';
+import dependent from '../src/arguments/defs/dependent-arising.ts';
+import stoic from '../src/arguments/defs/stoic-control.ts';
+import education from '../src/arguments/defs/equal-education.ts';
+import death from '../src/arguments/defs/epicurean-death.ts';
+import { existsSync } from 'node:fs';
+
+test('pendulum approximately conserves energy over 60 seconds',()=>{const p={length:1.5,gravity:9.8,angle:60};const s=pendulum.init(p,1);const energy=()=>.5*p.length*p.length*s.omega*s.omega+p.gravity*p.length*(1-Math.cos(s.theta));const initial=energy();for(let i=0;i<7200;i++)pendulum.step(s,1/120,p);assert.ok(Math.abs(energy()-initial)/initial<.001);});
+test('photoelectric threshold changes sign around the work function',()=>{assert.ok(photonEnergy(300)<2.3);assert.ok(photonEnergy(700)>2.3);assert.ok(Math.abs(photonEnergy(1000)-4.135667696)<1e-9);});
+test('induced voltage is zero at rest, scales with turns and reverses sign',()=>{const p={speed:.5,turns:8,field:.5};assert.equal(inducedEmf(1,{...p,speed:0}),0);assert.ok(Math.abs(inducedEmf(Math.PI/2,p)+inducedEmf(3*Math.PI/2,p))<1e-10);assert.equal(inducedEmf(1,{...p,turns:16}),2*inducedEmf(1,p));});
+test('historical chronology handles BCE, approximate years, and centuries',()=>{assert.equal(chronologicalYear('1st millennium BCE'),-500);assert.equal(chronologicalYear('384 BCE'),-384);assert.equal(chronologicalYear('c. 965'),965);assert.equal(chronologicalYear('4th century BCE'),-350);assert.equal(chronologicalYear('c. 2nd–3rd century CE'),150);assert.equal(chronologicalYear('1879-03-14'),1879);});
+for(const argument of [syllogism,induction,harm,dependent,stoic,education,death]) test(`${argument.id}: graph is valid and premise rejection propagates`,()=>{assert.deepEqual(validate(argument),[]);const conclusion=argument.claims.find(c=>c.kind==='conclusion');assert.equal(resolve(argument,new Set()).get(conclusion.id).stands,true);const premise=argument.claims.find(c=>c.kind==='premise');assert.equal(resolve(argument,new Set([premise.id])).get(conclusion.id).stands,false);});
+test('every learning path and laboratory links to real content',()=>{for(const id of [...PATHS.flatMap(p=>p.ids),...LABS.map(l=>l.person)])assert.ok(existsSync(`src/content/people/${id}.mdx`),id);for(const path of PATHS)assert.equal(path.ids.length,path.prompts.length);for(const lab of LABS){assert.ok(existsSync(`src/sims/defs/${lab.id}.ts`),lab.id);assert.ok(lab.correct>=0&&lab.correct<lab.answers.length);}});

@@ -1,0 +1,10 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {SCHOOLS,type School} from '../../../data/schools';
+import {allPeople} from '../../../lib/people';
+export function getStaticPaths(){return SCHOOLS.map(s=>({params:{id:s.id},props:{s}}));}
+interface Props{s:School}
+const {s}=Astro.props;const people=await allPeople();
+const connected=s.people.map(id=>{const p=people.find(p=>p.id===id);if(!p)throw new Error(`Unknown school person: ${id}`);return p;});
+---
+<Base title={s.name} description={s.essence} wing="wing-philosophy"><section class="shell page-intro"><a class="inline-link" href="/philosophy#schools">← Philosophy atlas</a><p class="eyebrow topic-kicker">{s.area} / INTRODUCTION</p><h1>{s.name}</h1><p>{s.essence}</p></section><div class="shell atlas-reading"><section class="atlas-question-panel"><p class="eyebrow">THE STARTING QUESTION</p><h2>{s.question}</h2></section><section><h2>A tension worth examining</h2><p>{s.tension}</p></section><section><h2>Read beyond the label</h2><p>{s.reading}.</p><p>A school’s name is a useful doorway, not a complete account. Compare arguments, historical contexts, and the positions of individual authors.</p><a class="inline-link" href={s.source}>Scholarly source & further study ↗</a></section>{connected.length>0&&<section><h2>Connected thinkers</h2><p>Connections indicate relevant work, not agreement with every version of this position.</p><div class="atlas-jumps">{connected.map(p=><a href={`/p/${p.id}`}>{p.data.name} ↗</a>)}</div></section>}<a class="button" href="/philosophy#compare">Compare with another school ↗</a></div></Base>

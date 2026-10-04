@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import Simulation from '../../sims/kernel/Simulation';
+import KnowledgeCheck from '../../components/KnowledgeCheck';
+import { LABS } from '../../data/learning';
+import { allPeople } from '../../lib/people';
+export function getStaticPaths() { return LABS.map(lab=>({params:{id:lab.id},props:{lab}})); }
+const { lab } = Astro.props;
+const person = (await allPeople()).find(p=>p.id===lab.person)!;
+---
+<Base title={lab.name} description={lab.description}>
+ <div class="shell page-intro"><a href="/laboratory" class="inline-link">← All experiments</a><p class="eyebrow mt-8">{lab.field} / {lab.mode}</p><h1>{lab.name}<em>.</em></h1><p>{lab.description}</p></div>
+ <div class="shell lab-page"><div class="lab-main"><Simulation client:load id={lab.id}/><KnowledgeCheck client:visible question={lab.question} answers={lab.answers} correct={lab.correct} explanation={lab.explanation}/></div><aside class="lab-guide"><p class="eyebrow">YOUR EXPERIMENT GUIDE</p><h2>First predict.<br/>Then play.</h2><ol>{lab.steps.map((step,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{step}</li>)}</ol><div class="guide-limit"><h3>Inside this model</h3><p>{lab.limit}</p></div><a href={`/p/${person.id}`} class="button secondary">Meet {person.data.name} ↗</a><a href={lab.source} class="inline-link block mt-5">Read the underlying science ↗</a></aside></div>
+</Base>

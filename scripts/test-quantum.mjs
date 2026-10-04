@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {initialState,applyGate,runCircuit,probabilities,concurrence,measure,sampleShots} from '../src/lib/quantum.ts';
+import {TOPICS} from '../src/data/topics.ts';
+import {existsSync} from 'node:fs';
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10,`${a} differs from ${b}`);
+const distribution=(state,expected)=>probabilities(state).forEach((p,i)=>near(p,expected[i]));
+const gate=(kind,target=0)=>({kind,target});
+test('wire order is q0 q1; X addresses each wire independently',()=>{distribution(runCircuit([gate('X')]),[0,0,1,0]);distribution(runCircuit([gate('X',1)]),[0,1,0,0]);});
+test('H is reversible and HZH changes the final result through phase',()=>{distribution(runCircuit([gate('H'),gate('H')]),[1,0,0,0]);distribution(runCircuit([gate('H'),gate('Z'),gate('H')]),[0,0,1,0]);});
+test('phase gates change complex amplitudes while preserving immediate probabilities',()=>{const s=runCircuit([gate('H'),gate('S')]);near(s[2].im,Math.SQRT1_2);near(s[2].re,0);distribution(s,[.5,0,.5,0]);const twice=runCircuit([gate('H'),gate('S'),gate('S')]);near(twice[2].re,-Math.SQRT1_2);});
+test('CNOT supports both control directions and is its own inverse',()=>{distribution(runCircuit([gate('X',1),gate('CNOT',0)]),[0,0,0,1]);distribution(runCircuit([gate('X'),gate('CNOT',1),gate('CNOT',1)]),[0,0,1,0]);});
+test('Bell pair differs from an independent pair in distribution and concurrence',()=>{const bell=runCircuit([gate('H'),gate('CNOT',1)]);distribution(bell,[.5,0,0,.5]);near(concurrence(bell),1);const separate=runCircuit([gate('H'),gate('H',1)]);distribution(separate,[.25,.25,.25,.25]);near(concurrence(separate),0);});
+test('unitary sequences preserve norm and do not mutate their input',()=>{let s=initialState();for(let i=0;i<300;i++){const before=structuredClone(s);const next=applyGate(s,gate(['H','X','Z','S','CNOT'][i%5],i%2));assert.deepEqual(s,before);near(probabilities(next).reduce((a,b)=>a+b),1);s=next;}});
+test('measurement collapses; subsequent measurements agree',()=>{const state=runCircuit([gate('H'),gate('CNOT',1)]);const first=measure(state,()=>.9);assert.equal(first.outcome,3);distribution(first.state,[0,0,0,1]);assert.equal(measure(first.state,()=>0).outcome,3);distribution(state,[.5,0,0,.5]);});
+test('shots sample fresh preparations and cannot invent forbidden Bell outcomes',()=>{let i=0;const state=runCircuit([gate('H'),gate('CNOT',1)]);assert.deepEqual(sampleShots(state,1000,()=>((i++%10)+.5)/10),[500,0,0,500]);assert.throws(()=>measure(state,()=>1));});
+test('all topic links and quiz answers resolve',()=>{for(const t of TOPICS){for(const p of t.people)assert.ok(existsSync(`src/content/people/${p}.mdx`),p);for(const l of t.labs)assert.ok(existsSync(`src/sims/defs/${l}.ts`),l);for(const id of t.related)assert.ok(TOPICS.some(t=>t.id===id),id);assert.ok(t.quiz.correct>=0&&t.quiz.correct<t.quiz.answers.length);}});

@@ -1,0 +1,70 @@
+---
+import ArgumentMap from '../arguments/kernel/ArgumentMap';
+import Simulation from '../sims/kernel/Simulation';
+import type { CollectionEntry } from 'astro:content';
+
+type Discovery = CollectionEntry<'people'>['data']['discoveries'][number];
+
+interface Props {
+  discovery: Discovery;
+  index: number;
+}
+
+const { discovery, index } = Astro.props;
+---
+
+<article class="scroll-mt-24" id={`discovery-${index + 1}`}>
+  <header class="mb-4">
+    <div class="mb-2 flex items-center gap-3">
+      <span
+        class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent/12 font-mono text-xs font-bold text-accent"
+      >
+        {index + 1}
+      </span>
+      <span class="font-mono text-xs font-semibold tracking-wide text-faint">
+        {discovery.year}
+      </span>
+    </div>
+    <h3 class="text-xl font-semibold tracking-tight sm:text-2xl">
+      {discovery.title}
+    </h3>
+  </header>
+
+  <div class="space-y-4 border-l-2 border-line pl-5 sm:pl-6">
+    <p class="text-[15px] leading-relaxed text-muted">{discovery.summary}</p>
+
+    <div>
+      <h4
+        class="mb-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-accent"
+      >
+        Why it mattered
+      </h4>
+      <p class="text-[15px] leading-relaxed text-muted">{discovery.significance}</p>
+    </div>
+
+    {
+      discovery.disputed && (
+        <div class="rounded-token-sm border border-line bg-surface px-4 py-3">
+          <h4 class="mb-1 font-mono text-[11px] font-bold uppercase tracking-wider text-faint">
+            What the popular version gets wrong
+          </h4>
+          <p class="text-[13.5px] leading-relaxed text-muted">{discovery.disputed}</p>
+        </div>
+      )
+    }
+  </div>
+
+  {
+    discovery.interactiveDemo && (
+      /* client:visible — the simulation's code is only fetched when the reader
+         actually scrolls to it, so a profile with six of them stays light. */
+      <Simulation client:visible id={discovery.interactiveDemo} />
+    )
+  }
+
+  {
+    /* The philosophy wing's interactive, mounted on the same terms. A discovery
+       may carry both: the idea, and the reasoning that got there. */
+    discovery.argument && <ArgumentMap client:visible id={discovery.argument} />
+  }
+</article>

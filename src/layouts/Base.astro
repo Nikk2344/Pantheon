@@ -1,0 +1,20 @@
+---
+import '../styles/theme.css';
+import '../styles/expansion.css';
+import '../styles/atlas.css';
+import ReadingLanguage from '../components/ReadingLanguage.astro';
+interface Props { title: string; description: string; wing?: 'wing-science' | 'wing-philosophy' }
+const { title, description, wing } = Astro.props;
+const full = title === 'The Pantheon' ? title : `${title} · The Pantheon`;
+const links = [['/explore','Explore'],['/scientists','Scientists'],['/philosophy','Philosophy'],['/discoveries','Ideas'],['/topics','Topics'],['/laboratory','Laboratory'],['/paths','Paths']];
+---
+<!doctype html><html lang="en" class={wing}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#101216"/><title>{full}</title><meta name="description" content={description}/><meta property="og:title" content={full}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<script is:inline>(() => { let dark = true; try { dark = localStorage.getItem('theme') !== 'light'; } catch {} document.documentElement.classList.toggle('dark', dark); })();</script>
+</head><body><a href="#main" class="skip-link">Skip to content</a><header class="site-header"><div class="nav-shell shell"><a href="/" class="brand" aria-label="The Pantheon home"><span class="brand-mark">✳</span><span>the pantheon<span class="brand-period">.</span></span></a><nav class="desktop-nav" aria-label="Main navigation">{links.map(([href,label])=><a href={href} data-hi={({Explore:"Khojo",Scientists:"Vaigyanik",Philosophy:"Darshan",Ideas:"Vichaar",Topics:"Topics",Laboratory:"Prayogshala",Paths:"Seekhne ke raaste"} as Record<string,string>)[label]} aria-current={Astro.url.pathname.replace(/\/$/,'')===href?'page':undefined}>{label}</a>)}</nav><div class="nav-actions"><a href="/collection" class="collection-link" aria-label="Your collection">▧</a><button id="theme-toggle" class="icon-button" aria-label="Toggle dark mode" type="button">◐</button><button id="menu-toggle" class="icon-button mobile-menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav" type="button">☰</button></div></div><nav id="mobile-nav" class="mobile-nav shell" aria-label="Mobile navigation" hidden>{links.map(([href,label])=><a href={href} data-hi={({Explore:"Khojo",Scientists:"Vaigyanik",Philosophy:"Darshan",Ideas:"Vichaar",Topics:"Topics",Laboratory:"Prayogshala",Paths:"Seekhne ke raaste"} as Record<string,string>)[label]}>{label}</a>)}<a href="/collection">Your collection</a></nav></header><ReadingLanguage/><main id="main"><slot/></main><footer class="site-footer shell"><div><a href="/" class="brand"><span class="brand-mark">✳</span>the pantheon.</a><p>A living atlas of the ideas that shape our world.<br/>Made for the endlessly curious.</p></div><div class="footer-links"><a href="/explore">Explore the archive ↗</a><a href="/paths">Find a learning path ↗</a><a href="/about">About & editorial approach ↗</a></div><div class="footer-note">Every profile cites its sources. Portrait credits appear on each profile.<br/>An expanding collection, never the final word.</div></footer>
+<script>
+const toggle = document.getElementById('theme-toggle');
+toggle?.addEventListener('click', () => { const dark = document.documentElement.classList.toggle('dark'); try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch {} });
+const menu = document.getElementById('menu-toggle'); const nav = document.getElementById('mobile-nav');
+menu?.addEventListener('click', () => { if (!nav) return; nav.hidden = !nav.hidden; menu.setAttribute('aria-expanded', String(!nav.hidden)); menu.setAttribute('aria-label', nav.hidden ? 'Open navigation' : 'Close navigation'); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && nav && !nav.hidden) { nav.hidden = true; menu?.setAttribute('aria-expanded','false'); menu?.focus(); } });
+</script></body></html>

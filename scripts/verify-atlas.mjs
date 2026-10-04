@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import {chromium} from 'playwright';
+import {mkdirSync} from 'node:fs';
+const BASE=process.env.BASE_URL||'http://127.0.0.1:4322';
+const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const go=async p=>{const r=await page.goto(BASE+p,{waitUntil:'networkidle'});assert.equal(r.status(),200,p);};
+mkdirSync('.shots/atlas',{recursive:true});
+try{
+ await go('/philosophy');const data=await (await page.request.get(BASE+'/catalogue.json')).json();assert.equal(data.schemaVersion,2);
+ const search=page.getByRole('searchbox',{name:'Search schools'});await search.fill('stoicism');assert.equal(await page.locator('#schools .atlas-grid .atlas-card').count(),1);await page.waitForFunction(()=>new URL(location.href).searchParams.get('q')==='stoicism');await page.reload({waitUntil:'networkidle'});await page.waitForFunction(()=>document.querySelector('input[type=search]').value==='stoicism');assert.equal(await search.inputValue(),'stoicism');
+ await page.getByLabel('Area of inquiry').selectOption('Indian darśanas');assert.equal(await page.locator('.atlas-empty').isVisible(),true);await page.getByRole('button',{name:'Reset filters'}).click();assert.equal(await page.locator('#schools .atlas-grid .atlas-card').count(),data.counts.schools);
+ await search.fill('samkhya');assert.equal(await page.locator('#schools .atlas-grid .atlas-card[href="/philosophy/schools/samkhya"]').count(),1);await page.getByRole('button',{name:'Reset filters'}).click();
+ await page.getByRole('combobox',{name:'First school',exact:true}).selectOption('advaita');await page.getByRole('combobox',{name:'Second school',exact:true}).selectOption('dvaita');assert.match(await page.locator('#compare').innerText(),/Madhva/);await page.screenshot({path:'.shots/atlas/compare.png'});
+ console.log('PASS atlas search, diacritics, URL persistence, combined filters, reset, and comparison');
+ for(const s of data.schools){const r=await page.request.get(`${BASE}/philosophy/schools/${s.id}`);assert.equal(r.status(),200);assert.ok((await r.text()).includes(s.question));}
+ for(const t of data.traditions){const r=await page.request.get(`${BASE}/philosophy/traditions/${t.id}`);assert.equal(r.status(),200);}
+ for(const id of Object.keys(data.scientistViews)){const r=await page.request.get(`${BASE}/p/${id}`);assert.equal(r.status(),200);assert.ok((await r.text()).includes('id="philosophy"'),id);}
+ await go('/philosophy/texts');assert.equal(await page.locator('.text-entry').count(),data.counts.textGuides);await page.locator('#mandukya summary').click();assert.match(await page.locator('#mandukya details').innerText(),/Gauḍapāda/);
+ console.log('PASS all school, tradition, scientist outlook pages, and expandable text context');
+ await go('/lab/matter-and-sound');const matter=page.getByTestId('matter-lab'),sound=page.getByTestId('sound-lab');await matter.getByLabel('Surface separation',{exact:true}).fill('0.96');assert.match(await matter.locator('.lab-readout').innerText(),/Repulsive/);await matter.getByLabel('Surface separation',{exact:true}).fill('2.5');assert.match(await matter.locator('.lab-readout').innerText(),/Attractive/);await matter.getByRole('button',{name:'03 · Quantum structure'}).click();assert.match(await matter.locator('.stage-copy').innerText(),/fermions/);await matter.getByLabel('Show electron distributions').uncheck();
+ await sound.getByLabel('Pitch',{exact:true}).fill('440');assert.match(await sound.locator('.lab-readout').innerText(),/0.78 m/);await sound.getByLabel('Harmonics',{exact:true}).fill('1');await sound.getByLabel('Amplitude',{exact:true}).fill('0.05');
+ await sound.getByRole('button',{name:'Play tone · 8 seconds'}).click();await page.waitForFunction(()=>document.querySelector('.audio-status').textContent.includes('Playing a synthesized'));assert.equal(await sound.getByRole('button',{name:'Stop sound'}).isEnabled(),true);await sound.getByLabel('Remove air (vacuum)').check();assert.equal(await sound.getByRole('button',{name:'Play tone · 8 seconds'}).isDisabled(),true);assert.equal(await sound.getByRole('button',{name:'Stop sound'}).isDisabled(),true);
+ await sound.getByLabel('Remove air (vacuum)').uncheck();await sound.getByRole('button',{name:'Play four-note phrase'}).click();await page.waitForFunction(()=>document.querySelector('.audio-status').textContent.includes('Playing four notes'));assert.equal(await sound.getByLabel('Pitch',{exact:true}).isDisabled(),true);await page.waitForFunction(()=>document.querySelector('.audio-status').textContent.includes('Sound is off'),{timeout:6000});
+ await sound.getByRole('button',{name:'Advance animation one step'}).click();assert.equal(await sound.getByRole('button',{name:'Resume animation'}).isVisible(),true);console.log('PASS matter controls, tone generation, vacuum stop, phrase completion, and manual animation');
+ await page.emulateMedia({reducedMotion:'reduce'});await go('/lab/matter-and-sound');assert.equal(await page.getByRole('button',{name:'Resume motion',exact:true}).isVisible(),true);assert.equal(await page.getByRole('button',{name:'Resume animation',exact:true}).isVisible(),true);
+ for(const width of [390,768,1024,1440]){await page.setViewportSize({width,height:1000});for(const path of ['/philosophy','/philosophy/texts','/philosophy/traditions/hindu','/philosophy/scientists','/lab/matter-and-sound','/p/albert-einstein']){await go(path);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Overflow ${path} at ${width}`);}}
+ await page.setViewportSize({width:1440,height:1000});for(const [p,n] of [['/philosophy','atlas'],['/philosophy/texts','texts'],['/philosophy/scientists','scientist-views']]){await go(p);await page.screenshot({path:`.shots/atlas/${n}.png`});}
+ await go('/lab/matter-and-sound');await page.locator('#sound').scrollIntoViewIfNeeded();await page.screenshot({path:'.shots/atlas/sound.png'});await page.getByRole('button',{name:'Toggle dark mode'}).click();await page.screenshot({path:'.shots/atlas/sound-light.png'});
+ await page.setViewportSize({width:390,height:844});await page.locator('#matter').scrollIntoViewIfNeeded();await page.screenshot({path:'.shots/atlas/matter-mobile.png'});
+ const unavailable=await browser.newPage();await unavailable.addInitScript(()=>{window.AudioContext=undefined;});await unavailable.goto(BASE+'/lab/matter-and-sound');await unavailable.getByRole('button',{name:'Play tone · 8 seconds'}).click();assert.match(await unavailable.locator('.audio-status').innerText(),/not available/);await unavailable.close();
+ assert.deepEqual(errors,[]);console.log('PASS reduced motion, responsive layouts, light theme, unavailable audio, and zero browser exceptions');
+}finally{await browser.close();}
+

@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { PATHS } from '../data/learning';
+import { allPeople, portraitFor } from '../lib/people';
+import { Image } from 'astro:assets';
+const people=await allPeople();
+for(const path of PATHS) for(const id of path.ids) if(!people.some(p=>p.id===id)) throw new Error(`Unknown learning path figure: ${id}`);
+---
+<Base title="Learning paths" description="Follow connected ideas through guided learning paths in science and philosophy."><section class="shell page-intro"><p class="eyebrow">A QUESTION IS A GOOD BEGINNING</p><h1>Follow a thread.<br/><em>Find a new perspective.</em></h1><p>You don’t need to know where to start. Pick a question, follow the people who wrestled with it, and try the experiments along the way. Mark profiles as read to track your progress.</p></section><section class="shell paths-list">{PATHS.map((path,i)=><article class="path-card" id={path.id} data-path={path.ids.join('|')}><div class="path-summary"><p class="eyebrow">PATH {String(i+1).padStart(2,'0')} / {path.level}</p><h2>{path.title}</h2><p>{path.description}</p><div class="path-meta">{path.ids.length} minds · About {path.minutes} minutes</div><div class="path-progress"><div data-progress style="width:0%"></div></div><p data-progress-label class="path-meta">0 of {path.ids.length} read</p></div><ol class="path-steps">{path.ids.map((id,j)=>{const person=people.find(p=>p.id===id)!;const portrait=portraitFor(id);return <li data-path-person={id}><span class="step-number">{String(j+1).padStart(2,'0')}</span><a href={`/p/${id}`} class="path-person">{portrait&&<Image src={portrait.image} alt="" width={80} height={80} class="path-portrait"/>}<div><h3>{person.data.name}</h3><p>{path.prompts[j]}</p></div><span data-read-indicator aria-label="Not yet read">↗</span></a></li>;})}</ol></article>)}</section></Base>
+<script>
+import { getLearning } from '../lib/learning';
+function updatePaths(){const read=getLearning().read;document.querySelectorAll<HTMLElement>('[data-path]').forEach(path=>{const ids=path.dataset.path!.split('|');const count=ids.filter(id=>read.includes(id)).length;path.querySelector<HTMLElement>('[data-progress]')!.style.width=`${100*count/ids.length}%`;path.querySelector('[data-progress-label]')!.textContent=`${count} of ${ids.length} read${count===ids.length?' · Path complete':''}`;path.querySelectorAll<HTMLElement>('[data-path-person]').forEach(step=>{const complete=read.includes(step.dataset.pathPerson!);const indicator=step.querySelector('[data-read-indicator]')!;indicator.textContent=complete?'✓':'↗';indicator.setAttribute('aria-label',complete?'Read':'Not yet read');});});}
+updatePaths();window.addEventListener('pageshow',updatePaths);window.addEventListener('storage',updatePaths);
+</script>

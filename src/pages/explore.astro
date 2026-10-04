@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import BrowseDirectory from '../components/BrowseDirectory.astro';
+import { allPeople } from '../lib/people';
+
+const people = await allPeople();
+---
+
+<Base
+  title="Explore"
+  description="Search the Pantheon by person, field, era, discovery, or philosophical idea."
+>
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+      <p class="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">The archive</p>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Explore the minds that changed ours.</h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+        Search across people, fields, eras, discoveries, and arguments. Every result leads to a sourced profile built to explain the idea, not merely name it.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+    <nav class="catalogue-links" aria-label="Ways to explore"><a href="/discoveries">Discoveries & ideas ↗</a><a href="/topics">Science topic guides ↗</a><a href="/timeline">Contribution timeline ↗</a></nav>
+    <BrowseDirectory people={people} />
+  </section>
+</Base>

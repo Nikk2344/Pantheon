@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { TOPICS, type Topic } from '../../data/topics';
+import { LABS } from '../../data/learning';
+import { allPeople } from '../../lib/people';
+import PersonCard from '../../components/PersonCard.astro';
+import QuantumCircuit from '../../components/QuantumCircuit';
+import KnowledgeCheck from '../../components/KnowledgeCheck';
+export function getStaticPaths(){return TOPICS.map(topic=>({params:{id:topic.id},props:{topic}}));}
+interface Props {topic:Topic}
+const {topic}=Astro.props;const people=await allPeople();
+const connected=topic.people.map(id=>{const p=people.find(p=>p.id===id);if(!p)throw new Error(`Unknown topic person ${id}`);return p;});
+const quantum=topic.id==='quantum-computing';
+---
+<Base title={topic.title} description={topic.description} wing="wing-science">
+ <section class="shell page-intro"><a href="/topics" class="inline-link">← All science topics</a><p class="eyebrow topic-kicker">{topic.kicker}</p><h1>{topic.title}<span class="topic-hero-symbol" aria-hidden="true">{topic.symbol}</span></h1><p>{topic.description}</p><div class="topic-meta">{topic.minutes} MINUTE GUIDE · SOURCED INTRODUCTION {quantum&&<>· <a href="#playground">JUMP TO THE PLAYGROUND ↓</a></>}</div></section>
+ <section class="shell topic-reading"><div class="topic-lessons">{topic.sections.map((s,i)=><article><span class="lesson-number">{String(i+1).padStart(2,'0')}</span><div><h2>{s.title}</h2><p>{s.text}</p></div></article>)}<aside class="misconception"><p class="eyebrow">A COMMON MISCONCEPTION</p><h3>{topic.misconception[0]}</h3><p>{topic.misconception[1]}</p></aside></div><aside class="topic-glossary"><p class="eyebrow">WORDS TO GET COMFORTABLE WITH</p><dl>{topic.terms.map(([term,definition])=><><dt>{term}</dt><dd>{definition}</dd></>)}</dl></aside></section>
+ {quantum&&<section class="shell section-space" id="playground"><div class="section-heading"><div><p class="eyebrow">LEARN BY CHANGING SOMETHING</p><h2>Build. Interfere. Measure.</h2></div></div><QuantumCircuit client:visible /><div class="quantum-challenges"><div><span class="eyebrow">TRY 01 / REVERSIBILITY</span><h3>Can you undo a superposition?</h3><p>Clear the circuit. Add H twice to q0. Inspect each step and explain why the final result is certain.</p></div><div><span class="eyebrow">TRY 02 / HIDDEN PHASE</span><h3>Same bars. Different state.</h3><p>Load Interference. Compare steps 1 and 2, then 3. Which information did the probability bars leave out?</p></div><div><span class="eyebrow">TRY 03 / CORRELATIONS</span><h3>Uncertain alone. Connected together.</h3><p>Compare Bell pair with Independent pair. Run 1,000 shots for each. Which outcomes are possible?</p></div></div></section>}
+ <section class="shell topic-quiz"><KnowledgeCheck client:visible {...topic.quiz}/></section>
+ <section class="shell section-space"><div class="section-heading"><h2>Meet the minds behind the ideas.</h2></div><div class="people-grid">{connected.map(person=><PersonCard person={person}/>)}</div></section>
+ {topic.labs.length>0&&<section class="shell section-space"><div class="section-heading"><h2>Keep experimenting.</h2></div>{topic.id==='relativity'&&<p class="topic-lab-note">These classical models establish a starting point; neither simulates relativistic effects.</p>}<div class="journey-grid">{topic.labs.map(id=>{const lab=LABS.find(l=>l.id===id)!;return <a class="journey-card" href={`/lab/${id}`}><p class="eyebrow">{lab.field}</p><h3>{lab.name}</h3><p>{lab.description}</p><span class="inline-link">Open experiment ↗</span></a>;})}</div></section>}
+ <section class="shell section-space topic-sources"><h2>Sources & further study</h2><ul>{topic.sources.map(s=><li><a href={s.url}>{s.title} ↗</a></li>)}</ul><p>Continue exploring: {topic.related.map((id,i)=><>{i>0?' · ':''}<a href={`/topics/${id}`}>{TOPICS.find(t=>t.id===id)!.title}</a></>)}</p></section>
+</Base>

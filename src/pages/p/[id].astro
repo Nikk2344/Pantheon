@@ -1,0 +1,286 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Aside from '../../components/Aside.astro';
+import DiscoveryBlock from '../../components/DiscoveryBlock.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import LearningTools from '../../components/LearningTools';
+import { chronologicalYear } from '../../data/learning';
+import { TOPICS } from '../../data/topics';
+import { SCIENTIST_VIEWS } from '../../data/scientist-views';
+import { SCHOOLS } from '../../data/schools';
+import {
+  CATEGORY,
+  allPeople,
+  formatDate,
+  lifespan,
+  portraitFor,
+  relatedTo,
+  type Person,
+} from '../../lib/people';
+
+export const getStaticPaths = (async () => {
+  const people = await allPeople();
+  return people.map((person) => ({
+    params: { id: person.id },
+    props: { person },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  person: Person;
+}
+
+const { person } = Astro.props;
+const { data } = person;
+const outlook = SCIENTIST_VIEWS[person.id];
+const meta = CATEGORY[data.category];
+const portrait = portraitFor(person.id);
+const related = await relatedTo(person);
+const { Content } = await render(person);
+
+const interactives = data.discoveries.filter(
+  (d) => d.interactiveDemo || d.argument,
+).length;
+
+const facts = [
+  { label: 'Born', value: formatDate(data.born) + (data.birthplace ? `, ${data.birthplace}` : '') },
+  data.died ? { label: 'Died', value: formatDate(data.died) } : null,
+  { label: 'Era', value: data.era },
+  { label: 'Nationality', value: data.nationality.join(' · ') },
+].filter((f): f is { label: string; value: string } => f != null);
+---
+
+<Base title={data.name} description={data.summary} wing={meta.wing}>
+  <!-- Hero -->
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
+      <nav class="mb-8 text-sm text-faint">
+        <a href="/" class="transition hover:text-ink">Home</a>
+        <span class="mx-1.5">/</span>
+        <a href={`/${meta.slug}`} class="transition hover:text-ink">{meta.plural}</a>
+        <span class="mx-1.5">/</span>
+        <span class="text-muted">{data.name}</span>
+      </nav>
+
+      <div class="grid gap-8 md:grid-cols-[minmax(0,17rem)_1fr] md:gap-12">
+        <div>
+          {
+            portrait ? (
+              <figure>
+                <div class="overflow-hidden rounded-token border border-line bg-surface shadow-token">
+                  <Image
+                    src={portrait.image}
+                    width={680}
+                    alt={`Portrait of ${data.name}`}
+                    widths={[340, 680]}
+                    sizes="(min-width: 768px) 17rem, 100vw"
+                    class="aspect-4/5 w-full object-cover object-top"
+                    loading="eager"
+                  />
+                </div>
+                <figcaption class="mt-2.5 text-[11px] leading-relaxed text-faint">
+                  {portrait.credit} ·{' '}
+                  <a
+                    href={portrait.sourceUrl}
+                    class="underline underline-offset-2 transition hover:text-muted"
+                    rel="noopener"
+                  >
+                    {portrait.license}
+                  </a>
+                  <span> · Resized and cropped for display.</span>
+                </figcaption>
+                {chronologicalYear(data.born)<1400 && <p class="mt-2 text-[11px] leading-relaxed text-faint">Historical artistic depiction; not an authenticated contemporary likeness.</p>}
+              </figure>
+            ) : <div class="portrait-placeholder profile-placeholder"><span>{data.name.split(' ').map(n=>n[0]).slice(0,2).join('')}</span><small>No verified portrait available</small></div>
+          }
+        </div>
+
+        <div class="min-w-0">
+          <p
+            class="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-accent"
+          >
+            {meta.singular}
+          </p>
+          <h1 class="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+            {data.name}
+          </h1>
+          {
+            data.nativeName && data.nativeName !== data.name && (
+              <p class="mt-1.5 text-lg text-faint">{data.nativeName}</p>
+            )
+          }
+          <p class="mt-2 font-mono text-sm text-muted">{lifespan(person)}</p>
+
+          <p class="mt-6 max-w-2xl text-xl leading-snug tracking-tight text-ink">
+            {data.tagline}
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-1.5">
+            {
+              data.fields.map((f) => (
+                <span class="rounded-md bg-surface px-2.5 py-1 text-xs font-medium text-muted">
+                  {f}
+                </span>
+              ))
+            }
+            {
+              interactives > 0 && (
+                <span class="flex items-center gap-1.5 rounded-md bg-accent/12 px-2.5 py-1 text-xs font-semibold text-accent">
+                  <svg width="9" height="9" viewBox="0 0 12 12" aria-hidden="true">
+                    <path
+                      d="M0 1.4v9.2a1 1 0 0 0 1.5.86l7.7-4.6a1 1 0 0 0 0-1.72L1.5.54A1 1 0 0 0 0 1.4Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  {interactives} interactive{interactives > 1 ? 's' : ''}
+                </span>
+              )
+            }
+          </div>
+
+          <p class="entry-depth">{data.entryLevel} · Source links and further reading below</p>
+          <LearningTools client:load id={person.id} />
+          <dl class="mt-8 grid gap-x-8 gap-y-4 border-t border-line pt-6 sm:grid-cols-2">
+            {
+              facts.map((f) => (
+                <div>
+                  <dt class="text-[10px] font-bold uppercase tracking-wider text-faint">
+                    {f.label}
+                  </dt>
+                  <dd class="mt-0.5 text-sm text-muted">{f.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+
+          {
+            data.datesNote && (
+              <p class="mt-4 border-l-2 border-line pl-3 text-[13px] leading-relaxed text-faint">
+                {data.datesNote}
+              </p>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  {
+    data.quote && (
+      <section class="border-b border-line bg-surface">
+        <figure class="mx-auto max-w-4xl px-5 py-12 text-center sm:px-8 sm:py-16">
+          <blockquote class="text-2xl font-medium leading-snug tracking-tight text-ink sm:text-3xl">
+            <span class="text-accent">“</span>{data.quote.text}
+            <span class="text-accent">”</span>
+          </blockquote>
+          <figcaption class="mt-5 text-xs text-faint">{data.quote.source}</figcaption>
+        </figure>
+      </section>
+    )
+  }
+
+  <div class="mx-auto max-w-3xl px-5 sm:px-8">
+    <nav class="profile-jumps" aria-label="Profile sections"><a href="#biography">The story</a><a href="#discoveries">Ideas & experiments</a>{outlook&&<a href="#philosophy">Philosophical outlook</a>}<a href="#life">Life</a><a href="#sources">Sources</a></nav>
+    <!-- Biography -->
+    <section id="biography" class="py-14 scroll-mt-24">
+      <div class="longform">
+        <Content components={{ Aside }} />
+      </div>
+    </section>
+
+    <!-- Discoveries -->
+    <section id="discoveries" class="border-t border-line py-14 scroll-mt-24">
+      <header class="mb-10">
+        <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+          {
+            data.category === 'philosopher'
+              ? `What ${data.name.split(' ').slice(-1)[0]} argued`
+              : `What ${data.name.split(' ').slice(-1)[0]} found`
+          }
+        </h2>
+        <p class="mt-2 text-[15px] leading-relaxed text-muted">
+          {
+            interactives === 0
+              ? 'Each contribution, and what it meant.'
+              : data.category === 'philosopher'
+                ? 'Each contribution, what it meant, and — where the reasoning can be taken apart rather than summarised — something you can operate.'
+                : 'Each discovery, what it meant, and — where the idea can be shown rather than described — something you can run.'
+          }
+        </p>
+      </header>
+
+      <div class="space-y-16">
+        {
+          data.discoveries.map((discovery, i) => (
+            <DiscoveryBlock discovery={discovery} index={i} />
+          ))
+        }
+      </div>
+    </section>
+
+    {outlook&&<section id="philosophy" class="belief-section"><p class="belief-kind">{outlook.kind}</p><h2>Philosophical outlook</h2><h3>{outlook.title}</h3><p>{outlook.view}</p><h3>Alongside the discoveries</h3><p>{outlook.connection}</p><h3>Keep the distinction clear</h3><p>{outlook.caution}</p><a class="inline-link" href={outlook.source}>{outlook.sourceTitle} ↗</a>{outlook.schools.length>0&&<><p class="atlas-note">Related concepts to compare—not labels for the whole person:</p><div class="atlas-jumps">{outlook.schools.map(id=><a href={`/philosophy/schools/${id}`}>{SCHOOLS.find(s=>s.id===id)!.name} ↗</a>)}</div></>}<p><a class="inline-link" href="/philosophy/scientists">Compare scientists’ approaches ↗</a></p></section>}
+    <!-- Timeline -->
+    {
+      data.timeline.length > 0 && (
+        <section id="life" class="border-t border-line py-14 scroll-mt-24">
+          <h2 class="mb-8 text-2xl font-semibold tracking-tight">Life</h2>
+          <ol class="relative space-y-6 border-l border-line pl-7">
+            {data.timeline.map((item) => (
+              <li class="relative">
+                <span class="absolute -left-[34px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-bg bg-accent" />
+                <div class="font-mono text-xs font-semibold text-accent">{item.year}</div>
+                <p class="mt-1 text-[15px] leading-relaxed text-muted">{item.event}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    <!-- Sources -->
+    <section id="sources" class="border-t border-line py-14 scroll-mt-24">
+      <h2 class="mb-2 text-2xl font-semibold tracking-tight">Sources</h2>
+      <p class="mb-6 text-[15px] leading-relaxed text-muted">
+        Dates and factual claims on this page were checked against the following. If
+        something here is wrong, it is worth knowing which of these to blame.
+      </p>
+      <ul class="space-y-3">
+        {
+          data.sources.map((s) => (
+            <li class="flex flex-col gap-0.5">
+              <a
+                href={s.url}
+                rel="noopener"
+                class="text-[15px] font-medium text-accent underline underline-offset-2 transition hover:opacity-75"
+              >
+                {s.title}
+              </a>
+              {s.note && <span class="text-[13px] text-faint">{s.note}</span>}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+
+  {TOPICS.some(t=>t.people.includes(person.id))&&<section class="shell section-space"><div class="section-heading"><h2>Explore the bigger idea.</h2></div><div class="journey-grid">{TOPICS.filter(t=>t.people.includes(person.id)).map(t=><a href={`/topics/${t.id}`} class="journey-card"><p class="eyebrow">SCIENCE TOPIC</p><h3>{t.title}</h3><p>{t.description}</p><span class="inline-link">Read the guide ↗</span></a>)}</div></section>}
+  <!-- Related -->
+  {
+    related.length > 0 && (
+      <section class="border-t border-line">
+        <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+          <h2 class="mb-6 text-2xl font-semibold tracking-tight">Connected minds</h2>
+          <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {related.map((r) => (
+              <PersonCard person={r} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Base>

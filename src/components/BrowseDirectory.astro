@@ -1,0 +1,46 @@
+---
+import PersonCard from './PersonCard.astro';
+import type { Category, Person } from '../lib/people';
+import { chronologicalYear } from '../data/learning';
+interface Props { people:Person[]; fixedCategory?:Category; savedOnly?:boolean; }
+const { people, fixedCategory, savedOnly=false } = Astro.props;
+const fields=[...new Set(people.flatMap(p=>p.data.fields))].sort();
+const eras=[...new Set(people.map(p=>p.data.era))].sort((a,b)=>Math.min(...people.filter(p=>p.data.era===a).map(p=>chronologicalYear(p.data.born)))-Math.min(...people.filter(p=>p.data.era===b).map(p=>chronologicalYear(p.data.born))));
+const regions=[...new Set(people.map(p=>p.data.region))].sort();
+---
+<section id="browse-directory" data-fixed={fixedCategory || 'all'} data-saved-only={String(savedOnly)}>
+<div class="directory-panel"><div class="directory-search-row"><label class="directory-search"><span class="sr-only">Search people, fields, discoveries, and eras</span><span aria-hidden="true">⌕</span><input data-search type="search" placeholder="A person, a question, a world-changing idea…" autocomplete="off"/></label><button type="button" class="button secondary" data-random>Surprise me ↗</button></div><div class="directory-filters">
+{!fixedCategory && <label>Discipline<select data-filter="category" class="filter-select"><option value="all">All minds</option><option value="scientist">Scientists</option><option value="philosopher">Philosophers</option></select></label>}
+<label>Field<select data-filter="field" class="filter-select"><option value="all">All fields</option>{fields.map(f=><option value={f}>{f}</option>)}</select></label><label>Era<select data-filter="era" class="filter-select"><option value="all">All eras</option>{eras.map(e=><option value={e}>{e}</option>)}</select></label><label>Birth region<select data-filter="region" class="filter-select"><option value="all">All regions</option>{regions.map(r=><option value={r}>{r}</option>)}</select></label><label>Order<select data-filter="sort" class="filter-select"><option value="name">Name A–Z</option><option value="oldest">Earliest first</option><option value="newest">Latest first</option></select></label></div><div class="directory-options"><label><input type="checkbox" data-interactive/> With interactive experiences</label><button type="button" data-clear class="inline-link">Reset filters ↺</button></div></div>
+<div class="directory-meta"><p data-count role="status" aria-live="polite">{savedOnly?'Loading your collection…':`${people.length} minds to explore`}</p><span>Follow an idea. See where it takes you.</span></div>
+<div data-grid class="people-grid">{people.map(person=><div data-person data-id={person.id} data-name={person.data.name} data-year={chronologicalYear(person.data.born)} data-category={person.data.category} data-era={person.data.era} data-region={person.data.region} data-fields={person.data.fields.join('|')} data-interactive={String(person.data.discoveries.some(d=>d.interactiveDemo||d.argument))} data-searchable={[person.data.name,person.data.nativeName,person.data.summary,person.data.tagline,person.data.era,...person.data.fields,...person.data.nationality,...person.data.discoveries.map(d=>d.title+' '+d.summary)].filter(Boolean).join(' ')} hidden={savedOnly}><PersonCard person={person}/></div>)}</div>
+<div data-empty hidden class="empty-state"><h2>{savedOnly?'Make room for your next idea.':'No minds found for those filters.'}</h2><p>{savedOnly?'Save a profile to keep it here. Your collection and notes stay in this browser.':'Try another search, or reset the filters to explore the full collection.'}</p><a href="/explore" class="button secondary">Explore the archive ↗</a></div>
+<noscript><p class="mt-6 text-muted">Search, filters, and saved collections need JavaScript. You can browse all profiles in the <a href="/explore" class="inline-link">archive</a>.</p></noscript>
+</section>
+<script>
+import { getLearning } from '../lib/learning';
+const root=document.querySelector<HTMLElement>('#browse-directory');
+if(root){
+ const input=root.querySelector<HTMLInputElement>('[data-search]')!;
+ const selects=[...root.querySelectorAll<HTMLSelectElement>('[data-filter]')];
+ const interactive=root.querySelector<HTMLInputElement>('[data-interactive]')!;
+ const records=[...root.querySelectorAll<HTMLElement>('[data-person]')];
+ const grid=root.querySelector<HTMLElement>('[data-grid]')!;
+ const normalize=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+ function readUrl(){const url=new URL(location.href);input.value=url.searchParams.get('q')||'';selects.forEach(s=>{const value=url.searchParams.get(s.dataset.filter!)|| (s.dataset.filter==='sort'?'name':'all');s.value=[...s.options].some(o=>o.value===value)?value:s.options[0]!.value;});interactive.checked=url.searchParams.get('interactive')==='1';}
+ function update(syncUrl=true){
+  const values=Object.fromEntries(selects.map(s=>[s.dataset.filter!,s.value]));
+  const query=normalize(input.value); const saved=getLearning().saved;let visible=0;
+  for(const r of records){const d=r.dataset;const show=(!query||normalize(d.searchable||'').includes(query))&&(!values.category||values.category==='all'||values.category===d.category)&&(values.field==='all'||d.fields?.split('|').includes(values.field!))&&(values.era==='all'||values.era===d.era)&&(values.region==='all'||values.region===d.region)&&(!interactive.checked||d.interactive==='true')&&(root!.dataset.savedOnly!=='true'||saved.includes(d.id!));r.hidden=!show;if(show)visible++;}
+  records.sort((a,b)=>values.sort==='oldest'?Number(a.dataset.year)-Number(b.dataset.year):values.sort==='newest'?Number(b.dataset.year)-Number(a.dataset.year):a.dataset.name!.localeCompare(b.dataset.name!)).forEach(r=>grid.append(r));
+  root!.querySelector('[data-count]')!.textContent=`${visible} ${visible===1?'mind':'minds'} ${root!.dataset.savedOnly==='true'?'in your collection':'to explore'}`;
+  (root!.querySelector('[data-empty]') as HTMLElement).hidden=visible!==0;
+  const random=root!.querySelector<HTMLButtonElement>('[data-random]')!;random.disabled=visible===0;
+  if(syncUrl){const url=new URL(location.href);url.search='';if(input.value.trim())url.searchParams.set('q',input.value.trim());for(const [key,value] of Object.entries(values)){if(value!=='all'&&value!=='name')url.searchParams.set(key,value);}if(interactive.checked)url.searchParams.set('interactive','1');history.replaceState(null,'',url);}
+ }
+ readUrl();update(false);input.addEventListener('input',()=>update());selects.forEach(s=>s.addEventListener('change',()=>update()));interactive.addEventListener('change',()=>update());
+ root.querySelector('[data-clear]')?.addEventListener('click',()=>{input.value='';selects.forEach(s=>s.selectedIndex=0);interactive.checked=false;update();input.focus();});
+ root.querySelector('[data-random]')?.addEventListener('click',()=>{const visible=records.filter(r=>!r.hidden);if(visible.length)location.href=`/p/${visible[Math.floor(Math.random()*visible.length)]!.dataset.id}`;});
+ window.addEventListener('popstate',()=>{readUrl();update(false);});window.addEventListener('storage',()=>update(false));window.addEventListener('pageshow',()=>{readUrl();update(false);});
+}
+</script>

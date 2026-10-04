@@ -1,0 +1,29 @@
+<div class="reading-language shell" data-reading-language>
+ <span data-hi="Apni language chuno">Reading language</span>
+ <button type="button" data-language-choice="en" aria-pressed="true">English</button>
+ <button type="button" data-language-choice="hinglish" aria-pressed="false">Hinglish</button>
+ <details class="other-languages"><summary>More languages</summary><div class="language-popover"><label for="translate-language">Translate this page</label><select id="translate-language"><option value="hi">हिन्दी · Hindi</option><option value="bn">বাংলা · Bengali</option><option value="ta">தமிழ் · Tamil</option><option value="te">తెలుగు · Telugu</option><option value="mr">मराठी · Marathi</option><option value="gu">ગુજરાતી · Gujarati</option><option value="ur">اردو · Urdu</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="ar">العربية</option><option value="zh-CN">中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option></select><a id="translate-page" href="https://translate.google.com/" target="_blank" rel="noreferrer">Open Google Translate ↗</a><p id="translation-note">Machine translation may change technical meanings. Check the English original and cited sources.</p><p>Hinglish is written in Roman Hindi with English terms. Curated coverage currently includes the homepage introduction, solar-system descriptions and navigation; other articles remain in English.</p></div></details>
+ <span class="language-coverage" hidden data-hinglish-note lang="hi-Latn">Hinglish guide · baaki articles abhi English mein hain.</span>
+</div>
+<script>
+ const root=document.querySelector<HTMLElement>('[data-reading-language]');
+ const originals=new WeakMap<HTMLElement,string>();
+ function applyLanguage(value:string){
+  const hi=value==='hinglish';document.documentElement.dataset.language=hi?'hinglish':'en';
+  document.querySelectorAll<HTMLElement>('[data-hi]').forEach(el=>{if(!originals.has(el))originals.set(el,el.innerHTML);if(hi){el.textContent=el.dataset.hi??'';el.lang='hi-Latn';}else{el.innerHTML=originals.get(el)??'';el.removeAttribute('lang');}});
+  root?.querySelectorAll<HTMLButtonElement>('[data-language-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.languageChoice===value)));
+  const note=root?.querySelector<HTMLElement>('[data-hinglish-note]');if(note)note.hidden=!hi;
+  try{localStorage.setItem('pantheon-language',value);}catch{}
+  document.dispatchEvent(new Event('pantheon-language'));
+ }
+ let saved='en';try{saved=localStorage.getItem('pantheon-language')==='hinglish'?'hinglish':'en';}catch{}applyLanguage(saved);
+ root?.querySelectorAll<HTMLButtonElement>('[data-language-choice]').forEach(b=>b.addEventListener('click',()=>applyLanguage(b.dataset.languageChoice??'en')));
+ const select=document.querySelector<HTMLSelectElement>('#translate-language'),link=document.querySelector<HTMLAnchorElement>('#translate-page'),note=document.querySelector<HTMLElement>('#translation-note');
+ function updateTranslation(){if(!select||!link||!note)return;const local=['localhost','127.0.0.1','[::1]'].includes(location.hostname)||location.hostname.endsWith('.local');
+  if(local){link.href='https://support.google.com/chrome/answer/173424';link.textContent='How to use browser translation ↗';note.textContent='This is a local preview. Use your browser’s Translate command for this page. Website translation links become available after public hosting.';}
+  else{const url=new URL('https://translate.google.com/translate');url.searchParams.set('sl','en');url.searchParams.set('tl',select.value);url.searchParams.set('u',location.origin+location.pathname);link.href=url.toString();link.textContent='Translate this page with Google ↗';note.textContent='Opens an external service with this public page URL. Machine translation can change technical meanings; compare with the original.';}}
+ select?.addEventListener('change',updateTranslation);updateTranslation();
+</script>
+<style>
+ .reading-language{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;font-size:11px;border-bottom:1px solid var(--tk-border);position:relative;z-index:5}.reading-language>span:first-child{color:var(--tk-muted);margin-right:4px}.reading-language button,.other-languages summary{font:inherit;border:1px solid var(--tk-border);padding:6px 10px;border-radius:20px;background:var(--tk-surface);color:var(--tk-ink);cursor:pointer}.reading-language button[aria-pressed=true]{border-color:var(--tk-accent);color:var(--tk-accent)}.other-languages summary{list-style:none}.other-languages{position:relative}.language-popover{position:absolute;top:35px;left:0;width:min(320px,80vw);padding:20px;background:var(--tk-surface);border:1px solid var(--tk-border-strong);box-shadow:0 16px 40px #0004;border-radius:14px;font-size:12px;line-height:1.7}.language-popover label,.language-popover select,.language-popover a{display:block;margin-bottom:12px}.language-popover select{width:100%;padding:9px;background:var(--tk-raised);color:var(--tk-ink);border:1px solid var(--tk-border);border-radius:7px}.language-popover p{color:var(--tk-muted)}.language-coverage{color:var(--tk-muted);margin-left:auto}.reading-language [hidden]{display:none}@media(max-width:650px){.language-coverage{width:100%;margin-left:0}.language-popover{left:auto;right:0}.reading-language{font-size:10px}}
+</style>

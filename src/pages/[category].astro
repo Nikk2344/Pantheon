@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../layouts/Base.astro';
+import BrowseDirectory from '../components/BrowseDirectory.astro';
+import { CATEGORY, peopleIn, type Category } from '../lib/people';
+
+export const getStaticPaths = (() => {
+  return (Object.keys(CATEGORY) as Category[]).map((key) => ({
+    params: { category: CATEGORY[key].slug },
+    props: { key },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  key: Category;
+}
+
+const { key } = Astro.props;
+const meta = CATEGORY[key];
+const people = await peopleIn(key);
+
+---
+
+<Base title={meta.plural} description={meta.blurb} wing={meta.wing}>
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+      <nav class="mb-6 text-sm text-faint">
+        <a href="/" class="transition hover:text-ink">Home</a>
+        <span class="mx-1.5">/</span>
+        <span class="text-muted">{meta.plural}</span>
+      </nav>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{meta.plural}</h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{meta.blurb}</p>
+
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+    {key==='philosopher'&&<p class="mb-8 text-muted">Explore beyond biographies: <a class="inline-link" href="/philosophy">Schools, “isms,” cultural traditions, and foundational texts ↗</a></p>}
+    {key==='scientist'&&<p class="mb-8 text-muted">Alongside the discoveries: <a class="inline-link" href="/philosophy/scientists">Scientists’ philosophical views and approaches ↗</a></p>}
+    {key==='philosopher'&&<nav class="philosophy-starts" aria-label="Philosophy starting points"><a href="/paths#stoicism"><strong>Living with uncertainty ↗</strong><span>Epicurus · Epictetus · Marcus Aurelius</span></a><a href="/paths#asian-thought"><strong>Self, change & the way ↗</strong><span>Laozi · Zhuangzi · Buddha · Nāgārjuna</span></a><a href="/paths#equality"><strong>Who gets to be free? ↗</strong><span>Wollstonecraft · Ambedkar · Beauvoir</span></a><a href="/paths#existence"><strong>Choosing a life ↗</strong><span>Kierkegaard · Nietzsche · Beauvoir</span></a></nav>}
+    {key==='scientist'&&<p class="mb-8 text-muted">Looking for a whole field? <a class="inline-link" href="/topics">Explore six science topic guides, including quantum computing ↗</a></p>}
+    {
+      people.length === 0 ? (
+        <div class="rounded-token border border-dashed border-line px-6 py-20 text-center">
+          <p class="text-lg font-medium">This wing is still empty.</p>
+          <p class="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">
+            Entries are written one at a time, against sources, or not at all.
+          </p>
+        </div>
+      ) : <BrowseDirectory people={people} fixedCategory={key} />
+    }
+  </section>
+</Base>
