@@ -1,0 +1,66 @@
+---
+{
+  "title": "AlexNet and the deep-learning vision breakthrough",
+  "year": 2012,
+  "dateNote": "2012: the ImageNet competition result and NeurIPS paper.",
+  "kind": "Architecture",
+  "fields": [
+    "Artificial intelligence",
+    "Computer vision"
+  ],
+  "credit": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton authored the AlexNet paper. Its benchmark depended on ImageNet, developed by Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, Fei-Fei Li, and collaborators, including the people who labelled images.",
+  "summary": "A deep convolutional network trained on GPUs made a striking improvement in large-scale image classification, helping establish learned visual features as a practical approach.",
+  "significance": "The result made a strong case for combining substantial labelled datasets, trainable feature hierarchies, and suitable computing hardware. Progress depended on that combination rather than on a single new equation.",
+  "limitation": "Identifying a benchmark category does not establish human-like visual understanding. A model can exploit background cues and fail when the camera, setting, or population changes.",
+  "steps": [
+    {
+      "title": "Learn local patterns",
+      "text": "Shared convolutional filters respond to patterns across different parts of an image."
+    },
+    {
+      "title": "Combine features",
+      "text": "Successive layers transform the responses into features useful for the training objective."
+    },
+    {
+      "title": "Correct predictions",
+      "text": "Backpropagation adjusts weights using classification errors from labelled examples."
+    }
+  ],
+  "related": [
+    "clip",
+    "transformer"
+  ],
+  "sources": [
+    {
+      "title": "Krizhevsky, Sutskever & Hinton: ImageNet Classification with Deep Convolutional Neural Networks (2012)",
+      "url": "https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html",
+      "note": "Architecture, GPU training, and the competition result."
+    },
+    {
+      "title": "Deng and colleagues: ImageNet (2009)",
+      "url": "https://doi.org/10.1109/CVPR.2009.5206848",
+      "note": "The dataset and its collaborative construction."
+    }
+  ],
+  "question": "A classifier performs well on clean catalogue photographs. What would you test before using it with phone photographs?",
+  "answer": "Use held-out phone photographs from the intended conditions, including difficult lighting, backgrounds, and unfamiliar examples. Report failures by condition rather than assuming a benchmark score transfers unchanged."
+}
+---
+
+## The problem before the breakthrough
+
+Recognition needs more than matching identical pixels. An object can move, rotate, or appear under different lighting. Earlier pipelines often relied on carefully designed features. AlexNet showed that a large supervised network could learn useful features while being trained for the classification task itself.
+
+## What the experiment showed
+
+The 2012 system combined convolution, rectified linear activations, data augmentation, dropout, and GPU computation. Its ImageNet competition submission achieved a top-five error of 15.3%, compared with 26.2% for the next entry. Top-five error asks whether the correct category appears among five predictions; it is not ordinary single-choice accuracy. See the original paper in the evidence list.
+
+ImageNet was an enabling research contribution in its own right. Its organised categories and labelled images made training and comparison possible. The result should therefore be read as a story about data infrastructure and labour as well as algorithms.
+
+## Work through an example
+
+Imagine teaching a model to recognise mugs. A training set containing mostly mugs on wooden tables may reward a shortcut: detecting the table. Test the same mugs on grass, and the shortcut becomes visible. This thought experiment illustrates why changing the background is a useful evaluation, even when aggregate accuracy looks impressive.
+
+## Follow the next question
+
+AlexNet predicted a fixed set of labels. [CLIP](/innovations/clip) asks how language can help specify categories, while [transformers](/innovations/transformer) show a different way to combine information across an input.

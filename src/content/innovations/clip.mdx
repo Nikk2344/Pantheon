@@ -1,0 +1,72 @@
+---
+{
+  "title": "CLIP: connecting images and language",
+  "year": 2021,
+  "dateNote": "2021: publication of Learning Transferable Visual Models From Natural Language Supervision.",
+  "kind": "Training method",
+  "fields": [
+    "Artificial intelligence",
+    "Computer vision",
+    "Multimodal learning"
+  ],
+  "credit": "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever authored CLIP.",
+  "summary": "CLIP learns image and text representations by matching paired images and captions, allowing natural-language descriptions to specify visual categories at evaluation time.",
+  "significance": "It demonstrated substantial transfer to visual tasks without fitting a new classifier to labelled examples from each target dataset. Language became a flexible interface for choosing categories.",
+  "limitation": "Zero-shot means no task-specific example training in that evaluation, not learning without data. Prompt wording, dataset bias, and fine-grained distinctions can strongly affect results.",
+  "steps": [
+    {
+      "title": "Encode both modalities",
+      "text": "Separate encoders map an image and its text description into comparable representations."
+    },
+    {
+      "title": "Learn paired similarity",
+      "text": "A contrastive objective favours matching image-text pairs over mismatched pairs in a batch."
+    },
+    {
+      "title": "Describe candidate labels",
+      "text": "At evaluation, compare an image with text descriptions of the possible classes."
+    }
+  ],
+  "related": [
+    "alexnet",
+    "diffusion",
+    "transformer"
+  ],
+  "sources": [
+    {
+      "title": "Radford and colleagues: Learning Transferable Visual Models From Natural Language Supervision (2021)",
+      "url": "https://arxiv.org/abs/2103.00020",
+      "note": "Training, zero-shot transfer, evaluation, and reported limitations."
+    },
+    {
+      "title": "CLIP research code and model card",
+      "url": "https://github.com/openai/CLIP/blob/main/model-card.md",
+      "note": "Intended use, out-of-scope applications, and evaluation cautions."
+    }
+  ],
+  "question": "Does using no labelled examples from a target benchmark mean CLIP was never trained on images?",
+  "answer": "No. It was pretrained on a large collection of image-text pairs. Zero-shot transfer describes adaptation to the target task, not the absence of prior learning."
+}
+---
+
+## Change the interface to a classifier
+
+A conventional classifier chooses among labels fixed during training. CLIP learns a relationship between image and language representations. A user can describe candidate classes with text and compare their representations with that of an image.
+
+The original paper trained on 400 million image-text pairs and tested transfer across a range of datasets. Such scale is part of the account: the system did not acquire visual concepts solely from the labels written at evaluation time.
+
+## Work through an example
+
+Imagine classifying pictures as “a photo of a bicycle” or “a photo of a motorcycle.” The image encoder supplies a vector; the text encoder supplies vectors for the two descriptions. Relative similarity helps determine a choice. This explanation omits implementation details but shows why changing the descriptions can change the task.
+
+Now ask whether a pictured bicycle has exactly seven visible spokes. Success at broad categorisation would not answer that finer question. Each use needs an evaluation matched to its required precision.
+
+## Similarity is not a complete account of a scene
+
+The model card warns about deployment beyond tested uses and about uneven performance. Image-text associations can encode the assumptions and imbalances of their sources. A high similarity score is not a certification of identity, fairness, or factual accuracy.
+
+CLIP itself is not a text-to-image generator. It computes representations and comparisons. Generative systems can use related representations as one component, but that does not make the encoder responsible for every part of the generated output.
+
+## Compare two kinds of progress
+
+[AlexNet](/innovations/alexnet) demonstrated learned visual features for a fixed benchmark. CLIP explored how language supervision can expand transfer. Both make the design of the evaluation as important as the appealing example.

@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allInnovations } from '../../lib/ideas';
+const entries = await allInnovations();
+---
+<Base title="Modern discoveries & AI" description="Understand transformers, generative AI, scientific prediction, and modern inventions through their mechanisms, evidence, collaborators, and limits.">
+  <section class="shell page-intro innovation-intro"><p class="eyebrow">MODERN DISCOVERIES / {entries.length} EXPLAINED</p><h1>How did we<br/><em>get here?</em></h1><p>From learning to recognise an image to predicting molecular structures. Follow the inventions behind modern AI, with a guide to genome editing alongside them.</p><p class="innovation-intro-note">A curated 2012–2024 collection. Dates identify a paper or milestone, not the first appearance of every underlying idea. Team credits and original research accompany each article.</p><a class="button secondary" href="/discoveries?field=Artificial+intelligence">Search the AI contributions ↗</a></section>
+  <section class="shell"><div class="innovation-start"><p class="eyebrow">A SUGGESTED READING ORDER</p><nav aria-label="AI reading sequence"><a href="/innovations/alexnet">01 · Learning visual features →</a><a href="/innovations/transformer">02 · Connecting a sequence →</a><a href="/innovations/instructgpt">03 · Following instructions →</a><a href="/innovations/alphafold-3">04 · Predicting molecular structures ↗</a></nav></div></section>
+  <section class="shell section-space"><div class="section-heading"><h2>Explore the breakthroughs.</h2><span class="eyebrow">NEWEST MILESTONE FIRST</span></div><div class="topic-grid">{entries.map(({id,data:d})=><a class="topic-card" href={`/innovations/${id}`}><div class="topic-card-top"><span class="eyebrow">{d.year} / {d.kind}</span><span aria-hidden="true">↗</span></div><h2>{d.title}</h2><p>{d.summary}</p><div class="topic-card-bottom"><span>{d.fields.slice(0,2).join(' · ')}</span><span aria-hidden="true">↗</span></div></a>)}</div></section>
+</Base>

@@ -16,6 +16,8 @@ pnpm-debug.log*
 # local verification artifacts
 .shots/
 .backups/
+.sites-runtime/
+.openai/
 
 
 # environment variables

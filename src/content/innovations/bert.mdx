@@ -1,0 +1,69 @@
+---
+{
+  "title": "BERT and contextual language representations",
+  "year": 2018,
+  "dateNote": "2018: first public preprint; the paper appeared at NAACL in 2019.",
+  "kind": "Training method",
+  "fields": [
+    "Artificial intelligence",
+    "Natural language processing"
+  ],
+  "credit": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova authored BERT at Google.",
+  "summary": "BERT pretrains a bidirectional transformer on text with masked-token prediction, then adapts the resulting representations to tasks such as classification and extractive question answering.",
+  "significance": "It helped make pretraining followed by task-specific adaptation a central workflow for language understanding benchmarks. One trained representation could support several downstream tasks.",
+  "limitation": "Predicting masked tokens and scoring benchmarks does not establish grounded understanding. The original BERT is an encoder model, not a conversational next-token generator.",
+  "steps": [
+    {
+      "title": "Hide part of the text",
+      "text": "Training selects tokens for a masking-based prediction objective."
+    },
+    {
+      "title": "Use both directions",
+      "text": "The encoder can use context to the left and right of a selected position."
+    },
+    {
+      "title": "Adapt to a task",
+      "text": "A task-specific output layer and fine-tuning convert representations into predictions."
+    }
+  ],
+  "related": [
+    "transformer",
+    "rag",
+    "instructgpt"
+  ],
+  "sources": [
+    {
+      "title": "Devlin and colleagues: BERT (2018/2019)",
+      "url": "https://arxiv.org/abs/1810.04805",
+      "note": "Masked-language modelling, next-sentence prediction, fine-tuning, and benchmark results."
+    },
+    {
+      "title": "Liu and colleagues: RoBERTa (2019)",
+      "url": "https://arxiv.org/abs/1907.11692",
+      "note": "A later study showing the importance of training choices in BERT-style systems."
+    }
+  ],
+  "question": "Why is context on both sides useful for the word bank?",
+  "answer": "Nearby words can distinguish a river bank from a financial bank. Bidirectional representations can use either side, although success still depends on the data and learned model."
+}
+---
+
+## A representation changes with the sentence
+
+A fixed dictionary vector gives a word the same representation whenever it appears. A contextual encoder can represent a token differently depending on the surrounding sentence. BERT learns such representations by predicting selected tokens using the remaining context.
+
+The original system also used a next-sentence prediction objective. It should not be described as simply reading every word and freely generating an answer like a chat assistant.
+
+## A concrete comparison
+
+Compare “They sat on the bank beside the river” with “They contacted the bank about a loan.” The shared word is not enough to settle the meaning. A representation useful for a question-answering system needs the surrounding evidence. This is an explanatory example, not a benchmark result.
+
+For extractive question answering, a model can learn to select the beginning and end of an answer span in a supplied passage. That task differs from composing an unrestricted response, and a good result on it does not establish that the model will avoid inventing unsupported claims elsewhere.
+
+## The recipe needs scrutiny
+
+RoBERTa later examined choices including training duration, data, masking, and removal of the next-sentence objective. Its findings caution against attributing every gain to a distinctive architectural name. Experimental comparisons should account for the training budget and data as well as the model diagram.
+
+## Follow the evidence
+
+Ask whether evaluation examples overlap with training material, whether the task resembles the intended application, and whether performance differs across language varieties. A single average can conceal important weaknesses. The contrast with [InstructGPT](/innovations/instructgpt) is useful: representation pretraining and instruction-following optimisation solve related but different problems.

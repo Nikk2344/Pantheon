@@ -27,7 +27,7 @@ try{
  await page.getByRole('button',{name:'↺ Now',exact:true}).click();assert.ok(Math.abs(Date.parse(await displayed())-Date.now())<5000);
  await page.getByRole('button',{name:'True distance scale',exact:true}).click();assert.match(await page.locator('.solar-map-note').innerText(),/AU distance scale/);await page.getByRole('button',{name:'Spaced orbits',exact:true}).click();
  await page.getByText('Choose a date · how accurate is this?',{exact:true}).click();
- await page.getByRole('button',{name:'Hinglish',exact:true}).click();assert.match(await page.locator('#solar-title').innerText(),/Hamara/);assert.match(await page.locator('.planet-detail-copy').innerText(),/hamara ghar/);
+ await page.getByRole('button',{name:'Hinglish',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#solar-title')?.textContent==='Hamara Solar System');assert.match(await page.locator('#solar-title').innerText(),/Hamara/);assert.match(await page.locator('.planet-detail-copy').innerText(),/hamara ghar/);
  await page.reload({waitUntil:'networkidle'});await page.waitForFunction(()=>document.querySelector('#solar-title')?.textContent==='Hamara Solar System');assert.equal(await page.getByRole('button',{name:'Hinglish',exact:true}).getAttribute('aria-pressed'),'true');
  await page.goto(BASE+'/p/j-robert-oppenheimer',{waitUntil:'networkidle'});assert.match(await page.locator('h1').innerText(),/Oppenheimer/);assert.equal(await page.getByRole('button',{name:'Hinglish',exact:true}).getAttribute('aria-pressed'),'true');
  await page.getByText('More languages',{exact:true}).click();assert.match(await page.locator('#translation-note').innerText(),/local preview/);

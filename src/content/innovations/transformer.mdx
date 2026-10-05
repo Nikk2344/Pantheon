@@ -1,0 +1,69 @@
+---
+{
+  "title": "The transformer and self-attention",
+  "year": 2017,
+  "dateNote": "2017: Attention Is All You Need; attention mechanisms had important earlier predecessors.",
+  "kind": "Architecture",
+  "fields": [
+    "Artificial intelligence",
+    "Natural language processing"
+  ],
+  "credit": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin authored the transformer paper. Earlier neural attention work includes Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio.",
+  "summary": "The transformer builds sequence representations through attention and feed-forward layers, replacing recurrence in the original translation architecture and enabling more parallel training.",
+  "significance": "It supplied a reusable architecture for learning relationships among sequence elements. Later systems adapted its encoder, decoder, and attention components for language and other data.",
+  "limitation": "Attention weights are not automatically explanations of reasoning. The original dense attention operation also grows quadratically with sequence length, and architecture alone guarantees neither truth nor understanding.",
+  "steps": [
+    {
+      "title": "Represent tokens",
+      "text": "Token vectors are combined with information about position."
+    },
+    {
+      "title": "Mix relevant context",
+      "text": "Queries and keys determine weights used to combine value vectors across positions."
+    },
+    {
+      "title": "Refine representations",
+      "text": "Multiple attention heads, feed-forward layers, and repeated blocks transform the contextual features."
+    }
+  ],
+  "related": [
+    "bert",
+    "instructgpt",
+    "rag"
+  ],
+  "sources": [
+    {
+      "title": "Vaswani and colleagues: Attention Is All You Need (2017)",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "note": "Original encoder-decoder transformer, attention operation, and translation experiments."
+    },
+    {
+      "title": "Bahdanau, Cho & Bengio: Neural Machine Translation by Jointly Learning to Align and Translate (2014/2015)",
+      "url": "https://arxiv.org/abs/1409.0473",
+      "note": "An earlier neural alignment and attention mechanism."
+    }
+  ],
+  "question": "Does replacing recurrence with attention mean a model can ignore the order of words?",
+  "answer": "No. Order still matters. The original transformer adds positional encodings; later architectures can represent position differently."
+}
+---
+
+## The problem it addressed
+
+A recurrent translation model processes a sequence through successive states. Attention had already allowed a decoder to consult relevant parts of an input instead of relying only on one compressed representation. The transformer made attention the main mechanism connecting positions, dispensing with recurrence in its sequence architecture.
+
+Its original evidence came from machine translation. That is a narrower claim than saying that the 2017 paper already contained every feature of a modern conversational model.
+
+## Read a sentence with context
+
+Consider: “The animal did not cross the street because it was tired.” A reader connects “it” with “animal.” Attention permits information from different positions to be combined when constructing a token's representation. This sentence is an illustration of the motivation, not a claim about a measured attention head in a particular model.
+
+Multiple heads can form different mixtures. A subsequent feed-forward transformation processes the result. Repeating these operations builds a contextual representation, while positional information prevents the input from becoming merely an unordered collection of words.
+
+## Why the distinction between training and use matters
+
+Parallel processing of positions during training does not imply that every model generates all output tokens simultaneously. An autoregressive decoder typically produces a continuation one token at a time. The encoder-decoder transformer, encoder-only BERT, and decoder-based language models are related designs with different objectives and information access.
+
+## Inspect the claim
+
+When someone says a system “uses transformers,” ask about the training data, objective, attention mask, context length, and evaluation task. Those choices determine what the architecture is trained to do. [BERT](/innovations/bert) illustrates representation learning, while [InstructGPT](/innovations/instructgpt) illustrates additional training for instruction following.

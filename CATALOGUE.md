@@ -37,3 +37,11 @@ Schools live in `src/data/schools.ts`; tradition and text introductions in `src/
 `/catalogue.json` is now schema version 2, retaining earlier fields and adding `schools`, `traditions`, `textGuides`, and `scientistViews`. It remains a static export, not a database connection.
 
 The matter curve is a dimensionless Lennard-Jones illustration, not a quantum simulation of a wall. Sound is a collective mechanical wave: the organized molecule rows omit thermal motion, and the animation is slowed and not phase-synchronized with audible output. Sound requires an explicit Play action, stops automatically, and stops on vacuum, hidden-tab, or page-exit events. Reduced-motion settings start both animations paused. `npm run verify:atlas` checks the new pages, interactions, audio lifecycle, and responsive layouts.
+
+## Modern discoveries and inventions
+
+The catalogue now includes 12 separately authored MDX research articles: AlexNet, GANs, AlphaGo, transformers, BERT, diffusion models, RAG, CLIP, InstructGPT, AlphaFold 2, AlphaFold 3, and CRISPR-Cas9. These add 12 contributions to the 262 represented on individual profiles; profile and scientist-outlook counts remain 125 and 51. The batch covers milestones from 2012 through 2024, not a current product leaderboard.
+
+Each article credits a research team, distinguishes the date of a paper from prior work, supplies three mechanism steps, explains an example, and states evidence and limits. Source notes indicate what each primary paper supports. The steps are explanatory diagrams, not functioning simulations. Related article IDs are validated at build time. Add future records in `src/content/innovations`; do not invent a sole-person attribution to fit the biography collection.
+
+The static export retains schema version 2 with additive `innovations`, `counts.innovations`, and `counts.profileContributions` fields. `counts.contributions` counts both collections. `/discoveries`, `/timeline`, and the homepage use the same combined total.

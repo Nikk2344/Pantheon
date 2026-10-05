@@ -1,0 +1,68 @@
+---
+{
+  "title": "Retrieval-augmented generation (RAG)",
+  "year": 2020,
+  "dateNote": "2020: the RAG paper combining a neural retriever with a pretrained sequence-to-sequence generator; retrieval-based language systems predate it.",
+  "kind": "Research system",
+  "fields": [
+    "Artificial intelligence",
+    "Natural language processing",
+    "Information retrieval"
+  ],
+  "credit": "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela authored the RAG paper.",
+  "summary": "A generator uses retrieved passages alongside its learned parameters, making external documents part of the information available when it produces an answer.",
+  "significance": "The approach separates some factual material from fixed model parameters. An external index can be updated and inspected, although retrieval quality and answer faithfulness still need evaluation.",
+  "limitation": "Retrieved text can be irrelevant, outdated, or misleading, and the generator can misread it. Adding retrieval does not guarantee a supported answer or a correct citation.",
+  "steps": [
+    {
+      "title": "Retrieve passages",
+      "text": "A query representation is used to find relevant passages in an external index."
+    },
+    {
+      "title": "Condition generation",
+      "text": "The generator receives the question and retrieved evidence as inputs."
+    },
+    {
+      "title": "Check the answer",
+      "text": "A responsible application separately verifies that claims follow from suitable sources; this is not guaranteed by generation."
+    }
+  ],
+  "related": [
+    "bert",
+    "transformer",
+    "instructgpt"
+  ],
+  "sources": [
+    {
+      "title": "Lewis and colleagues: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020)",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "note": "The original RAG model and knowledge-intensive task evaluation."
+    },
+    {
+      "title": "Karpukhin and colleagues: Dense Passage Retrieval for Open-Domain Question Answering (2020)",
+      "url": "https://arxiv.org/abs/2004.04906",
+      "note": "The dense passage retrieval approach used in this research lineage."
+    }
+  ],
+  "question": "A retrieved document mentions the answer’s topic. Is that enough to support the answer?",
+  "answer": "No. Relevance is weaker than support. Check the exact claim, the source’s date and authority, and whether the passage actually entails the statement."
+}
+---
+
+## Two places to store information
+
+A model's parameters encode patterns learned during training. A document index stores passages that can be retrieved at inference time. The 2020 RAG work combined these forms of memory and studied open-domain question answering and other knowledge-intensive tasks.
+
+Its original design used a dense retriever and a pretrained sequence-to-sequence generator. The authors explored variants that condition on retrieved documents differently during generation. The term RAG now covers a broader family of pipelines; not every application implements that original training procedure.
+
+## Work through a library question
+
+Suppose a reader asks when a museum changed its opening hours. A model trained earlier might not know. A retrieval system could fetch the current schedule, allowing the answer to use newer information without retraining all model weights. This is an illustrative workflow, not a claim that a particular system can access live schedules.
+
+Now imagine the index contains an old schedule and a new one. Both match the question. Retrieval has found relevant text, but the application must still resolve the dates. If it cites the new page while copying hours from the old page, the presence of a citation has not solved the error.
+
+## Evaluate the stages separately
+
+First test whether the needed evidence is present in the index. Then test whether retrieval finds it. Finally test whether the answer uses it accurately and admits when evidence is insufficient. Collapsing these stages into one answer score can conceal the source of failure.
+
+For a reading exercise, compare a generated answer with each cited passage. Mark which sentences are directly supported, which require inference, and which have no support in the retrieved material.

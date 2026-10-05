@@ -1,0 +1,69 @@
+---
+{
+  "title": "AlphaFold 2 and protein structure prediction",
+  "year": 2021,
+  "dateNote": "2020: the CASP14 assessment; 2021: publication of the detailed AlphaFold 2 method.",
+  "kind": "Research system",
+  "fields": [
+    "Artificial intelligence",
+    "Computational biology"
+  ],
+  "credit": "John Jumper, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov, Olaf Ronneberger, Demis Hassabis, and the wider AlphaFold team. The original paper identifies the full authorship; experimental structural biology supplied essential training and evaluation data.",
+  "summary": "AlphaFold 2 predicts three-dimensional protein structures from sequence information using a learned architecture that integrates evolutionary relationships and geometric reasoning.",
+  "significance": "High accuracy on many CASP14 targets expanded the usefulness of predicted structures as research starting points. It also made confidence estimates central to interpreting a structural prediction.",
+  "limitation": "A predicted structure is not a full account of folding dynamics, cellular function, or every molecular interaction. Confidence varies by region and target, and experimental validation remains important.",
+  "steps": [
+    {
+      "title": "Collect sequence context",
+      "text": "The system uses sequence information, including related sequences and available structural templates."
+    },
+    {
+      "title": "Exchange constraints",
+      "text": "Its architecture updates representations of sequence relationships and residue pairs."
+    },
+    {
+      "title": "Predict geometry",
+      "text": "A structure module generates coordinates, with refinement and confidence estimates."
+    }
+  ],
+  "related": [
+    "alphafold-3",
+    "alphago",
+    "crispr-cas9"
+  ],
+  "sources": [
+    {
+      "title": "Jumper and colleagues: Highly accurate protein structure prediction with AlphaFold (2021)",
+      "url": "https://www.nature.com/articles/s41586-021-03819-2",
+      "note": "The architecture, CASP14 evaluation, and confidence estimates."
+    },
+    {
+      "title": "Terwilliger and colleagues: AlphaFold predictions are valuable hypotheses and accelerate but do not replace experimental structure determination (2024)",
+      "url": "https://www.nature.com/articles/s41592-023-02087-4",
+      "note": "A research comparison of predictions with experimental structure determination."
+    }
+  ],
+  "question": "Does a high-confidence predicted fold establish that a proposed drug will work?",
+  "answer": "No. Binding, cellular activity, exposure, and many other questions remain. A structure can help generate a hypothesis without establishing its biological or clinical consequences."
+}
+---
+
+## Why shape became a computational target
+
+A protein's amino-acid sequence is related to the structures it can adopt. Knowing a structure can help researchers propose how it works or where other molecules might interact. Experimental methods remain essential, but obtaining structures for every target is difficult.
+
+AlphaFold 2 brought a substantial improvement at CASP14, a community assessment using structures not available to predictors at the time of prediction. This matters because testing against concealed experimental targets is stronger evidence than choosing an attractive prediction after seeing the answer.
+
+## Prediction and physical simulation are different
+
+The model learns relationships between sequence information and structure. It does not simply simulate every atomic collision throughout the time a protein takes to fold. Calling the result a solution to every aspect of “protein folding” erases this distinction.
+
+## Work through a research judgment
+
+Imagine a predicted protein with a confident central region and a poorly determined tail. A researcher interested in the centre and one interested in the tail should not treat the prediction as equally informative. A visually complete rendering can hide uneven confidence; examine the uncertainty alongside the coordinates.
+
+The experimental comparison linked below explains why predictions can accelerate structure determination while remaining hypotheses. Different conformations, weakly supported regions, and discrepancies with measurements require interpretation rather than automatic acceptance.
+
+## What changes next?
+
+The next problem is not merely drawing an isolated chain. Biological activity often involves interactions among molecules. [AlphaFold 3](/innovations/alphafold-3) broadens the molecular types considered, while retaining the need to distinguish a predicted arrangement from measured behaviour.

@@ -1,0 +1,72 @@
+---
+{
+  "title": "AlphaFold 3: predicting biomolecular complexes",
+  "year": 2024,
+  "dateNote": "2024: publication of the AlphaFold 3 method and evaluation.",
+  "kind": "Research system",
+  "fields": [
+    "Artificial intelligence",
+    "Computational biology",
+    "Generative models"
+  ],
+  "credit": "Josh Abramson and colleagues at Google DeepMind and Isomorphic Labs, including Jonas Adler, Jack Dunger, Richard Evans, Tim Green, John Jumper, and Demis Hassabis. The paper provides the complete team and contributions.",
+  "summary": "AlphaFold 3 extends structure prediction to complexes containing proteins, nucleic acids, small molecules, ions, and modified residues, using a diffusion-based coordinate-generation stage.",
+  "significance": "It brings several kinds of molecular interaction into one prediction framework. This can support structural hypotheses about how biological components fit together.",
+  "limitation": "A plausible complex is not proof of binding strength, a reaction mechanism, or therapeutic benefit. The paper reports limitations including some stereochemical errors and unreliable ordering of disordered regions.",
+  "steps": [
+    {
+      "title": "Describe the components",
+      "text": "Represent the molecular entities whose joint arrangement is being predicted."
+    },
+    {
+      "title": "Build joint features",
+      "text": "Learned representations capture candidate relationships among their parts."
+    },
+    {
+      "title": "Denoise atomic coordinates",
+      "text": "A diffusion stage generates structural predictions, evaluated with confidence and external evidence."
+    }
+  ],
+  "related": [
+    "alphafold-2",
+    "diffusion",
+    "crispr-cas9"
+  ],
+  "sources": [
+    {
+      "title": "Abramson and colleagues: Accurate structure prediction of biomolecular interactions with AlphaFold 3 (2024)",
+      "url": "https://www.nature.com/articles/s41586-024-07487-w",
+      "note": "Molecular coverage, diffusion architecture, evaluations, and limitations."
+    },
+    {
+      "title": "Jumper and colleagues: Highly accurate protein structure prediction with AlphaFold (2021)",
+      "url": "https://www.nature.com/articles/s41586-021-03819-2",
+      "note": "The preceding protein-structure system, for comparison."
+    }
+  ],
+  "question": "What should you conclude from a predicted ligand positioned inside a protein pocket?",
+  "answer": "It suggests a structural hypothesis under the model’s assumptions. It does not by itself show that the ligand binds strongly, changes function, or works in a living system."
+}
+---
+
+## From a chain to an assembly
+
+Proteins often act with other molecules. AlphaFold 3 broadens prediction to assemblies that can include DNA, RNA, ligands, and chemical modifications. The 2024 paper evaluates several interaction categories rather than presenting one universal accuracy score for every possible biological system.
+
+A central architectural change is its diffusion-based generation of atomic coordinates. This is related to the broad idea of learning denoising transformations, but the inputs, representation, and scientific evaluation differ from ordinary image generation.
+
+## What the evidence supports
+
+The authors compare predicted structures with reference structures and report gains across several interaction tasks. The result supports improved prediction on the evaluated problems. It does not establish a complete model of a cell or a substitute for measurements of dynamics, affinity, and function.
+
+## Work through a proposed use
+
+Suppose a researcher wants to know whether changing one residue might affect a contact with a small molecule. Predicted structures could suggest where to look and which comparison to investigate. The useful next question is what observation would distinguish the proposed explanation from an alternative.
+
+A beautiful molecular rendering is not that observation. The contact might be misplaced, a conformation might be missing, or the actual biological conditions might differ from the prediction setup. Confidence and validation need to accompany the picture.
+
+## Keep the lineage visible
+
+[AlphaFold 2](/innovations/alphafold-2) established an earlier advance in protein structure prediction. [Diffusion models](/innovations/diffusion) describe the broader generative mechanism. These connections show how modern inventions often recombine ideas across fields while inheriting new evaluation demands.
+
+The date on this article identifies a published milestone. It is not a claim that this is the final or newest possible structure-prediction system.

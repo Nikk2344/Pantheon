@@ -2,26 +2,55 @@
 import Base from '../layouts/Base.astro';
 import PersonCard from '../components/PersonCard.astro';
 import SolarSystem from '../components/SolarSystem';
-import { allPeople, verifyLinks, interactiveCount } from '../lib/people';
+import { allPeople, verifyLinks } from '../lib/people';
+import { allInnovations } from '../lib/ideas';
 import { verifyArguments } from '../arguments/kernel/registry';
 await verifyLinks(); await verifyArguments();
 const people = await allPeople();
-const interactive = await interactiveCount();
 const spotlight = ['marie-curie', 'j-robert-oppenheimer', 'mary-wollstonecraft', 'br-ambedkar'].map(id => people.find(p => p.id === id)).filter(Boolean);
-const fields = new Set(people.flatMap(p => p.data.fields));
+const innovations = await allInnovations();
+const contributions = people.reduce((total, person) => total + person.data.discoveries.length, 0) + innovations.length;
+const doorways = [
+ { href: '/scientists', number: '01', label: 'SCIENCE', title: 'Understand the world.', text: 'Discoveries, experiments, and the people behind them.', detail: `${people.filter(p => p.data.category === 'scientist').length} scientists`, icon: '◎' },
+ { href: '/philosophy', number: '02', label: 'PHILOSOPHY', title: 'Question what you know.', text: 'Compare schools of thought and examine their arguments.', detail: '75 schools & positions', icon: '∞' },
+ { href: '/laboratory', number: '03', label: 'LABORATORY', title: 'Find out for yourself.', text: 'Change a variable. Make a prediction. See what follows.', detail: 'Interactive models & arguments', icon: '↗' },
+];
 ---
-<Base title="The Pantheon" description="Meet the minds that changed the world. Explore science and philosophy through sourced stories, interactive experiments, and ideas you can take apart.">
-  <section class="home-hero solar-home shell">
-    <div class="hero-copy"><p class="eyebrow"><span class="tiny-star">✳</span> AN ATLAS OF HUMAN CURIOSITY</p><h1 data-hi="Bade sawaal. Naye nazariye.">Great minds.<br/><em>World-changing ideas.</em></h1><p class="hero-description" data-hi="Duniya kaise kaam karti hai? Hum kya jaan sakte hain? Sochne walon se milo, discoveries samjho aur khud experiments karke dekho.">Follow the questions that changed everything.<br class="desktop-break"/> Meet the people. Understand the discoveries.<br class="desktop-break"/> Then try the ideas for yourself.</p><div class="hero-actions"><a href="/explore" class="button primary" data-hi="Minds aur ideas khojo ↗">Explore the minds <span>↗</span></a><a href="/laboratory" class="button text-button"><span class="play-outline">▷</span> Step into the lab</a></div><div class="hero-footnote"><span class="short-line"></span> A little curiosity can change your whole perspective.</div></div>
-    <SolarSystem client:load />
+<Base title="The Pantheon" description="Explore science and philosophy through sourced human stories, interactive experiments, and ideas you can take apart.">
+ <div class="home-redesign">
+  <section class="home-opening shell" aria-labelledby="home-title">
+   <div class="home-opening-copy">
+    <p class="eyebrow"><span aria-hidden="true">✳</span> A FIELD GUIDE TO HUMAN CURIOSITY</p>
+    <h1 id="home-title" data-hi="Bade sawaal. Naye nazariye.">Big questions.<br/><span>Brighter perspectives.</span></h1>
+    <p class="home-lede" data-hi="Duniya ko samjho. Apni soch ko sawaal karo. Science aur philosophy ke ideas ko padho, aur khud karke dekho.">Understand the world. Question your assumptions. Meet the minds behind science and philosophy, then try their ideas for yourself.</p>
+    <div class="home-opening-actions"><a href="/explore" class="button primary" data-hi="Minds aur ideas khojo ↗">Explore the archive <span aria-hidden="true">↗</span></a><a href="/paths" class="button secondary">Find a starting point <span aria-hidden="true">→</span></a></div>
+    <p class="home-editorial-note">Sourced stories. Playable ideas. Room for disagreement.</p>
+   </div>
+   <aside class="home-question-board" aria-label="Start with a question">
+    <div class="question-board-top"><span class="eyebrow">START WITH A QUESTION</span><span aria-hidden="true">↘</span></div>
+    <a href="/lab/matter-and-sound"><span class="question-index">01 / MATTER</span><strong>Why can’t you walk<br/>through a wall?</strong><span class="question-link">Explore matter & sound <span aria-hidden="true">↗</span></span></a>
+    <a href="/philosophy/schools/stoicism"><span class="question-index">02 / LIVING</span><strong>What is actually<br/>in your control?</strong><span class="question-link">Meet the Stoics <span aria-hidden="true">↗</span></span></a>
+    <div class="question-board-bottom"><span class="question-orbit" aria-hidden="true">✳</span><span>Follow a question.<br/>See where it takes you.</span></div>
+   </aside>
   </section>
-  <section class="stats-strip shell" aria-label="Inside the archive"><div><strong>{String(people.length).padStart(2,'0')}</strong><span>remarkable minds</span></div><div><strong>{String(interactive).padStart(2,'0')}</strong><span>interactive discoveries</span></div><div><strong>{fields.size}</strong><span>fields of thought</span></div><div class="stats-message"><span class="tiny-star">✳</span><span>Across cultures.<br/>Across centuries.</span></div></section>
-  <section class="shell section-space"><div class="section-heading"><div><p class="eyebrow">TWO WAYS OF ASKING WHY</p><h2>A growing world of ideas.</h2></div></div><div class="wing-grid">
-    <a href="/scientists" class="wing-card science-card"><div class="wing-art" aria-hidden="true">◎</div><span class="eyebrow">01 / THE SCIENCE WING</span><h3>How does the<br/>world work?</h3><p>From the smallest particles to the farthest stars. Explore the experiments that made the invisible understandable.</p><div class="wing-card-bottom"><span>{people.filter(p=>p.data.category==='scientist').length} scientists · Discover & experiment</span><span>↗</span></div></a>
-    <a href="/philosophers" class="wing-card philosophy-card"><div class="wing-art" aria-hidden="true">∞</div><span class="eyebrow">02 / THE PHILOSOPHY WING</span><h3>What does it mean<br/>to be human?</h3><p>Knowledge, existence, and how we ought to live. Follow the reasoning, challenge a premise, and see what still stands.</p><div class="wing-card-bottom"><span>{people.filter(p=>p.data.category==='philosopher').length} philosophers · Question & reflect</span><span>↗</span></div></a>
-  </div></section>
-  <section class="shell section-space"><div class="section-heading"><div><p class="eyebrow">MEET YOUR NEXT BIG IDEA</p><h2>Extraordinary minds. Human stories.</h2></div><a href="/discoveries" class="inline-link">Explore discoveries & ideas ↗</a></div><div class="people-grid">{spotlight.map(person => person && <PersonCard person={person}/>)}</div></section>
-  <section class="shell section-space"><div class="lab-banner"><div><p class="eyebrow">LESS MEMORISING. MORE DISCOVERING.</p><h2>Don’t just read about it.<br/><em>Make it happen.</em></h2><p>Change a variable. Test a prediction. Watch what follows.<br/>Our interactive lab puts the ideas in your hands.</p><a href="/laboratory" class="button primary">Enter the laboratory ↗</a></div><div class="lab-banner-list"><a href="/lab/orbit"><span>01</span><div><strong>Launch a planet</strong><small>Gravity & orbital mechanics</small></div>↗</a><a href="/lab/gold-foil"><span>02</span><div><strong>Look inside the atom</strong><small>Reconstruct Rutherford’s experiment</small></div>↗</a><a href="/p/rene-descartes#discovery-1"><span>03</span><div><strong>Try doubting everything</strong><small>Take apart Descartes’s argument</small></div>↗</a></div></div></section>
-  <section class="shell section-space"><a href="/topics" class="quantum-feature"><div><p class="eyebrow">NEW / THE SCIENCE ATLAS</p><h2>What happens when<br/>a computer goes quantum?</h2><p>Six topic guides connect the big ideas.<br/>Start with a hands-on quantum circuit playground.</p><span class="button primary">Explore science topics ↗</span></div><div class="quantum-feature-art" aria-hidden="true"><span>H</span><i>─</i><span>⊕</span><small>|00⟩ + |11⟩<br/>──────────<br/>√2</small></div></a></section>
-  <section class="shell section-space"><div class="section-heading"><div><p class="eyebrow">FOLLOW YOUR CURIOSITY</p><h2>Every idea leads somewhere.</h2></div></div><div class="journey-grid"><a href="/paths" class="journey-card"><span class="journey-icon">⌁</span><h3>Take a learning path</h3><p>Connected ideas, in an order that makes sense. Start with a question and follow it deeper.</p><span class="inline-link">Find your starting point ↗</span></a><a href="/timeline" class="journey-card"><span class="journey-icon">↔</span><h3>Travel through time</h3><p>See how discoveries and arguments unfolded across centuries and cultures.</p><span class="inline-link">Explore the timeline ↗</span></a><a href="/collection" class="journey-card"><span class="journey-icon">▧</span><h3>Build your own collection</h3><p>Save fascinating people, keep your notes, and pick up where your curiosity left off.</p><span class="inline-link">Open your collection ↗</span></a></div></section>
+  <div class="home-proof shell" aria-label="Inside the archive"><p><strong>{people.length}</strong> sourced profiles</p><p><strong>{contributions}</strong> contributions</p><p><strong>14</strong> learning paths</p><a href="/about">A curated, growing collection <span aria-hidden="true">↗</span></a></div>
+  <section class="home-section shell" aria-labelledby="doorway-title">
+   <div class="home-section-heading"><div><p class="eyebrow">PICK A DIRECTION</p><h2 id="doorway-title">One curiosity. Many ways in.</h2></div><p>Read a story, follow an argument,<br/>or put an idea to the test.</p></div>
+   <div class="home-doorways">{doorways.map(item => <a href={item.href} class={`home-doorway home-doorway-${item.number}`}><div class="doorway-top"><span class="eyebrow">{item.number} / {item.label}</span><span class="doorway-icon" aria-hidden="true">{item.icon}</span></div><h3>{item.title}</h3><p>{item.text}</p><div class="doorway-bottom"><span>{item.detail}</span><span aria-hidden="true">↗</span></div></a>)}</div>
+  </section>
+  <section class="home-section shell" aria-labelledby="ai-title"><div class="home-next"><div><p class="eyebrow">NEW / MODERN DISCOVERIES & AI</p><h2 id="ai-title">The ideas behind<br/>the intelligent machine.</h2><p>Explore transformers, generative models, human feedback, and AI for science. Twelve detailed articles explain the mechanisms, research teams, evidence, and limits.</p></div><nav aria-label="Modern discoveries"><a href="/innovations"><span>Explore all 12 discoveries</span>↗</a><a href="/innovations/transformer"><span>How transformers connect ideas</span>↗</a><a href="/innovations/alphafold-3"><span>Predicting molecular structures</span>↗</a></nav></div></section>
+  <section class="home-section shell" aria-labelledby="people-title">
+   <div class="home-section-heading"><div><p class="eyebrow">THE PEOPLE BEHIND THE IDEAS</p><h2 id="people-title">Extraordinary minds.<br/>Human stories.</h2></div><a href="/explore" class="home-section-link">Meet all {people.length} minds <span aria-hidden="true">↗</span></a></div>
+   <div class="home-people-grid">{spotlight.map(person => person && <PersonCard person={person}/>)}</div>
+  </section>
+  <section class="home-section home-cosmos shell" aria-labelledby="cosmos-title">
+   <div class="home-section-heading"><div><p class="eyebrow">A LITTLE PERSPECTIVE</p><h2 id="cosmos-title">Your place in the bigger picture.</h2></div><p>Choose a planet. Speed up time.<br/>Watch a familiar world differently.</p></div>
+   <SolarSystem client:load />
+  </section>
+  <section class="home-section shell" aria-labelledby="try-title">
+   <div class="home-section-heading"><div><p class="eyebrow">LEARN BY DOING</p><h2 id="try-title">Less memorising. More discovering.</h2></div><a href="/laboratory" class="home-section-link">All experiences <span aria-hidden="true">↗</span></a></div>
+   <div class="home-experiments"><a href="/lab/gold-foil"><span class="eyebrow">EXPERIMENT / ATOMIC STRUCTURE</span><div class="experiment-art" aria-hidden="true"><span>α</span><i>→</i><b>│</b><i>↗</i></div><h3>Look inside the atom.</h3><p>Reconstruct Rutherford’s gold-foil experiment and see why a tiny nucleus changed the picture.</p><span class="home-section-link">Try the experiment ↗</span></a><a href="/topics/quantum-computing#playground"><span class="eyebrow">PLAYGROUND / QUANTUM COMPUTING</span><div class="experiment-art quantum-art" aria-hidden="true"><span>H</span><i>─</i><span>⊕</span><i>─</i><span>?</span></div><h3>A different kind of computer.</h3><p>Build a two-qubit circuit. Explore probability, interference, and the correlations of entanglement.</p><span class="home-section-link">Build a circuit ↗</span></a></div>
+  </section>
+  <section class="home-section shell"><div class="home-next"><div><p class="eyebrow">MAKE IT YOUR OWN</p><h2>Curiosity doesn’t have to<br/>follow a straight line.</h2><p>Follow connected ideas through a learning path, explore their history, or keep a collection of your own.</p></div><nav aria-label="Continue your learning"><a href="/paths"><span>Find a learning path</span>↗</a><a href="/timeline"><span>Explore the timeline</span>↗</a><a href="/collection"><span>Open your collection</span>↗</a></nav></div></section>
+ </div>
 </Base>

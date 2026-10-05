@@ -4,10 +4,12 @@ An interactive atlas of scientific discoveries and philosophical ideas. Built wi
 
 ## Current release
 
+The 274 contributions comprise 262 profile-linked contributions and 12 team-attributed modern research articles (11 AI and one biotechnology). Explore the new collection at `/innovations`, or search it in `/discoveries`.
+
 - **125 sourced profiles**: 51 scientists and 74 philosophers, spanning antiquity through modern science, with historical portraits and attribution.
 - **7 physics experiences**: orbits, radioactive decay, the gold-foil reconstruction, a nonlinear pendulum, photoelectric emission, induction, and wave superposition.
 - **8 interactive argument maps**, including Stoic agency, Epicurus on death, and Wollstonecraft on education.
-- **262 contributions** in a searchable idea index with field filters, chronology, expandable significance, and pagination.
+- **274 contributions** in a searchable idea index with field filters, chronology, expandable significance, and pagination.
 - **7 science guides** and an ideal two-qubit quantum circuit playground with gates, phase, entanglement, and measurement.
 - **75 philosophical schools and positions**, searchable by question/term and area, with a two-school comparison.
 - **13 cultural tradition guides** and **21 Hindu text/text-family introductions**, including the four Vedas, principal Upanishads, Gītā, and the six darśanas with competing Vedānta interpretations.
@@ -37,10 +39,11 @@ npm run astro -- dev stop
 ```sh
 npm test                 # physics, chronology, argument, and content-link checks
 npm run check            # Astro + TypeScript diagnostics
-npm run build            # schema and cross-reference validation; 243 static pages
+npm run build            # schema and cross-reference validation; 256 static pages
 npm run preview -- --host 127.0.0.1 --port 4322
 npm run verify:app       # production regression suite on port 4322
 npm run verify:catalogue # idea index, quantum lab, new arguments, and responsive layouts
+npm run verify:innovations # modern article routes, search, timeline, export, and phone layouts
 npm run verify:atlas     # schools, traditions, scientist views, matter, sound, and audio lifecycle
 ```
 
@@ -48,6 +51,8 @@ npm run verify:atlas     # schools, traditions, scientist views, matter, sound, 
 
 ## Structure
 
+- `src/content/innovations/*.mdx`: modern research articles with team credits, mechanism steps, examples, limitations, and primary sources.
+- `src/lib/ideas.ts`: unified search and timeline records, plus innovation link validation.
 - `src/content/people/*.mdx`: individual profiles, structured contributions, timelines, and sources.
 - `src/content.config.ts`: schema validation. Unknown simulation/argument IDs fail validation.
 - `src/lib/people.ts`: collection helpers, portraits, related-person validation.

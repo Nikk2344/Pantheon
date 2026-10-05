@@ -6,7 +6,7 @@ Read `AGENTS.md` for framework development instructions and `README.md` for comm
 
 Preserve the existing Astro/React architecture and sourced MDX records. Build and show concrete working changes. Use modern design tokens in `src/styles/theme.css`, precise historical writing, attributed portraits, and genuinely interactive simulations/arguments with explicit limitations.
 
-The catalogue has 125 profiles and 262 contributions. It is curated, not exhaustive; most entries are introductory. Read CATALOGUE.md for editorial scope and HOSTING.md for the hosting/database plan. Do not describe the database as connected.
+The catalogue has 125 profiles and 274 contributions. It is curated, not exhaustive; most entries are introductory. Read CATALOGUE.md for editorial scope and HOSTING.md for the hosting/database plan. Do not describe the database as connected.
 
 The philosophy atlas adds 75 schools/positions, 13 cultural guides, 21 Hindu text/text-family guides, and 51 evidence-labeled scientist outlooks. `/lab/matter-and-sound` has contact and electronic sound animations. See PROJECT.md and CATALOGUE.md for scope and `npm run verify:atlas` for the new browser checks.
 

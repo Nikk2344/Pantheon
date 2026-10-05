@@ -106,4 +106,24 @@ const people = defineCollection({
   }),
 });
 
-export const collections = { people };
+const innovations = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/innovations' }),
+  schema: z.object({
+    title: z.string(),
+    year: z.number().int(),
+    dateNote: z.string(),
+    fields: z.array(z.string()).min(1),
+    kind: z.enum(['Architecture', 'Training method', 'Research system', 'Biotechnology']),
+    credit: z.string(),
+    summary: z.string(),
+    significance: z.string(),
+    limitation: z.string(),
+    steps: z.array(z.object({ title: z.string(), text: z.string() })).length(3),
+    related: z.array(z.string()).min(1),
+    sources: z.array(source).min(2),
+    question: z.string(),
+    answer: z.string(),
+  }),
+});
+
+export const collections = { people, innovations };

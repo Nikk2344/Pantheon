@@ -17,7 +17,8 @@
     "astro": "astro",
     "verify:catalogue": "node scripts/verify-catalogue.mjs",
     "verify:atlas": "node scripts/verify-atlas.mjs",
-    "verify:solar": "node scripts/verify-solar.mjs"
+    "verify:solar": "node scripts/verify-solar.mjs",
+    "verify:innovations": "node scripts/verify-innovations.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.7",

@@ -1,0 +1,68 @@
+---
+{
+  "title": "AlphaGo: learning combined with search",
+  "year": 2016,
+  "dateNote": "2016: Nature paper; its reported Fan Hui match took place in October 2015. The Lee Sedol match followed in March 2016.",
+  "kind": "Research system",
+  "fields": [
+    "Artificial intelligence",
+    "Reinforcement learning"
+  ],
+  "credit": "David Silver and the DeepMind AlphaGo team, including Aja Huang, Chris Maddison, Arthur Guez, Laurent Sifre, George van den Driessche, Julian Schrittwieser, and Demis Hassabis. The paper lists the full research and engineering team.",
+  "summary": "AlphaGo combined learned move selection, learned position evaluation, and tree search to play Go at a level that defeated a professional human player.",
+  "significance": "It demonstrated how learned estimates can guide a search process in a domain too large for exhaustive enumeration. Learning and explicit look-ahead can complement each other.",
+  "limitation": "Go supplies precise rules, legal actions, and a clear result. Success there does not establish reliable decision-making in an open environment with ambiguous goals or uncertain consequences.",
+  "steps": [
+    {
+      "title": "Suggest moves",
+      "text": "A policy network gives the search promising candidate actions."
+    },
+    {
+      "title": "Evaluate futures",
+      "text": "Value estimates and search help compare possible continuations."
+    },
+    {
+      "title": "Learn from play",
+      "text": "Training combines human game data and reinforcement learning in the original system."
+    }
+  ],
+  "related": [
+    "instructgpt",
+    "alphafold-2"
+  ],
+  "sources": [
+    {
+      "title": "Silver and colleagues: Mastering the game of Go with deep neural networks and tree search (2016)",
+      "url": "https://www.nature.com/articles/nature16961",
+      "note": "Original AlphaGo architecture and the Fan Hui result."
+    },
+    {
+      "title": "Silver and colleagues: Mastering the game of Go without human knowledge (2017)",
+      "url": "https://www.nature.com/articles/nature24270",
+      "note": "AlphaGo Zero and its different self-play training setup."
+    }
+  ],
+  "question": "Why is a Go win a clearer training signal than a judgment that a conversation was helpful?",
+  "answer": "Go has an agreed terminal outcome under explicit rules. Helpfulness depends on context, preferences, and consequences that are not captured by a single universally accepted score."
+}
+---
+
+## Why search needed help
+
+Go offers many legal moves and long sequences of possible replies. Exhaustively exploring the game tree is impractical. A useful search must spend its effort selectively and estimate the value of positions before every possible continuation has been played out.
+
+The 2016 AlphaGo paper brought neural policies and value estimates into Monte Carlo tree search. Its professional-player result was evidence about the combined system, not evidence that search or learning alone explained the achievement.
+
+## Keep the versions distinct
+
+The original system learned initially from human games and then improved through reinforcement learning. AlphaGo Zero, published in 2017, used self-play without human game examples. It still relied on engineered rules, architecture, search, and a training procedure. “Without human knowledge” should not be read as “without human design.”
+
+## Work through an example
+
+Imagine a position with twenty plausible moves. A policy points toward three promising candidates; look-ahead then reveals that the most immediately attractive one loses after a reply. An evaluator can help estimate the remaining positions. This simplified example explains the division of labour without reproducing AlphaGo's computations.
+
+## What transfers beyond a board
+
+The general research question is how to combine learned approximations with structured reasoning. In other settings, the hard part may be defining the reward or finding an accurate simulator. A game engine reliably tells you what follows a legal move. A real organisation does not come with such an oracle.
+
+Compare [human-feedback training](/innovations/instructgpt), where judgments help define a learning signal, and [AlphaFold 2](/innovations/alphafold-2), where the target is a molecular structure rather than a winning move.

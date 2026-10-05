@@ -1,0 +1,68 @@
+---
+{
+  "title": "Generative adversarial networks (GANs)",
+  "year": 2014,
+  "dateNote": "2014: publication of the original adversarial-learning framework.",
+  "kind": "Training method",
+  "fields": [
+    "Artificial intelligence",
+    "Generative models"
+  ],
+  "credit": "Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio authored the original GAN paper.",
+  "summary": "A generator learns to produce samples while a discriminator learns to distinguish generated examples from training data. Their competing objectives provide a training signal.",
+  "significance": "GANs made learned comparison central to generative modelling and stimulated research on image synthesis. They showed that a useful objective can be supplied by another trainable model.",
+  "limitation": "The theoretical equilibrium is not a guarantee that training reaches it. Instability and mode collapse can produce convincing samples that cover only a small part of the data distribution.",
+  "steps": [
+    {
+      "title": "Generate a sample",
+      "text": "A generator transforms a random input into a candidate image or other example."
+    },
+    {
+      "title": "Compare sources",
+      "text": "A discriminator learns to separate dataset examples from generated examples."
+    },
+    {
+      "title": "Update both models",
+      "text": "The discriminator improves its distinction; the generator learns to make that distinction harder."
+    }
+  ],
+  "related": [
+    "diffusion",
+    "clip"
+  ],
+  "sources": [
+    {
+      "title": "Goodfellow and colleagues: Generative Adversarial Networks (2014)",
+      "url": "https://arxiv.org/abs/1406.2661",
+      "note": "The two-player objective, theory, and initial experiments."
+    },
+    {
+      "title": "Mao and colleagues: Least Squares Generative Adversarial Networks (2016/2017)",
+      "url": "https://arxiv.org/abs/1611.04076",
+      "note": "A later investigation of training gradients and stability."
+    }
+  ],
+  "question": "If every generated face looks convincing, have you established that the model learned the full distribution?",
+  "answer": "No. It might generate only a few kinds of face. Sample quality, diversity, memorisation, and coverage require different checks."
+}
+---
+
+## A changing learning signal
+
+A fixed distance between two pictures can penalise a plausible image just because its pixels differ from one particular target. The GAN proposal instead trains a discriminator using examples of real and generated data. Its feedback changes as the generator improves.
+
+The models do not literally argue or understand deception. “Adversarial” describes their optimisation objectives. The discriminator estimates a source distinction, not whether an image tells the truth about the world.
+
+## Why the elegant theory was not the whole story
+
+The original paper analyses an idealised equilibrium in which generated and training distributions match. Finite networks trained by alternating updates are a different practical problem. Later work, including least-squares GANs, explored losses that could improve the learning signal and training behaviour.
+
+## Work through an example
+
+Suppose a dataset contains ten equally common handwritten digits. A generator produces beautiful sevens and nothing else. Someone shown three samples might admire the quality; someone counting the categories would notice nine missing classes. This is a useful mental model of mode collapse. Looking at a small, selected gallery cannot tell you whether the model covers the distribution.
+
+## From a demonstration to a useful system
+
+Ask how outputs were selected, how diversity was measured, and whether examples resemble training records too closely. These questions matter even if the pictures look realistic. The relevant standard depends on the application: design exploration, synthetic training data, and evidence about real events require very different judgments.
+
+[Diffusion models](/innovations/diffusion) offer another generative approach, using repeated denoising instead of this original discriminator-generator contest.

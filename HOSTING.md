@@ -32,3 +32,5 @@ The built `/catalogue.json` export now contains versioned public profile records
 Before migrating, add a validated content loader, draft/publish workflow, and editor authentication. Database write credentials must stay on the server. Enable row-level security and keep public clients read-only for published records. Store externally edited biographies as sanitized Markdown or structured blocks; do not execute arbitrary database content as MDX code. Add private, per-user tables only when implementing cloud notebooks—current notes remain in browser storage.
 
 No hosting account, database, credentials, or deployment has been created by this release.
+
+The modern research release also exports team-attributed innovation records, their article bodies, source notes, and related IDs. These are stored in `src/content/innovations/*.mdx`; they remain static content.

@@ -1,0 +1,74 @@
+---
+{
+  "title": "Denoising diffusion models",
+  "year": 2020,
+  "dateNote": "2020: the DDPM paper; diffusion-based generative modelling had an important 2015 predecessor.",
+  "kind": "Training method",
+  "fields": [
+    "Artificial intelligence",
+    "Generative models"
+  ],
+  "credit": "Jonathan Ho, Ajay Jain, and Pieter Abbeel authored Denoising Diffusion Probabilistic Models. Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, and Surya Ganguli published an earlier diffusion framework in 2015.",
+  "summary": "A model learns to reverse gradual corruption by noise, allowing a sampling process to transform a noise distribution into structured outputs such as images.",
+  "significance": "Repeated denoising became a powerful route to generative modelling. Later latent diffusion methods reduced the cost by performing much of the process in a compressed representation.",
+  "limitation": "A plausible generated picture is not evidence that its contents existed. Sample quality also does not settle memorisation, data rights, representation of people, or reliability for scientific measurement.",
+  "steps": [
+    {
+      "title": "Add known noise",
+      "text": "Training corrupts examples at different noise levels using a specified forward process."
+    },
+    {
+      "title": "Learn a correction",
+      "text": "A neural network predicts noise or another equivalent denoising quantity."
+    },
+    {
+      "title": "Sample in reverse",
+      "text": "Generation starts from noise and applies learned updates toward a structured sample."
+    }
+  ],
+  "related": [
+    "gan",
+    "alphafold-3",
+    "clip"
+  ],
+  "sources": [
+    {
+      "title": "Ho, Jain & Abbeel: Denoising Diffusion Probabilistic Models (2020)",
+      "url": "https://arxiv.org/abs/2006.11239",
+      "note": "The denoising objective and image-generation experiments."
+    },
+    {
+      "title": "Sohl-Dickstein and colleagues: Deep Unsupervised Learning using Nonequilibrium Thermodynamics (2015)",
+      "url": "https://arxiv.org/abs/1503.03585",
+      "note": "Earlier diffusion-based generative modelling."
+    },
+    {
+      "title": "Rombach and colleagues: High-Resolution Image Synthesis with Latent Diffusion Models (2021/2022)",
+      "url": "https://arxiv.org/abs/2112.10752",
+      "note": "Denoising in a learned latent space and conditioning."
+    }
+  ],
+  "question": "Does a reverse diffusion process simply recover one original photograph hidden in random noise?",
+  "answer": "No. Sampling uses a learned statistical model to produce an output. A random starting point does not contain a uniquely determined original photograph waiting to be uncovered."
+}
+---
+
+## Learn an easier local task
+
+Generating an entire image in one step is a difficult modelling problem. Diffusion breaks generation into successive transformations. During training, the noise level is known, so the model can learn corrections at many stages rather than receiving only a final aesthetic judgment.
+
+The 2020 DDPM paper connected its formulation with denoising score matching and demonstrated strong image synthesis. Its historical predecessors matter: the method was an advance in an existing research programme, not the first idea of learning to reverse a noisy process.
+
+## Imagine a cloud of dots
+
+As a teaching analogy, imagine adding random displacement to dots that initially trace a circle. After enough corruption the circle becomes hard to see. A model trained across many such examples could learn local updates toward the family of circle-like configurations. This analogy explains a distributional task; it is not the actual neural image algorithm.
+
+## Pixels, latents, and conditions
+
+Latent diffusion performs denoising in a representation produced by an autoencoder, then decodes it into an image. This can reduce the cost of operating directly on every pixel. Conditioning can guide generation with text or other inputs, but guidance is not an assurance that every requested spatial or semantic relationship is satisfied.
+
+## Evaluate more than appearance
+
+Compare multiple unselected samples, test changes in the prompt, and distinguish visual appeal from faithful representation. For a historical reconstruction, a generated object should not be mistaken for archival evidence. For a diagram, verify labels and relationships separately.
+
+[AlphaFold 3](/innovations/alphafold-3) uses diffusion in a different domain: predicting atomic arrangements. A shared family of techniques does not make those scientific outputs equivalent to ordinary pictures.

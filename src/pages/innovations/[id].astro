@@ -1,0 +1,26 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { allInnovations } from '../../lib/ideas';
+export async function getStaticPaths() {
+  return (await allInnovations()).map(entry => ({params:{id:entry.id},props:{entry}}));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const related = (await allInnovations()).filter(item => d.related.includes(item.id));
+---
+<Base title={d.title} description={d.summary} wing="wing-science">
+ <section class="shell page-intro innovation-intro"><a href="/innovations" class="inline-link">← Modern discoveries & AI</a><p class="eyebrow innovation-kicker">{d.year} / {d.kind}</p><h1>{d.title}</h1><p>{d.summary}</p><p class="innovation-intro-note">{d.dateNote}</p></section>
+ <div class="shell innovation-layout">
+  <article class="innovation-article">
+   <section class="innovation-credit" id="credit"><h2>Who did the work?</h2><p>{d.credit}</p></section>
+   <section class="innovation-process" aria-labelledby="mechanism"><h2 id="mechanism">The mechanism in three steps</h2><ol>{d.steps.map((step,i)=><li><span class="eyebrow">0{i+1}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol><p class="innovation-caption">A simplified explanation of the mechanism; these steps are not a running model.</p></section>
+   <div class="innovation-prose"><Content /></div>
+   <section class="innovation-takeaway"><h2>Why it matters</h2><p>{d.significance}</p><h2>What this does not establish</h2><p>{d.limitation}</p></section>
+   <section class="innovation-check"><h2>Check your understanding</h2><p>{d.question}</p><details><summary>Reveal the explanation</summary><p>{d.answer}</p></details></section>
+   <section class="innovation-sources" id="sources"><h2>Read the evidence</h2><ol>{d.sources.map(source=><li><a href={source.url}>{source.title} ↗</a>{source.note&&<p>{source.note}</p>}</li>)}</ol></section>
+  </article>
+  <aside class="innovation-aside"><p class="eyebrow">KEEP EXPLORING</p>{related.map(item=><a href={`/innovations/${item.id}`}><span>{item.data.year}</span><strong>{item.data.title}</strong><span aria-hidden="true">↗</span></a>)}<a href="/topics/information-and-computation"><strong>Start with information & computation</strong><span aria-hidden="true">↗</span></a><a href="/discoveries?field=Artificial+intelligence"><strong>Search all AI contributions</strong><span aria-hidden="true">↗</span></a></aside>
+ </div>
+</Base>

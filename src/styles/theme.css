@@ -349,3 +349,180 @@ em { font-style:normal; color:var(--tk-brand); }
 @media(max-width:620px) { .hero-copy h1 { font-size:clamp(36px,11vw,50px); } }
 .wing-science { --tk-accent:var(--tk-science); }
 .wing-philosophy { --tk-accent:var(--tk-philosophy); }
+
+/* Homepage: editorial desktop layout and dedicated compact phone presentation. */
+:root { --tk-home-tint:color-mix(in srgb,var(--tk-brand) 7%,var(--tk-raised)); }
+.home-redesign { overflow:clip; }
+.home-opening { display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:72px;align-items:center;padding-block:72px 64px; }
+.home-opening-copy>.eyebrow { display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.13em; }
+.home-opening-copy>.eyebrow span { color:var(--tk-brand);font-size:22px; }
+.home-opening h1 { font-size:clamp(44px,4.8vw,70px);font-weight:530;letter-spacing:-.06em;line-height:1.08;margin:26px 0; }
+.home-opening h1>span { color:var(--tk-brand); }
+.home-lede { max-width:470px;font-size:16px;line-height:1.85;color:var(--tk-muted); }
+.home-opening-actions { display:flex;flex-wrap:wrap;gap:12px;margin-top:30px; }
+.home-opening-actions .button { min-height:48px;font-size:12px; }
+.home-editorial-note { margin-top:22px;font-size:11px;color:var(--tk-muted); }
+.home-question-board { background:var(--tk-home-tint);border:1px solid var(--tk-border);border-radius:20px;padding:26px 30px;position:relative; }
+.question-board-top { display:flex;justify-content:space-between;align-items:center;padding-bottom:10px; }
+.question-board-top .eyebrow { font-size:9px;letter-spacing:.14em; }
+.question-board-top>span:last-child { color:var(--tk-brand);font-size:25px; }
+.home-question-board>a { display:block;padding:23px 0;border-bottom:1px solid var(--tk-border); }
+.question-index { display:block;font-size:9px;letter-spacing:.12em;color:var(--tk-muted); }
+.home-question-board strong { display:block;font-size:clamp(22px,2.1vw,30px);letter-spacing:-.04em;line-height:1.25;font-weight:500;margin:12px 0 18px; }
+.question-link { font-size:11px;color:var(--tk-brand);display:flex;justify-content:space-between; }
+.home-question-board>a:hover .question-link { text-decoration:underline;text-underline-offset:4px; }
+.question-board-bottom { display:flex;gap:16px;align-items:center;padding-top:20px;color:var(--tk-muted);font-size:10px;line-height:1.6; }
+.question-orbit { font-size:36px;color:var(--tk-brand); }
+.home-proof { display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:23px;border-block:1px solid var(--tk-border); }
+.home-proof p { display:flex;align-items:baseline;gap:10px;font-size:11px;color:var(--tk-muted); }
+.home-proof strong { color:var(--tk-ink);font-size:25px;font-weight:500;letter-spacing:-.04em; }
+.home-proof>a { font-size:10px;color:var(--tk-muted); }
+.home-section { padding-top:80px; }
+.home-section-heading { display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px; }
+.home-section-heading h2,.home-next h2 { font-size:clamp(27px,2.7vw,38px);font-weight:500;letter-spacing:-.045em;line-height:1.15;margin-top:12px; }
+.home-section-heading>p { color:var(--tk-muted);font-size:12px;line-height:1.8; }
+.home-section-link { display:inline-flex;gap:20px;align-items:center;font-size:12px;color:var(--tk-brand);min-height:44px; }
+.home-doorways { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.home-doorway { --door-accent:var(--tk-science);background:var(--tk-raised);border:1px solid var(--tk-border);border-radius:14px;padding:26px;transition:border-color .2s,background .2s; }
+.home-doorway-02 { --door-accent:var(--tk-philosophy); }
+.home-doorway-03 { --door-accent:var(--tk-brand); }
+.home-doorway:hover { border-color:var(--door-accent);background:color-mix(in srgb,var(--door-accent) 4%,var(--tk-raised)); }
+.doorway-top { display:flex;justify-content:space-between;align-items:center;color:var(--door-accent); }
+.doorway-top .eyebrow { font-size:9px;color:var(--door-accent); }
+.doorway-icon { font-size:36px;line-height:1; }
+.home-doorway h3 { font-size:24px;font-weight:500;letter-spacing:-.04em;margin:28px 0 12px; }
+.home-doorway>p { color:var(--tk-muted);font-size:12px;line-height:1.8;min-height:44px; }
+.doorway-bottom { display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--tk-border);margin-top:28px;padding-top:18px;font-size:10px;color:var(--tk-muted); }
+.doorway-bottom>span:last-child { font-size:20px;color:var(--door-accent); }
+.home-people-grid { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px; }
+.home-people-grid .person-card { box-shadow:none;border-radius:12px; }
+.home-people-grid .portrait-wrap { aspect-ratio:1.12; }
+.home-experiments { display:grid;grid-template-columns:1fr 1fr;gap:18px; }
+.home-experiments>a { padding:30px;border:1px solid var(--tk-border);border-radius:16px;background:var(--tk-raised); }
+.home-experiments>a:hover { border-color:var(--tk-brand); }
+.home-experiments .eyebrow { font-size:9px; }
+.experiment-art { display:flex;align-items:center;justify-content:center;gap:28px;height:150px;margin:20px 0;background:var(--tk-surface);border-radius:10px;color:var(--tk-science);font-size:45px; }
+.experiment-art i { font-style:normal;font-size:28px;color:var(--tk-muted); }
+.experiment-art b { font-weight:300;font-size:80px;color:var(--tk-brand); }
+.quantum-art { color:var(--tk-philosophy);gap:16px; }
+.quantum-art span { border:1px solid var(--tk-border-strong);border-radius:8px;padding:6px 13px;font-size:28px; }
+.home-experiments h3 { font-size:26px;font-weight:500;letter-spacing:-.04em; }
+.home-experiments p { margin:12px 0 14px;color:var(--tk-muted);font-size:13px;line-height:1.8;max-width:400px; }
+.home-next { display:grid;grid-template-columns:1.3fr 1fr;gap:64px;padding:42px;border-radius:18px;background:var(--tk-home-tint);border:1px solid var(--tk-border); }
+.home-next p:not(.eyebrow) { color:var(--tk-muted);font-size:13px;line-height:1.8;max-width:440px;margin-top:20px; }
+.home-next nav { align-self:center; }
+.home-next nav a { display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid var(--tk-border);font-size:14px; }
+.home-next nav a:hover { color:var(--tk-brand); }
+@media (max-width:1050px) { .home-opening { gap:36px; }.home-doorway { padding:22px; }.home-doorway h3 { font-size:21px; }.home-proof { gap:16px; }.home-proof>a { display:none; } }
+@media (max-width:850px) { .home-opening { padding-block:48px;gap:28px; }.home-opening h1 { font-size:46px; }.home-lede { font-size:14px; }.home-opening-actions { flex-direction:column;align-items:start; }.home-question-board { padding:22px; }.home-doorways { gap:10px; }.home-doorway { padding:18px; }.home-people-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.home-next { gap:30px;padding:30px; } }
+@media (max-width:620px) {
+ .home-redesign .shell { width:calc(100% - 36px); }
+ .home-opening { grid-template-columns:1fr;padding-block:34px 28px;gap:28px; }
+ .home-opening-copy>.eyebrow { font-size:8px;letter-spacing:.1em;gap:7px; }
+ .home-opening-copy>.eyebrow span { font-size:18px; }
+ .home-opening h1 { font-size:clamp(36px,9.8vw,54px);line-height:1.08;margin:20px 0;letter-spacing:-.055em; }
+ .home-lede { font-size:14px;line-height:1.75;max-width:100%; }
+ .home-opening-actions { display:grid;grid-template-columns:1fr;margin-top:24px;gap:9px; }
+ .home-opening-actions .button { width:100%;min-height:48px;justify-content:space-between;padding-inline:16px; }
+ .home-editorial-note { font-size:10px;margin-top:16px; }
+ .home-question-board { display:grid;grid-template-columns:1fr 1fr;padding:16px;gap:0 16px;border-radius:12px; }
+ .question-board-top { grid-column:1/-1;padding-bottom:6px; }
+ .question-board-top .eyebrow { font-size:8px; }
+ .home-question-board>a { padding:12px 0 4px;border-bottom:0;min-width:0; }
+ .home-question-board>a:nth-of-type(2) { border-left:1px solid var(--tk-border);padding-left:16px; }
+ .question-index { font-size:8px; }
+ .home-question-board strong { font-size:18px;margin:10px 0 12px;line-height:1.3; }
+ .home-question-board strong br { display:none; }
+ .question-link { font-size:10px;gap:6px;min-height:36px;align-items:center; }
+ .question-board-bottom { display:none; }
+ .home-proof { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-block:18px; }
+ .home-proof p { flex-direction:column;gap:3px;font-size:9px; }
+ .home-proof p+p { border-left:1px solid var(--tk-border);padding-left:14px; }
+ .home-proof strong { font-size:24px; }
+ .home-section { padding-top:44px; }
+ .home-section-heading { align-items:start;flex-direction:column;gap:8px;margin-bottom:20px; }
+ .home-section-heading .eyebrow,.home-next .eyebrow { font-size:8px;letter-spacing:.1em; }
+ .home-section-heading h2,.home-next h2 { font-size:28px;line-height:1.18;margin-top:10px; }
+ .home-section-heading>p { font-size:12px; }
+ .home-section-heading>p br { display:none; }
+ .home-section-link { font-size:11px; }
+ .home-doorways { grid-template-columns:1fr;gap:10px; }
+ .home-doorway { padding:20px;position:relative; }
+ .doorway-icon { position:absolute;top:21px;right:20px;font-size:29px; }
+ .home-doorway h3 { margin:13px 0 8px;font-size:23px; }
+ .home-doorway>p { min-height:0;max-width:90%;font-size:12px; }
+ .doorway-bottom { margin-top:16px;padding-top:12px; }
+ .home-people-grid { grid-template-columns:1fr;gap:10px; }
+ .home-people-grid .person-card { display:grid;grid-template-columns:98px minmax(0,1fr);height:auto;min-height:132px; }
+ .home-people-grid .portrait-wrap { aspect-ratio:auto;height:100%; }
+ .home-people-grid .person-body { padding:14px;gap:6px; }
+ .home-people-grid .person-heading { gap:4px; }
+ .home-people-grid .person-card h3 { font-size:16px; }
+ .home-people-grid .person-body>p { font-size:11px;line-height:1.55;-webkit-line-clamp:2; }
+ .home-people-grid .person-body>div:last-child { display:none; }
+ .home-people-grid .portrait-wrap>span { display:none; }
+ .home-experiments { grid-template-columns:1fr;gap:12px; }
+ .home-experiments>a { padding:22px;border-radius:12px; }
+ .home-experiments .eyebrow { font-size:8px; }
+ .experiment-art { height:108px;margin:16px 0; }
+ .home-experiments h3 { font-size:24px; }
+ .home-next { grid-template-columns:1fr;gap:16px;padding:24px;border-radius:12px; }
+ .home-next p:not(.eyebrow) { font-size:12px;margin-top:14px; }
+ .home-next nav a { font-size:13px;min-height:56px;padding:17px 0; }
+ .home-cosmos .solar-header { padding:20px 18px 0;gap:10px; }
+ .home-cosmos .solar-header h2 { font-size:22px; }
+ .home-cosmos .solar-stage svg { max-height:360px; }
+ .home-cosmos .solar-detail { padding:10px 18px 20px; }
+ .home-cosmos .planet-detail-copy { padding-right:0;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 80px;gap:5px 12px;margin-top:18px; }
+ .home-cosmos .planet-portrait { grid-column:2;grid-row:1 / span 3;position:relative;width:74px;height:74px;top:auto;right:auto;margin:4px 0; }
+ .home-cosmos .planet-detail-copy>.eyebrow { grid-column:1;font-size:8px;align-self:end; }
+ .home-cosmos .planet-detail-copy h3 { grid-column:1;font-size:27px;margin:2px 0 8px; }
+ .home-cosmos .planet-detail-copy>p:not(.eyebrow),.home-cosmos .planet-detail-copy dl { grid-column:1/-1; }
+ .home-cosmos .planet-detail-copy>p:not(.eyebrow) { font-size:12px; }
+ .home-cosmos .solar-console { padding:18px;gap:16px; }
+ .home-cosmos .solar-controls { width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:8px; }
+ .home-cosmos .solar-controls button { font-size:11px;min-height:46px; }
+ .home-cosmos .solar-controls label { flex-direction:row;align-items:center;gap:6px;min-width:0; }
+ .home-cosmos .solar-controls select { width:100%;min-width:0;font-size:11px;min-height:46px;padding-inline:6px; }
+ .home-cosmos .solar-hint { padding:0 18px 16px;font-size:11px; }
+ .home-cosmos .solar-method { padding-inline:18px;font-size:11px; }
+ .home-cosmos .solar-date { display:grid;grid-template-columns:1fr 1fr;gap:8px; }
+ .home-cosmos .solar-date label { grid-column:1/-1; }
+ .home-cosmos .solar-date input { min-width:0;width:100%; }
+ .home-cosmos .solar-date button { min-height:44px; }
+ .nav-actions .icon-button,.nav-actions .collection-link { width:40px;height:40px; }
+ .nav-shell { gap:10px; }.nav-actions { gap:6px; }.brand { font-size:19px;gap:7px; }
+ .reading-language button,.other-languages summary { min-height:36px;display:flex;align-items:center; }
+ .language-popover { max-width:calc(100vw - 40px); }
+}
+@media (prefers-reduced-motion:reduce) { .home-people-grid .person-card:hover { transform:none; } }
+
+/* Modern research articles: readable measures and team-based attribution. */
+.innovation-intro-note { font-size:12px!important;line-height:1.8!important;color:var(--tk-muted);max-width:760px; }
+.innovation-kicker { margin-top:26px; }
+.innovation-start { border:1px solid var(--tk-border);background:var(--tk-raised);border-radius:var(--tk-radius);padding:24px; }
+.innovation-start nav { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:16px; }
+.innovation-start nav a { font-size:13px;line-height:1.7;color:var(--tk-science);padding:8px 0; }
+.innovation-layout { display:grid;grid-template-columns:minmax(0,850px) minmax(180px,1fr);gap:48px;align-items:start; }
+.innovation-article { min-width:0; }
+.innovation-article h2 { font-size:25px;line-height:1.3;font-weight:550;margin:0 0 16px; }
+.innovation-article p { font-size:15px;line-height:1.9;color:var(--tk-muted); }
+.innovation-credit { border-left:3px solid var(--tk-science);padding:22px 26px;background:var(--tk-surface);border-radius:0 12px 12px 0;scroll-margin-top:110px; }
+.innovation-credit h2 { font-size:17px; }.innovation-credit p { font-size:13px; }
+.innovation-process { margin-block:40px; }
+.innovation-process ol { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0; }
+.innovation-process li { padding:22px;border:1px solid var(--tk-border);border-radius:12px;background:var(--tk-raised); }
+.innovation-process h3 { font-size:17px;margin:14px 0 10px;font-weight:550;line-height:1.4; }
+.innovation-process li p { font-size:12px;line-height:1.8; }
+.innovation-process .innovation-caption { font-size:11px;margin-top:12px; }
+.innovation-prose { max-width:720px; }.innovation-prose h2 { margin-top:40px; }.innovation-prose p { margin-bottom:20px; }
+.innovation-prose a,.innovation-sources a { color:var(--tk-science);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere; }
+.innovation-takeaway { border-block:1px solid var(--tk-border);padding:28px 0;margin-top:36px; }.innovation-takeaway h2:not(:first-child) { margin-top:26px; }
+.innovation-check { padding:26px;background:var(--tk-home-tint);border:1px solid var(--tk-border);border-radius:12px;margin-block:36px; }
+.innovation-check details { margin-top:20px; }.innovation-check summary { cursor:pointer;color:var(--tk-brand);font-size:13px;min-height:44px;padding:12px 0; }.innovation-check details p { margin-top:12px; }
+.innovation-sources { scroll-margin-top:110px; }.innovation-sources ol { padding-left:20px;list-style:decimal; }.innovation-sources li { padding-left:5px;margin-bottom:22px;font-size:13px;line-height:1.7; }.innovation-sources p { font-size:12px;margin-top:7px; }
+.innovation-aside { position:sticky;top:110px; }.innovation-aside>a { display:flex;flex-wrap:wrap;gap:10px;font-size:13px;line-height:1.6;padding:20px 0;border-bottom:1px solid var(--tk-border); }.innovation-aside strong { font-weight:500; }.innovation-aside>a>span:first-child { width:100%;font-size:11px;color:var(--tk-muted); }.innovation-aside>a:hover { color:var(--tk-science); }
+@media(max-width:950px){.innovation-layout { grid-template-columns:minmax(0,1fr); }.innovation-aside { position:static;display:grid;grid-template-columns:1fr 1fr;gap:0 24px; }.innovation-aside>.eyebrow { grid-column:1/-1; }.innovation-start nav { grid-template-columns:1fr 1fr; }}
+@media(max-width:620px){.innovation-layout { gap:36px; }.innovation-process ol { grid-template-columns:1fr;gap:10px; }.innovation-process li { padding:18px; }.innovation-process h3 { margin:8px 0; }.innovation-article h2 { font-size:23px; }.innovation-credit h2 { font-size:17px; }.innovation-article p { font-size:14px; }.innovation-credit,.innovation-check { padding:20px; }.innovation-credit p,.innovation-process li p { font-size:12px; }.innovation-start nav { grid-template-columns:1fr;gap:5px; }.innovation-aside { grid-template-columns:1fr; }.innovation-sources p { font-size:12px; }}
+
+.innovation-intro>p:not(.eyebrow) { max-width:780px;line-height:1.8;margin-block:14px; }

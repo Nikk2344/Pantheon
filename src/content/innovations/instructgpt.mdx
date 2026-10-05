@@ -1,0 +1,70 @@
+---
+{
+  "title": "InstructGPT and learning from human feedback",
+  "year": 2022,
+  "dateNote": "2022: the InstructGPT paper. Learning reward models from human preferences had important earlier work, including a 2017 paper.",
+  "kind": "Training method",
+  "fields": [
+    "Artificial intelligence",
+    "Natural language processing",
+    "Reinforcement learning"
+  ],
+  "credit": "Long Ouyang and colleagues authored the InstructGPT paper, including Jeff Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, and a wider research, engineering, and human-feedback team. The paper lists all authors and describes its labeler process.",
+  "summary": "InstructGPT adapted pretrained language models using demonstrations, comparisons of responses, and reinforcement learning to improve instruction following under human evaluation.",
+  "significance": "The work showed that model size alone does not determine whether responses satisfy a user’s request. Training on demonstrations and preferences can substantially change behaviour.",
+  "limitation": "Preferences from a particular group of labelers are not universal human values. The resulting models still made factual and other errors; improved preference scores do not prove comprehensive safety or truthfulness.",
+  "steps": [
+    {
+      "title": "Learn demonstrations",
+      "text": "Supervised fine-tuning trains on example responses to prompts."
+    },
+    {
+      "title": "Model preferences",
+      "text": "Ranked responses train a reward model to predict comparative judgments."
+    },
+    {
+      "title": "Optimise with constraints",
+      "text": "Reinforcement learning improves the predicted reward while penalising excessive departure from a reference policy."
+    }
+  ],
+  "related": [
+    "transformer",
+    "rag",
+    "alphago"
+  ],
+  "sources": [
+    {
+      "title": "Ouyang and colleagues: Training language models to follow instructions with human feedback (2022)",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "note": "The InstructGPT procedure, human evaluations, and limitations."
+    },
+    {
+      "title": "Christiano and colleagues: Deep reinforcement learning from human preferences (2017)",
+      "url": "https://arxiv.org/abs/1706.03741",
+      "note": "Earlier work learning reward signals from comparisons."
+    }
+  ],
+  "question": "Why can a higher reward-model score fail to indicate a more truthful answer?",
+  "answer": "The reward model approximates judgments from finite data. A response can exploit its preferences or sound convincing without being correct. Independent factual evaluation remains necessary."
+}
+---
+
+## Prediction is not the same objective as assistance
+
+A language model trained to predict text can continue a prompt in many ways. A user, however, may want a concise answer, a specific format, or an explicit acknowledgment of uncertainty. Additional training can make those intended behaviours more likely.
+
+InstructGPT combined supervised demonstrations with a reward model learned from human rankings. It then used reinforcement learning to optimise responses against that reward. The published evaluation found that labelers could prefer a smaller instruction-tuned model over a much larger untuned baseline.
+
+## Earlier preference-learning research
+
+The 2017 human-preferences work investigated learning a reward function from comparisons of short behavioural segments. This is useful when writing the desired reward directly is difficult. InstructGPT applied a related idea to language responses; it did not invent all learning from feedback.
+
+## Work through a comparison
+
+Suppose two answers both contain the correct date. One gives it clearly; the other hides it in irrelevant prose. A labeler may prefer the first. But consider another pair in which an uncertain correct answer competes with a confident false one. Preference and correctness can diverge.
+
+That distinction is why a useful evaluation should inspect multiple properties separately: instruction following, factual support, calibration, and performance across different users and contexts.
+
+## The remaining question
+
+A learned proxy is easier to optimise than the full purpose of a conversation. Ask whose judgments supplied the data, which prompts were represented, and how the system was tested outside those conditions. [Retrieval-augmented generation](/innovations/rag) addresses access to evidence, but retrieval and preference optimisation still do not make factual correctness automatic.
