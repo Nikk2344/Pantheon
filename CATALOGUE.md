@@ -45,3 +45,7 @@ The catalogue now includes 12 separately authored MDX research articles: AlexNet
 Each article credits a research team, distinguishes the date of a paper from prior work, supplies three mechanism steps, explains an example, and states evidence and limits. Source notes indicate what each primary paper supports. The steps are explanatory diagrams, not functioning simulations. Related article IDs are validated at build time. Add future records in `src/content/innovations`; do not invent a sole-person attribution to fit the biography collection.
 
 The static export retains schema version 2 with additive `innovations`, `counts.innovations`, and `counts.profileContributions` fields. `counts.contributions` counts both collections. `/discoveries`, `/timeline`, and the homepage use the same combined total.
+
+## Mathematics wing
+
+October 2026: 145 profiles, comprising 74 philosophers, 41 scientists, and 30 mathematicians. Mathematicians have their own category and wing at `/mathematicians`. Add new ones with a row in `scripts/catalogue-mathematicians.mjs` (category `mathematician`), then run `npm run portraits <id>`. Coverage is still uneven: logic and applied mathematics, the Chinese, African, and Latin American traditions, and twentieth-century figures beyond the current selection all need more names. Disputed priority and legend are marked in each profile's reading note (for example Fermat's claimed proof, Gauss and Legendre on least squares, Hilbert and Einstein in 1915).

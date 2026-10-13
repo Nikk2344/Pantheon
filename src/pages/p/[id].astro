@@ -199,7 +199,9 @@ const facts = [
           {
             data.category === 'philosopher'
               ? `What ${data.name.split(' ').slice(-1)[0]} argued`
-              : `What ${data.name.split(' ').slice(-1)[0]} found`
+              : data.category === 'mathematician'
+                ? `What ${data.name} worked out`
+                : `What ${data.name.split(' ').slice(-1)[0]} found`
           }
         </h2>
         <p class="mt-2 text-[15px] leading-relaxed text-muted">
@@ -208,6 +210,8 @@ const facts = [
               ? 'Each contribution, and what it meant.'
               : data.category === 'philosopher'
                 ? 'Each contribution, what it meant, and — where the reasoning can be taken apart rather than summarised — something you can operate.'
+                : data.category === 'mathematician'
+                  ? 'Each result or method, why it mattered, and where its claim is secure or disputed.'
                 : 'Each discovery, what it meant, and — where the idea can be shown rather than described — something you can run.'
           }
         </p>

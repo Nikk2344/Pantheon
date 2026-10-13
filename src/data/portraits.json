@@ -838,5 +838,157 @@
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oppenheimer_(cropped).jpg",
     "wikipedia": "https://en.wikipedia.org/wiki/J._Robert_Oppenheimer"
+  },
+  "liu-hui": {
+    "file": "liu-hui.jpg",
+    "description": "Chinese mathematician and writer",
+    "credit": "Unknown",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Liu_hui.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Liu_Hui"
+  },
+  "omar-khayyam": {
+    "file": "omar-khayyam.jpg",
+    "description": "Persian polymath and poet (1048–1131)",
+    "credit": "Alireza Javaheri",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hakim_Omar_Khayam_-_panoramio.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Omar_Khayyam"
+  },
+  "bhaskara-ii": {
+    "file": "bhaskara-ii.jpg",
+    "description": "Indian mathematician and astronomer (1114–1185)",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%A4%AD%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%9A%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Bhāskara_II"
+  },
+  "fibonacci": {
+    "file": "fibonacci.jpg",
+    "description": "Italian mathematician (c. 1170 – c. 1240/50)",
+    "credit": "Taty2007",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_Fibonacci.JPG",
+    "wikipedia": "https://en.wikipedia.org/wiki/Fibonacci"
+  },
+  "pierre-de-fermat": {
+    "file": "pierre-de-fermat.jpg",
+    "description": "French mathematician and lawyer (1601–1665)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pierre_de_Fermat.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Pierre_de_Fermat"
+  },
+  "blaise-pascal": {
+    "file": "blaise-pascal.jpg",
+    "description": "French polymath (1623–1662)",
+    "credit": "unknown; a copy of the painting of François II Quesnel, which was made for Gérard Edelinck en 1691[réf. nécessaire].",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blaise_Pascal_Versailles,_circa_1690.JPG",
+    "wikipedia": "https://en.wikipedia.org/wiki/Blaise_Pascal"
+  },
+  "leonhard-euler": {
+    "file": "leonhard-euler.jpg",
+    "description": "Swiss mathematician (1707–1783)",
+    "credit": "Jakob Emanuel Handmann",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonhard_Euler_-_Jakob_Emanuel_Handmann_(Kunstmuseum_Basel).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Leonhard_Euler"
+  },
+  "carl-friedrich-gauss": {
+    "file": "carl-friedrich-gauss.jpg",
+    "description": "German polymath and scholar (1777–1855)",
+    "credit": "Christian Albrecht Jensen",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carl_Friedrich_Gauss_1840_by_Jensen.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss"
+  },
+  "sophie-germain": {
+    "file": "sophie-germain.jpg",
+    "description": "French mathematician, physicist, and philosopher (1776–1831)",
+    "credit": "s:fr:Auteur:Sophie Germain",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Germain_-_%C5%92uvres_philosophiques,_1896_(Illustration_page_4).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Sophie_Germain"
+  },
+  "bernhard-riemann": {
+    "file": "bernhard-riemann.jpg",
+    "description": "German mathematician (1826–1866)",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georg_Friedrich_Bernhard_Riemann.jpeg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Bernhard_Riemann"
+  },
+  "evariste-galois": {
+    "file": "evariste-galois.jpg",
+    "description": "French mathematician (1811–1832)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evariste_galois.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Évariste_Galois"
+  },
+  "sofya-kovalevskaya": {
+    "file": "sofya-kovalevskaya.jpg",
+    "description": "Russian mathematician (1850–1891)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sofja_Wassiljewna_Kowalewskaja_1.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Sofya_Kovalevskaya"
+  },
+  "georg-cantor": {
+    "file": "georg-cantor.jpg",
+    "description": "Mathematician (1845–1918)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georg_Cantor_(Portr%C3%A4t).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Georg_Cantor"
+  },
+  "henri-poincare": {
+    "file": "henri-poincare.png",
+    "description": "French mathematician, physicist and engineer (1854–1912)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:PSM_V82_D416_Henri_Poincare.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Henri_Poincaré"
+  },
+  "david-hilbert": {
+    "file": "david-hilbert.jpg",
+    "description": "German mathematician (1862–1943)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hilbert.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/David_Hilbert"
+  },
+  "kurt-godel": {
+    "file": "kurt-godel.jpg",
+    "description": "Mathematician and philosopher (1906–1978)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kurt_g%C3%B6del.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kurt_Gödel"
+  },
+  "alexander-grothendieck": {
+    "file": "alexander-grothendieck.jpg",
+    "description": "French mathematician (1928–2014)",
+    "credit": "Konrad Jacobs, Erlangen, Copyright by MFO / Original uploader was AEDP at it.wikipedia",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexander_Grothendieck_-_face.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Alexander_Grothendieck"
+  },
+  "maryam-mirzakhani": {
+    "file": "maryam-mirzakhani.jpg",
+    "description": "Iranian mathematician (1977–2017)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maryam_Mirzakhani.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Maryam_Mirzakhani"
+  },
+  "mary-somerville": {
+    "file": "mary-somerville.jpg",
+    "description": "Scottish scientist (1780–1872)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Phillips_-_Mary_Fairfax,_Mrs_William_Somerville,_1780_-_1872._Writer_on_science_-_Google_Art_Project.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mary_Somerville"
   }
 }

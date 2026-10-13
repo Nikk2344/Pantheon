@@ -32,6 +32,7 @@
 
   /* The two wings of the museum get their own identity colour. */
   --tk-science: #2563eb;
+  --tk-mathematics: #0f766e;
   --tk-philosophy: #b45309;
 
   /* Primary accent = science blue by default; category pages re-point it. */
@@ -70,6 +71,7 @@
   --tk-border-strong: #333b4d;
 
   --tk-science: #60a5fa;
+  --tk-mathematics: #5eead4;
   --tk-philosophy: #fbbf24;
 
   --tk-on-accent: #07090d;
@@ -95,6 +97,7 @@
   --color-accent: var(--tk-accent);
   --color-on-accent: var(--tk-on-accent);
   --color-science: var(--tk-science);
+  --color-mathematics: var(--tk-mathematics);
   --color-philosophy: var(--tk-philosophy);
   --color-sim-bg: var(--tk-sim-bg);
 
@@ -314,8 +317,8 @@
   }
 }
 /* Pantheon v2: modern observatory, shared by every surface. */
-:root { --tk-bg:#f7f8fa; --tk-raised:#ffffff; --tk-surface:#eef0f4; --tk-ink:#191c25; --tk-muted:#626977; --tk-faint:#727988; --tk-brand:#c95427; --tk-science:#2374ab; --tk-philosophy:#8054bc; --tk-accent:var(--tk-brand); --tk-radius:1rem; --tk-hero-grid:#cdd3df; }
-.dark { --tk-bg:#101216; --tk-surface:#181b21; --tk-raised:#171a20; --tk-ink:#f1f0ec; --tk-muted:#a3a7b2; --tk-faint:#89909e; --tk-border:#2b2e35; --tk-border-strong:#414650; --tk-brand:#ef936b; --tk-science:#8ec4e8; --tk-philosophy:#bba2e3; --tk-accent:var(--tk-brand); --tk-on-accent:#171310; --tk-hero-grid:#2b3039; }
+:root { --tk-bg:#f7f8fa; --tk-raised:#ffffff; --tk-surface:#eef0f4; --tk-ink:#191c25; --tk-muted:#626977; --tk-faint:#727988; --tk-brand:#c95427; --tk-science:#2374ab; --tk-mathematics:#1d7a5f; --tk-philosophy:#8054bc; --tk-accent:var(--tk-brand); --tk-radius:1rem; --tk-hero-grid:#cdd3df; }
+.dark { --tk-bg:#101216; --tk-surface:#181b21; --tk-raised:#171a20; --tk-ink:#f1f0ec; --tk-muted:#a3a7b2; --tk-faint:#89909e; --tk-border:#2b2e35; --tk-border-strong:#414650; --tk-brand:#ef936b; --tk-science:#8ec4e8; --tk-mathematics:#7fd1ae; --tk-philosophy:#bba2e3; --tk-accent:var(--tk-brand); --tk-on-accent:#171310; --tk-hero-grid:#2b3039; }
 [hidden] { display:none !important; }
 button,a,input,select,textarea { -webkit-tap-highlight-color:transparent; }
 button { cursor:pointer; }
@@ -348,6 +351,7 @@ em { font-style:normal; color:var(--tk-brand); }
 @media(max-width:500px) {.global-timeline>li{grid-template-columns:1fr;padding-left:18px;gap:6px;}.global-timeline>li::before{left:0;}.timeline-dot{position:absolute;left:-6px;top:1px;margin-top:13px;}.timeline-year{text-align:left;padding-top:10px;}.timeline-event{padding:19px;}.timeline-event h2{font-size:18px;}.timeline-toolbar{gap:12px;}.timeline-toolbar label{width:50%;}.timeline-toolbar select{font-size:11px;}}
 @media(max-width:620px) { .hero-copy h1 { font-size:clamp(36px,11vw,50px); } }
 .wing-science { --tk-accent:var(--tk-science); }
+.wing-mathematics { --tk-accent:var(--tk-mathematics); }
 .wing-philosophy { --tk-accent:var(--tk-philosophy); }
 
 /* Homepage: editorial desktop layout and dedicated compact phone presentation. */
@@ -382,10 +386,11 @@ em { font-style:normal; color:var(--tk-brand); }
 .home-section-heading h2,.home-next h2 { font-size:clamp(27px,2.7vw,38px);font-weight:500;letter-spacing:-.045em;line-height:1.15;margin-top:12px; }
 .home-section-heading>p { color:var(--tk-muted);font-size:12px;line-height:1.8; }
 .home-section-link { display:inline-flex;gap:20px;align-items:center;font-size:12px;color:var(--tk-brand);min-height:44px; }
-.home-doorways { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.home-doorways { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px; }
 .home-doorway { --door-accent:var(--tk-science);background:var(--tk-raised);border:1px solid var(--tk-border);border-radius:14px;padding:26px;transition:border-color .2s,background .2s; }
-.home-doorway-02 { --door-accent:var(--tk-philosophy); }
-.home-doorway-03 { --door-accent:var(--tk-brand); }
+.home-doorway-02 { --door-accent:var(--tk-mathematics); }
+.home-doorway-03 { --door-accent:var(--tk-philosophy); }
+.home-doorway-04 { --door-accent:var(--tk-brand); }
 .home-doorway:hover { border-color:var(--door-accent);background:color-mix(in srgb,var(--door-accent) 4%,var(--tk-raised)); }
 .doorway-top { display:flex;justify-content:space-between;align-items:center;color:var(--door-accent); }
 .doorway-top .eyebrow { font-size:9px;color:var(--door-accent); }
@@ -526,3 +531,5 @@ em { font-style:normal; color:var(--tk-brand); }
 @media(max-width:620px){.innovation-layout { gap:36px; }.innovation-process ol { grid-template-columns:1fr;gap:10px; }.innovation-process li { padding:18px; }.innovation-process h3 { margin:8px 0; }.innovation-article h2 { font-size:23px; }.innovation-credit h2 { font-size:17px; }.innovation-article p { font-size:14px; }.innovation-credit,.innovation-check { padding:20px; }.innovation-credit p,.innovation-process li p { font-size:12px; }.innovation-start nav { grid-template-columns:1fr;gap:5px; }.innovation-aside { grid-template-columns:1fr; }.innovation-sources p { font-size:12px; }}
 
 .innovation-intro>p:not(.eyebrow) { max-width:780px;line-height:1.8;margin-block:14px; }
+
+@media(min-width:621px) and (max-width:1000px) { .home-doorways { grid-template-columns:repeat(2,minmax(0,1fr)); } }

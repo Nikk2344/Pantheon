@@ -2,7 +2,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import creditsJson from '../data/portraits.json';
 
 export type Person = CollectionEntry<'people'>;
-export type Category = 'scientist' | 'philosopher';
+export type Category = 'scientist' | 'mathematician' | 'philosopher';
 
 interface PortraitCredit {
   file: string;
@@ -42,6 +42,13 @@ export const CATEGORY = {
     wing: 'wing-science',
     blurb: 'The people who worked out how the world actually behaves — and, just as importantly, how to find out.',
   },
+  mathematician: {
+    plural: 'Mathematicians',
+    singular: 'Mathematician',
+    slug: 'mathematicians',
+    wing: 'wing-mathematics',
+    blurb: 'The people who found out what must be true, and why: proof, number, structure, and the patterns beneath everything else.',
+  },
   philosopher: {
     plural: 'Philosophers',
     singular: 'Philosopher',
@@ -53,6 +60,7 @@ export const CATEGORY = {
 
 export function categoryFromSlug(slug: string): Category | null {
   if (slug === 'scientists') return 'scientist';
+  if (slug === 'mathematicians') return 'mathematician';
   if (slug === 'philosophers') return 'philosopher';
   return null;
 }

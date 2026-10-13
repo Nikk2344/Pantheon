@@ -69,7 +69,7 @@ const people = defineCollection({
     portraitNote: z.string().optional(),
     /** Name in the subject's own language/script, where different. */
     nativeName: z.string().optional(),
-    category: z.enum(['scientist', 'philosopher']),
+    category: z.enum(['scientist', 'mathematician', 'philosopher']),
     fields: z.array(z.string()).min(1),
     era: z.string(),
     region: z.string().default('Europe'),
