@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allBooks, verifyBookLinks, eraOf } from '../../lib/books';
+import { BOOK_KINDS } from '../../content.config';
+await verifyBookLinks();
+const books = await allBooks();
+const regions = [...new Set(books.map((b) => b.data.region))].sort();
+const eras = ['Ancient (before 500 CE)', 'Medieval (500–1400)', 'Early modern (1400–1700)', 'Enlightenment (1700–1800)', 'Modern (1800–present)'];
+const kinds = BOOK_KINDS.filter((k) => books.some((b) => b.data.kind === k));
+---
+<Base title="Books" description="Famous and foundational books from every region and era, with what each argues, why it matters, where to start, and where its claims are disputed.">
+ <section class="shell page-intro">
+  <p class="eyebrow">THE LIBRARY / {books.length} BOOKS</p>
+  <h1>The books that<br/><em>changed minds.</em></h1>
+  <p>Famous and foundational works from every region and era: what each argues, why it mattered, where to start reading, and where its claims are disputed. Summaries are in our own words; full texts are linked only where a legal free edition exists.</p>
+ </section>
+ <section class="shell">
+  <div class="directory-panel">
+   <label class="directory-search"><span aria-hidden="true">⌕</span><span class="sr-only">Search books</span><input id="book-search" type="search" placeholder="A title, author, idea, or language…"/></label>
+   <div class="directory-filters">
+    <label>Kind<select id="book-kind" class="filter-select"><option value="all">All kinds</option>{kinds.map((k) => <option value={k}>{k}</option>)}</select></label>
+    <label>Era<select id="book-era" class="filter-select"><option value="all">All eras</option>{eras.map((e) => <option value={e}>{e}</option>)}</select></label>
+    <label>Region of origin<select id="book-region" class="filter-select"><option value="all">All regions</option>{regions.map((r) => <option value={r}>{r}</option>)}</select></label>
+    <label>Free to read<select id="book-free" class="filter-select"><option value="all">Any</option><option value="yes">Legal full text linked</option></select></label>
+   </div>
+  </div>
+  <p class="directory-meta" role="status"><span id="book-count">{books.length} books</span></p>
+  <div class="atlas-grid" id="book-grid">
+   {books.map((b) => (
+    <a class="atlas-card" href={`/books/${b.id}`} data-book data-kind={b.data.kind} data-era={eraOf(b)} data-region={b.data.region} data-free={String(!!b.data.readOnline)}
+       data-search={[b.data.title, b.data.originalTitle, b.data.author, b.data.originalLanguage, b.data.summary, ...b.data.keyIdeas].filter(Boolean).join(' ')}>
+     <span class="eyebrow">{b.data.kind} · {b.data.year}</span>
+     <h3>{b.data.title} <span aria-hidden="true">↗</span></h3>
+     <p><strong>{b.data.author}</strong> · {b.data.originalLanguage}</p>
+     <p>{b.data.summary}</p>
+    </a>
+   ))}
+  </div>
+  <p id="book-empty" class="directory-meta" hidden>No books match those filters. <button type="button" id="book-reset" class="inline-link">Reset filters</button></p>
+ </section>
+</Base>
+<script>
+ const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+ const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+ const search = $<HTMLInputElement>('book-search'), kind = $<HTMLSelectElement>('book-kind'), era = $<HTMLSelectElement>('book-era'), region = $<HTMLSelectElement>('book-region'), free = $<HTMLSelectElement>('book-free');
+ const cards = [...document.querySelectorAll<HTMLElement>('[data-book]')];
+ function update() {
+  const q = norm(search.value.trim()); let n = 0;
+  for (const c of cards) {
+   const d = c.dataset;
+   const show = (!q || norm(d.search ?? '').includes(q)) && (kind.value === 'all' || d.kind === kind.value) && (era.value === 'all' || d.era === era.value) && (region.value === 'all' || d.region === region.value) && (free.value === 'all' || d.free === 'true');
+   c.hidden = !show; if (show) n++;
+  }
+  $('book-count').textContent = `${n} ${n === 1 ? 'book' : 'books'}`;
+  $('book-empty').hidden = n > 0;
+ }
+ for (const el of [search, kind, era, region, free]) el.addEventListener(el === search ? 'input' : 'change', update);
+ $('book-reset').addEventListener('click', () => { search.value = ''; kind.value = era.value = region.value = free.value = 'all'; update(); search.focus(); });
+</script>

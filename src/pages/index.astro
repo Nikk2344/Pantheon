@@ -11,21 +11,21 @@ const spotlight = ['marie-curie', 'j-robert-oppenheimer', 'mary-wollstonecraft',
 const innovations = await allInnovations();
 const contributions = people.reduce((total, person) => total + person.data.discoveries.length, 0) + innovations.length;
 const doorways = [
- { href: '/scientists', number: '01', label: 'SCIENCE', title: 'Understand the world.', text: 'Discoveries, experiments, and the people behind them.', detail: `${people.filter(p => p.data.category === 'scientist').length} scientists`, icon: '◎' },
- { href: '/mathematicians', number: '02', label: 'MATHEMATICS', title: 'Find out what must be true.', text: 'Proofs, number, structure, and the people who built them.', detail: `${people.filter(p => p.data.category === 'mathematician').length} mathematicians`, icon: '∑' },
- { href: '/philosophy', number: '03', label: 'PHILOSOPHY', title: 'Question what you know.', text: 'Compare schools of thought and examine their arguments.', detail: '75 schools & positions', icon: '∞' },
- { href: '/laboratory', number: '04', label: 'LABORATORY', title: 'Find out for yourself.', text: 'Change a variable. Make a prediction. See what follows.', detail: 'Interactive models & arguments', icon: '↗' },
+ { href: '/scientists', key: 'door.science', number: '01', label: 'SCIENCE', title: 'Understand the world.', text: 'Discoveries, experiments, and the people behind them.', detail: `${people.filter(p => p.data.category === 'scientist').length} scientists`, icon: '◎' },
+ { href: '/mathematicians', key: 'door.math', number: '02', label: 'MATHEMATICS', title: 'Find out what must be true.', text: 'Proofs, number, structure, and the people who built them.', detail: `${people.filter(p => p.data.category === 'mathematician').length} mathematicians`, icon: '∑' },
+ { href: '/philosophy', key: 'door.philosophy', number: '03', label: 'PHILOSOPHY', title: 'Question what you know.', text: 'Compare schools of thought and examine their arguments.', detail: '75 schools & positions', icon: '∞' },
+ { href: '/laboratory', key: 'door.lab', number: '04', label: 'LABORATORY', title: 'Find out for yourself.', text: 'Change a variable. Make a prediction. See what follows.', detail: 'Interactive models & arguments', icon: '↗' },
 ];
 ---
 <Base title="The Pantheon" description="Explore science, mathematics, and philosophy through sourced human stories, interactive experiments, and ideas you can take apart.">
  <div class="home-redesign">
   <section class="home-opening shell" aria-labelledby="home-title">
    <div class="home-opening-copy">
-    <p class="eyebrow"><span aria-hidden="true">✳</span> A FIELD GUIDE TO HUMAN CURIOSITY</p>
-    <h1 id="home-title" data-hi="Bade sawaal. Naye nazariye.">Big questions.<br/><span>Brighter perspectives.</span></h1>
-    <p class="home-lede" data-hi="Duniya ko samjho. Apni soch ko sawaal karo. Science aur philosophy ke ideas ko padho, aur khud karke dekho.">Understand the world. Question your assumptions. Meet the minds behind science, mathematics, and philosophy, then try their ideas for yourself.</p>
-    <div class="home-opening-actions"><a href="/explore" class="button primary" data-hi="Minds aur ideas khojo ↗">Explore the archive <span aria-hidden="true">↗</span></a><a href="/paths" class="button secondary">Find a starting point <span aria-hidden="true">→</span></a></div>
-    <p class="home-editorial-note">Sourced stories. Playable ideas. Room for disagreement.</p>
+    <p class="eyebrow"><span aria-hidden="true">✳</span> <span data-i18n="home.eyebrow" class="i18n-caps">A field guide to human curiosity</span></p>
+    <h1 id="home-title" data-hi="Bade sawaal. Naye nazariye."><span data-i18n="home.t1">Big questions.</span><br/><span><span data-i18n="home.t2">Brighter perspectives.</span></span></h1>
+    <p class="home-lede" data-i18n="home.lede" data-hi="Duniya ko samjho. Apni soch ko sawaal karo. Science aur philosophy ke ideas ko padho, aur khud karke dekho.">Understand the world. Question your assumptions. Meet the minds behind science, mathematics, and philosophy, then try their ideas for yourself.</p>
+    <div class="home-opening-actions"><a href="/explore" class="button primary" data-hi="Minds aur ideas khojo ↗"><span data-i18n="home.cta1">Explore the archive</span> <span aria-hidden="true">↗</span></a><a href="/paths" class="button secondary"><span data-i18n="home.cta2">Find a starting point</span> <span aria-hidden="true">→</span></a></div>
+    <p class="home-editorial-note" data-i18n="home.note">Sourced stories. Playable ideas. Room for disagreement.</p>
    </div>
    <aside class="home-question-board" aria-label="Start with a question">
     <div class="question-board-top"><span class="eyebrow">START WITH A QUESTION</span><span aria-hidden="true">↘</span></div>
@@ -36,8 +36,8 @@ const doorways = [
   </section>
   <div class="home-proof shell" aria-label="Inside the archive"><p><strong>{people.length}</strong> sourced profiles</p><p><strong>{contributions}</strong> contributions</p><p><strong>15</strong> learning paths</p><a href="/about">A curated, growing collection <span aria-hidden="true">↗</span></a></div>
   <section class="home-section shell" aria-labelledby="doorway-title">
-   <div class="home-section-heading"><div><p class="eyebrow">PICK A DIRECTION</p><h2 id="doorway-title">One curiosity. Many ways in.</h2></div><p>Read a story, follow an argument,<br/>or put an idea to the test.</p></div>
-   <div class="home-doorways">{doorways.map(item => <a href={item.href} class={`home-doorway home-doorway-${item.number}`}><div class="doorway-top"><span class="eyebrow">{item.number} / {item.label}</span><span class="doorway-icon" aria-hidden="true">{item.icon}</span></div><h3>{item.title}</h3><p>{item.text}</p><div class="doorway-bottom"><span>{item.detail}</span><span aria-hidden="true">↗</span></div></a>)}</div>
+   <div class="home-section-heading"><div><p class="eyebrow i18n-caps" data-i18n="home.pick">Pick a direction</p><h2 id="doorway-title" data-i18n="home.pickTitle">One curiosity. Many ways in.</h2></div><p>Read a story, follow an argument,<br/>or put an idea to the test.</p></div>
+   <div class="home-doorways">{doorways.map(item => <a href={item.href} class={`home-doorway home-doorway-${item.number}`}><div class="doorway-top"><span class="eyebrow">{item.number} / {item.label}</span><span class="doorway-icon" aria-hidden="true">{item.icon}</span></div><h3 data-i18n={item.key}>{item.title}</h3><p>{item.text}</p><div class="doorway-bottom"><span>{item.detail}</span><span aria-hidden="true">↗</span></div></a>)}</div>
   </section>
   <section class="home-section shell" aria-labelledby="ai-title"><div class="home-next"><div><p class="eyebrow">NEW / MODERN DISCOVERIES & AI</p><h2 id="ai-title">The ideas behind<br/>the intelligent machine.</h2><p>Explore transformers, generative models, human feedback, and AI for science. Twelve detailed articles explain the mechanisms, research teams, evidence, and limits.</p></div><nav aria-label="Modern discoveries"><a href="/innovations"><span>Explore all 12 discoveries</span>↗</a><a href="/innovations/transformer"><span>How transformers connect ideas</span>↗</a><a href="/innovations/alphafold-3"><span>Predicting molecular structures</span>↗</a></nav></div></section>
   <section class="home-section shell" aria-labelledby="people-title">

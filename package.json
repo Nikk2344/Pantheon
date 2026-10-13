@@ -12,7 +12,7 @@
     "check": "astro check",
     "portraits": "node scripts/fetch-portraits.mjs",
     "verify": "node scripts/verify-visual.mjs",
-    "test": "node --test scripts/test-models.mjs scripts/test-quantum.mjs scripts/test-atlas.mjs scripts/test-solar.mjs",
+    "test": "node --test scripts/test-models.mjs scripts/test-quantum.mjs scripts/test-atlas.mjs scripts/test-solar.mjs scripts/test-i18n.mjs",
     "verify:app": "node scripts/verify-app.mjs",
     "astro": "astro",
     "verify:catalogue": "node scripts/verify-catalogue.mjs",

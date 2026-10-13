@@ -9,6 +9,7 @@ import PersonCard from '../../components/PersonCard.astro';
 import LearningTools from '../../components/LearningTools';
 import { chronologicalYear } from '../../data/learning';
 import { TOPICS } from '../../data/topics';
+import { booksFor } from '../../lib/books';
 import { SCIENTIST_VIEWS } from '../../data/scientist-views';
 import { SCHOOLS } from '../../data/schools';
 import {
@@ -39,6 +40,7 @@ const outlook = SCIENTIST_VIEWS[person.id];
 const meta = CATEGORY[data.category];
 const portrait = portraitFor(person.id);
 const related = await relatedTo(person);
+const books = await booksFor(person.id);
 const { Content } = await render(person);
 
 const interactives = data.discoveries.filter(
@@ -272,6 +274,7 @@ const facts = [
   </div>
 
   {TOPICS.some(t=>t.people.includes(person.id))&&<section class="shell section-space"><div class="section-heading"><h2>Explore the bigger idea.</h2></div><div class="journey-grid">{TOPICS.filter(t=>t.people.includes(person.id)).map(t=><a href={`/topics/${t.id}`} class="journey-card"><p class="eyebrow">SCIENCE TOPIC</p><h3>{t.title}</h3><p>{t.description}</p><span class="inline-link">Read the guide ↗</span></a>)}</div></section>}
+  {books.length > 0 && <section class="shell section-space"><div class="section-heading"><h2>Books to read.</h2><a href="/books" class="home-section-link">The library ↗</a></div><div class="atlas-grid">{books.map((b) => <a class="atlas-card" href={`/books/${b.id}`}><span class="eyebrow">{b.data.kind} · {b.data.year}</span><h3>{b.data.title} <span aria-hidden="true">↗</span></h3><p>{b.data.author}</p></a>)}</div></section>}
   <!-- Related -->
   {
     related.length > 0 && (

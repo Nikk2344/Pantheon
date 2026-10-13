@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allBooks, eraOf } from '../../lib/books';
+import { allPeople } from '../../lib/people';
+export async function getStaticPaths() {
+  const books = await allBooks();
+  return books.map((book) => ({ params: { id: book.id }, props: { book } }));
+}
+const { book } = Astro.props;
+const d = book.data;
+const people = await allPeople();
+const byId = new Map(people.map((p) => [p.id, p]));
+const authors = d.authorIds.map((id) => byId.get(id)!).filter(Boolean);
+const related = d.related.filter((id) => !d.authorIds.includes(id)).map((id) => byId.get(id)!).filter(Boolean);
+---
+<Base title={d.title} description={d.summary}>
+ <section class="shell page-intro">
+  <a class="inline-link" href="/books">← The library</a>
+  <p class="eyebrow topic-kicker">{d.kind.toUpperCase()} / {d.year} / {d.originalLanguage.toUpperCase()}</p>
+  <h1>{d.title}</h1>
+  <p>{d.originalTitle ? <em>{d.originalTitle} · </em> : null}by {d.author}. {d.summary}</p>
+ </section>
+ <div class="shell atlas-reading">
+  <section class="atlas-question-panel"><p class="eyebrow">WHY IT MATTERS</p><h2>{d.whyItMatters}</h2></section>
+  <section><h2>Three ideas to look for</h2><ol class="book-ideas">{d.keyIdeas.map((k) => <li>{k}</li>)}</ol></section>
+  <section><h2>Where to start</h2><p>{d.whereToStart}</p>
+   {d.readOnline && <p><a class="inline-link" href={d.readOnline} rel="noreferrer">Read a free, legal full text ↗</a></p>}</section>
+  <section><h2>Keep in mind</h2><p>{d.caveat}</p></section>
+  {authors.length > 0 && <section><h2>The author{authors.length > 1 ? 's' : ''}</h2><div class="atlas-jumps">{authors.map((p) => <a href={`/p/${p.id}`}>{p.data.name} ↗</a>)}</div></section>}
+  {related.length > 0 && <section><h2>Connected thinkers</h2><div class="atlas-jumps">{related.map((p) => <a href={`/p/${p.id}`}>{p.data.name} ↗</a>)}</div></section>}
+  <section><h2>Sources</h2><ul class="book-sources">{d.sources.map((s) => <li><a class="inline-link" href={s.url} rel="noreferrer">{s.title} ↗</a>{s.note ? <span> — {s.note}</span> : null}</li>)}</ul>
+   <p>This page summarises the work in our own words and is an orientation to reading it, not a substitute. Era: {eraOf(book)}.</p></section>
+ </div>
+</Base>
+<style is:global>
+ .book-ideas{padding-left:1.2rem;display:grid;gap:.7rem;line-height:1.7;color:var(--tk-muted)}
+ .book-sources{display:grid;gap:.6rem;line-height:1.6;color:var(--tk-muted)}
+</style>

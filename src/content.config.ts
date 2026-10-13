@@ -126,4 +126,34 @@ const innovations = defineCollection({
   }),
 });
 
-export const collections = { people, innovations };
+export const BOOK_KINDS = [
+  'Science', 'Mathematics', 'Philosophy', 'Literature', 'History',
+  'Foundational text', 'Politics & society', 'Medicine', 'Technology & AI',
+] as const;
+
+const books = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/books' }),
+  schema: z.object({
+    title: z.string(),
+    originalTitle: z.string().optional(),
+    author: z.string(),
+    /** Ids of authors who have a profile; checked after load. */
+    authorIds: z.array(z.string()).default([]),
+    year: z.union([z.number(), z.string()]),
+    originalLanguage: z.string(),
+    region: z.enum(['Africa', 'Asia', 'Europe', 'North America', 'South America', 'Oceania']),
+    kind: z.enum(BOOK_KINDS),
+    summary: z.string(),
+    whyItMatters: z.string(),
+    keyIdeas: z.array(z.string()).length(3),
+    whereToStart: z.string(),
+    /** Required: every book states authorship disputes, reception, or limits. */
+    caveat: z.string(),
+    related: z.array(z.string()).default([]),
+    /** Only for legal full texts. */
+    readOnline: z.url().optional(),
+    sources: z.array(source).min(2),
+  }),
+});
+
+export const collections = { people, innovations, books };
