@@ -1,0 +1,58 @@
+name: Auto Deploy Pantheon to AWS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build & Deploy to AWS (CloudFront + ECS Fargate)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Static Site
+        run: npm run build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Sync Static Site to S3 Bucket
+        run: |
+          aws s3 sync dist s3://pantheon-atlas-148142828268 --delete
+
+      - name: Invalidate CloudFront CDN Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id E2TBST97ZUHP5T --paths "/*"
+
+      - name: Log in to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build & Push Docker Container
+        env:
+          ECR_REGISTRY: 148142828268.dkr.ecr.ap-south-1.amazonaws.com
+          ECR_REPOSITORY: bg-demo-app
+          IMAGE_TAG: blue
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Force Rolling Deployment on ECS Fargate
+        run: |
+          aws ecs update-service --cluster bg-demo-cluster --service pantheon-service --force-new-deployment
