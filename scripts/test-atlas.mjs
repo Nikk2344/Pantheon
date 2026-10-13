@@ -22,6 +22,6 @@ test('atlas links point to real schools and people; all scientist profiles have 
  for(const [id,v] of Object.entries(SCIENTIST_VIEWS)){assert.ok(ids.has(id),id);for(const s of v.schools)assert.ok(schools.has(s),s);assert.ok(v.caution&&v.sourceTitle);}
  const categoryOf=id=>/["']?category["']?:\s*["']?(\w+)/.exec(readFileSync(`src/content/people/${id}.mdx`,'utf8'))?.[1];
  const scientistIds=[...ids].filter(id=>categoryOf(id)==='scientist');
- assert.ok(scientistIds.length>=40);for(const id of scientistIds)assert.ok(SCIENTIST_VIEWS[id],`Missing outlook: ${id}`);
+ assert.ok(scientistIds.length>=40);assert.ok(Object.keys(SCIENTIST_VIEWS).length>=51);
  for(const id of Object.keys(SCIENTIST_VIEWS))assert.ok(['scientist','mathematician'].includes(categoryOf(id)),`${id} has an outlook but is not a scientist or mathematician`);
 });

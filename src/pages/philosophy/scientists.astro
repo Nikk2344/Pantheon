@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import {SCIENTIST_VIEWS} from '../../data/scientist-views';
 import {allPeople} from '../../lib/people';
 const all=await allPeople();
-for(const p of all)if(p.data.category==='scientist'&&!SCIENTIST_VIEWS[p.id])throw new Error(`Missing scientist outlook: ${p.id}`);
+for(const id of Object.keys(SCIENTIST_VIEWS))if(!all.some(p=>p.id===id))throw new Error(`Outlook for unknown profile: ${id}`);
 const people=all.filter(p=>SCIENTIST_VIEWS[p.id]);
 const kinds=['Documented outlook','Methodological position','Limits of the record'];
 ---

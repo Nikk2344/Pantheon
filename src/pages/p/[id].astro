@@ -41,6 +41,9 @@ const meta = CATEGORY[data.category];
 const portrait = portraitFor(person.id);
 const related = await relatedTo(person);
 const books = await booksFor(person.id);
+// "What Kos found" is wrong for "Hippocrates of Kos": use the last word only for plain Given Family names.
+const nameWords = data.name.split(' ');
+const displayName = nameWords.length === 2 ? nameWords[1]! : data.name;
 const { Content } = await render(person);
 
 const interactives = data.discoveries.filter(
@@ -200,10 +203,10 @@ const facts = [
         <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
           {
             data.category === 'philosopher'
-              ? `What ${data.name.split(' ').slice(-1)[0]} argued`
+              ? `What ${displayName} argued`
               : data.category === 'mathematician'
                 ? `What ${data.name} worked out`
-                : `What ${data.name.split(' ').slice(-1)[0]} found`
+                : `What ${displayName} found`
           }
         </h2>
         <p class="mt-2 text-[15px] leading-relaxed text-muted">

@@ -1,0 +1,346 @@
+// BOOKS batch: regional scholarly, scientific, philosophical and historical works.
+const W = 'https://en.wikipedia.org/wiki/';
+
+export const books = [
+  {
+    id: 'canon-of-medicine', title: 'The Canon of Medicine', originalTitle: 'al-Qānūn fī al-Ṭibb',
+    author: 'Avicenna (Ibn Sina)', authorIds: ['avicenna'], year: 'c. 1025', originalLanguage: 'Arabic', region: 'Asia', kind: 'Medicine',
+    summary: 'A systematic medical encyclopaedia in five books covering general principles, simple drugs, diseases by body part, diseases not confined to one organ, and compound remedies. It organises Greek, Islamic and Indian medical knowledge into one ordered scheme.',
+    whyItMatters: 'It served as a standard medical reference in the Islamic world and, in Latin translation, in European universities for several centuries.',
+    keyIdeas: ['Medicine organised as a logical system from general principles to particular cures', 'Detailed treatment of drugs, their qualities and compounding', 'Humoral theory as the framework for diagnosis and treatment'],
+    whereToStart: 'Use an English selection or the partial translations of Book 1, which sets out the theory. Read it as a historical system, not as a manual.',
+    caveat: 'Its explanations rest on humoral theory, which modern medicine does not accept. Dating is approximate, and the text was compiled over some years.',
+    related: ['avicenna'],
+    sources: [{ title: 'The Canon of Medicine (Wikipedia)', url: W + 'The_Canon_of_Medicine' }, { title: 'Avicenna (Wikipedia)', url: W + 'Avicenna' }]
+  },
+  {
+    id: 'book-of-healing', title: 'The Book of Healing', originalTitle: 'Kitāb al-Shifāʾ',
+    author: 'Avicenna (Ibn Sina)', authorIds: ['avicenna'], year: 'c. 1020–1027', originalLanguage: 'Arabic', region: 'Asia', kind: 'Philosophy',
+    summary: 'A large philosophical and scientific encyclopaedia covering logic, natural sciences, mathematics and metaphysics in the Aristotelian tradition. It is not a medical text despite its title: the healing is of the soul from ignorance.',
+    whyItMatters: 'Its metaphysics and psychology shaped later Islamic philosophy and, through Latin translations of parts, medieval European thought.',
+    keyIdeas: ['Distinction between essence and existence in metaphysics', 'Systematic restatement of Aristotelian logic and natural science', 'Analysis of the soul and of knowledge'],
+    whereToStart: 'Begin with the Metaphysics (Ilahiyyat) in an English translation, ideally with a scholarly introduction.',
+    caveat: 'It is a vast work and no single complete English translation is standard; the exact dates of composition are approximate.',
+    related: ['avicenna'],
+    sources: [{ title: 'The Book of Healing (Wikipedia)', url: W + 'The_Book_of_Healing' }, { title: 'Avicenna (Wikipedia)', url: W + 'Avicenna' }]
+  },
+  {
+    id: 'muqaddimah', title: 'The Muqaddimah', originalTitle: 'al-Muqaddima',
+    author: 'Ibn Khaldun', authorIds: ['ibn-khaldun'], year: '1377', originalLanguage: 'Arabic', region: 'Africa', kind: 'History',
+    summary: 'The introduction to Ibn Khaldun’s universal history, which examines how societies form, flourish and decline. It discusses group solidarity (asabiyya), economics, politics, urban and nomadic life, and the sciences.',
+    whyItMatters: 'It is widely regarded as an early work of social theory and historical method, and is read by historians, sociologists and economists.',
+    keyIdeas: ['Group solidarity (asabiyya) as a force in the rise of dynasties', 'Cyclical patterns in the life of states', 'Critical method for evaluating historical reports'],
+    whereToStart: 'Franz Rosenthal’s English translation, abridged by N. J. Dawood, is the usual route; start with the early chapters on civilisation.',
+    caveat: 'Some modern readers describe it as anticipating later disciplines, but such comparisons are interpretive. Its claims about nomads and settled people reflect its time and place.',
+    related: ['ibn-khaldun'],
+    sources: [{ title: 'Muqaddimah (Wikipedia)', url: W + 'Muqaddimah' }, { title: 'Ibn Khaldun (Wikipedia)', url: W + 'Ibn_Khaldun' }]
+  },
+  {
+    id: 'book-of-optics', title: 'Book of Optics', originalTitle: 'Kitāb al-Manāẓir',
+    author: 'Ibn al-Haytham (Alhazen)', authorIds: ['ibn-al-haytham'], year: 'c. 1011–1021', originalLanguage: 'Arabic', region: 'Asia', kind: 'Science',
+    summary: 'A seven-book treatise on vision, light and reflection that argues the eye receives light from objects instead of emitting rays. It combines geometry, anatomy and experiment.',
+    whyItMatters: 'It replaced emission theories of vision with a model of light entering the eye and influenced European optics after its Latin translation.',
+    keyIdeas: ['Vision results from light entering the eye', 'Experiments with the camera obscura and with reflection and refraction', 'Psychology of visual perception'],
+    whereToStart: 'A. I. Sabra’s English translation of Books I–III is the standard scholarly route; begin with the introduction to Book I.',
+    caveat: 'The work is dense and mathematical in places. Popular claims that he founded the scientific method alone are overstated.',
+    related: ['ibn-al-haytham'],
+    sources: [{ title: 'Book of Optics (Wikipedia)', url: W + 'Book_of_Optics' }, { title: 'Ibn al-Haytham (Wikipedia)', url: W + 'Ibn_al-Haytham' }]
+  },
+  {
+    id: 'al-jabr', title: 'The Compendious Book on Calculation by Completion and Balancing', originalTitle: 'al-Kitāb al-mukhtaṣar fī ḥisāb al-jabr wa-l-muqābala',
+    author: 'Muhammad ibn Musa al-Khwarizmi', authorIds: ['al-khwarizmi'], year: 'c. 820 CE', originalLanguage: 'Arabic', region: 'Asia', kind: 'Mathematics',
+    summary: 'A practical treatise that gives systematic methods for solving linear and quadratic equations, together with geometric justifications and applications to inheritance and land measurement. It is written in words, not symbols.',
+    whyItMatters: 'The word “algebra” comes from its title, and it presented algebra as a discipline with its own procedures.',
+    keyIdeas: ['Reduction of equations to standard types by completing and balancing', 'Geometric demonstration of quadratic solutions', 'Applications to legacy and practical problems'],
+    whereToStart: 'Use Frederic Rosen’s older English translation or a modern edition with commentary, beginning with the quadratic cases.',
+    caveat: 'It does not use algebraic symbols and has no negative or zero solutions. Its sources, including Greek, Indian and Babylonian traditions, are debated.',
+    related: ['al-khwarizmi'],
+    sources: [{ title: 'The Compendious Book (Wikipedia)', url: W + 'The_Compendious_Book_on_Calculation_by_Completion_and_Balancing' }, { title: 'Al-Khwarizmi (MacTutor)', url: 'https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/' }]
+  },
+  {
+    id: 'hayy-ibn-yaqzan', title: 'Hayy ibn Yaqzan', originalTitle: 'Ḥayy ibn Yaqẓān',
+    author: 'Ibn Tufayl', authorIds: [], year: 'c. 1175', originalLanguage: 'Arabic', region: 'Africa', kind: 'Philosophy',
+    summary: 'A philosophical tale of a child raised alone on an island who comes to knowledge of nature and of God through reason and reflection. It then meets a man from a religious society and compares the two paths.',
+    whyItMatters: 'It is a key work of Andalusian philosophy and was read in Latin and English translation in early modern Europe.',
+    keyIdeas: ['Knowledge reached by unaided reason', 'Relation of philosophical insight to revealed religion', 'Allegorical storytelling as philosophy'],
+    whereToStart: 'Read a modern English translation such as Lenn Goodman’s in full; it is short.',
+    caveat: 'The work is allegorical, and its intended message about philosophy and religion is debated. Its influence on later European writers is sometimes argued, not proved.',
+    related: ['avicenna'],
+    sources: [{ title: 'Hayy ibn Yaqdhan (Wikipedia)', url: W + 'Hayy_ibn_Yaqdhan' }, { title: 'Ibn Tufayl (Wikipedia)', url: W + 'Ibn_Tufayl' }]
+  },
+  {
+    id: 'arthashastra', title: 'The Arthashastra', originalTitle: 'Arthaśāstra',
+    author: 'Attributed to Kautilya (Chanakya)', authorIds: [], year: 'c. 3rd century BCE–3rd century CE', originalLanguage: 'Sanskrit', region: 'Asia', kind: 'Politics & society',
+    summary: 'A Sanskrit treatise on statecraft, administration, law, taxation, espionage and foreign policy. It describes how a ruler should govern and secure a kingdom.',
+    whyItMatters: 'It is one of the main surviving sources for ancient Indian political and economic thought.',
+    keyIdeas: ['The king’s duty as welfare and security of the state', 'Systematic treatment of administration, revenue and law', 'Theory of relations among neighbouring states'],
+    whereToStart: 'R. P. Kangle’s edition and translation or L. N. Rangarajan’s Penguin version; start with the books on the king and on administration.',
+    caveat: 'Traditional attribution to Kautilya is debated; scholars generally see it as a composite text from a long period. Its practical use at any court is unclear.',
+    related: [],
+    sources: [{ title: 'Arthashastra (Wikipedia)', url: W + 'Arthashastra' }, { title: 'Chanakya (Wikipedia)', url: W + 'Chanakya' }]
+  },
+  {
+    id: 'sushruta-samhita', title: 'Sushruta Samhita', originalTitle: 'Suśruta Saṃhitā',
+    author: 'Traditionally attributed to Sushruta', authorIds: [], year: '1st millennium BCE–c. 500 CE', originalLanguage: 'Sanskrit', region: 'Asia', kind: 'Medicine',
+    summary: 'A Sanskrit compendium of Ayurvedic medicine that is especially known for its treatment of surgery, instruments and anatomy. It also covers diseases, drugs and treatment.',
+    whyItMatters: 'It is a major source for the history of surgery and medicine in South Asia.',
+    keyIdeas: ['Surgical procedures and instruments', 'Training of surgeons through practice on models', 'Classification of diseases and remedies'],
+    whereToStart: 'Use a scholarly English translation such as that of Dominik Wujastyk’s anthology or the P. V. Sharma translation, beginning with the surgical sections.',
+    caveat: 'Authorship and date are uncertain, and the text was revised by later editors. Claims about the earliest forms of surgery require care.',
+    related: [],
+    sources: [{ title: 'Sushruta Samhita (Wikipedia)', url: W + 'Sushruta_Samhita' }, { title: 'Sushruta (Wikipedia)', url: W + 'Sushruta' }]
+  },
+  {
+    id: 'charaka-samhita', title: 'Charaka Samhita', originalTitle: 'Caraka Saṃhitā',
+    author: 'Attributed to Charaka (revised by Dridhabala)', authorIds: [], year: 'c. 2nd century BCE–5th century CE', originalLanguage: 'Sanskrit', region: 'Asia', kind: 'Medicine',
+    summary: 'A foundational Sanskrit text of Ayurveda focused on internal medicine, diagnosis, drugs, the body and ethics for physicians. It has traditional sections on principles, diagnosis, body, senses, treatment and success.',
+    whyItMatters: 'It is one of the two classical sources of Ayurvedic medicine and a major source for early Indian ideas of health and disease.',
+    keyIdeas: ['Health as balance of the three doshas', 'Medical ethics and the physician’s conduct', 'Diagnosis, prognosis and therapy'],
+    whereToStart: 'Use a translation with commentary, such as that edited by P. V. Sharma, and begin with the first section on principles.',
+    caveat: 'The text is composite: an earlier layer is ascribed to Agnivesha and Charaka, with later additions. The dating given here is approximate and scholarly estimates vary.',
+    related: [],
+    sources: [{ title: 'Charaka Samhita (Wikipedia)', url: W + 'Charaka_Samhita' }, { title: 'Charaka (Wikipedia)', url: W + 'Charaka' }]
+  },
+  {
+    id: 'aryabhatiya', title: 'Aryabhatiya', originalTitle: 'Āryabhaṭīya',
+    author: 'Aryabhata', authorIds: ['aryabhata'], year: '499 CE', originalLanguage: 'Sanskrit', region: 'Asia', kind: 'Mathematics',
+    summary: 'A short Sanskrit work in verse on mathematics and astronomy, covering arithmetic, algebra, trigonometry, the motion of planets and eclipses. It is divided into four sections.',
+    whyItMatters: 'It is one of the oldest surviving Indian mathematical astronomy texts by a named author and shaped later Indian work.',
+    keyIdeas: ['A table of sines and methods of calculation', 'Planetary motions explained with a system of epicycles', 'Account of eclipses as shadow phenomena'],
+    whereToStart: 'Walter Clark’s English translation or a modern annotated edition; start with the mathematics section (Ganitapada).',
+    caveat: 'The verses are terse and rely on commentary. Interpretations such as a rotating Earth are discussed in the scholarship and not settled.',
+    related: ['aryabhata'],
+    sources: [{ title: 'Aryabhatiya (Wikipedia)', url: W + 'Aryabhatiya' }, { title: 'Aryabhata (MacTutor)', url: 'https://mathshistory.st-andrews.ac.uk/Biographies/Aryabhata_I/' }]
+  },
+  {
+    id: 'brahmasphutasiddhanta', title: 'Brahmasphutasiddhanta', originalTitle: 'Brāhmasphuṭasiddhānta',
+    author: 'Brahmagupta', authorIds: ['brahmagupta'], year: '628 CE', originalLanguage: 'Sanskrit', region: 'Asia', kind: 'Mathematics',
+    summary: 'A Sanskrit astronomical treatise in verse with chapters on arithmetic and algebra. It sets out rules for working with zero and with positive and negative numbers.',
+    whyItMatters: 'It is among the earliest surviving texts to treat zero as a number with arithmetic rules.',
+    keyIdeas: ['Rules for arithmetic with zero, positive and negative quantities', 'Methods for solving quadratic and indeterminate equations', 'Astronomical computation'],
+    whereToStart: 'Use H. T. Colebrooke’s old translation of the mathematics chapters or a modern commentary; start with chapter 18 on algebra.',
+    caveat: 'Brahmagupta’s statement on division by zero is not correct by modern standards. The text is difficult without commentary.',
+    related: ['brahmagupta'],
+    sources: [{ title: 'Brahmasphutasiddhanta (Wikipedia)', url: W + 'Brahmasphutasiddhanta' }, { title: 'Brahmagupta (MacTutor)', url: 'https://mathshistory.st-andrews.ac.uk/Biographies/Brahmagupta/' }]
+  },
+  {
+    id: 'lilavati', title: 'Lilavati', originalTitle: 'Līlāvatī',
+    author: 'Bhaskara II', authorIds: ['bhaskara-ii'], year: '1150', originalLanguage: 'Sanskrit', region: 'Asia', kind: 'Mathematics',
+    summary: 'A Sanskrit mathematical treatise in verse, forming part of Bhaskara II’s Siddhanta Shiromani. It covers arithmetic, geometry, measurement and series through worked problems.',
+    whyItMatters: 'It was a standard teaching text in India for centuries and is a classic of Indian mathematics.',
+    keyIdeas: ['Arithmetic and geometry taught through verse problems', 'Rules for series and combinations', 'Practical measurement and mensuration'],
+    whereToStart: 'Use an English translation with commentary and read selected problems before the rules that follow.',
+    caveat: 'Stories that it was named for his daughter are tradition, not documented fact. The problems are in a poetic style that can obscure the method.',
+    related: ['bhaskara-ii'],
+    sources: [{ title: 'Lilavati (Wikipedia)', url: W + 'Lilavati' }, { title: 'Bhaskara II (MacTutor)', url: 'https://mathshistory.st-andrews.ac.uk/Biographies/Bhaskara_II/' }]
+  },
+  {
+    id: 'yuktibhasa', title: 'Yuktibhasa', originalTitle: 'Yuktibhāṣā',
+    author: 'Jyeshthadeva', authorIds: [], year: 'c. 1530', originalLanguage: 'Malayalam', region: 'Asia', kind: 'Mathematics',
+    summary: 'A Malayalam work that explains mathematics and astronomy of the Kerala school, giving reasoning and proofs for results found in earlier texts. It treats infinite series and trigonometric functions.',
+    whyItMatters: 'It preserves rationales, uncommon in Indian texts, for results associated with Madhava on infinite series.',
+    keyIdeas: ['Proofs for infinite series for pi and trigonometric functions', 'Derivations of astronomical computations', 'Explanation of method together with result'],
+    whereToStart: 'K. V. Sarma’s edition with English translation is the standard scholarly access; start with the section on series.',
+    caveat: 'Its date is approximate. The question of whether Kerala results influenced Europe is not established by direct evidence.',
+    related: ['madhava'],
+    sources: [{ title: 'Yuktibhasa (Wikipedia)', url: W + 'Yuktibh%C4%81%E1%B9%A3%C4%81' }, { title: 'Madhava (MacTutor)', url: 'https://mathshistory.st-andrews.ac.uk/Biographies/Madhava/' }]
+  },
+  {
+    id: 'nine-chapters', title: 'The Nine Chapters on the Mathematical Art', originalTitle: '九章算術 (Jiuzhang suanshu)',
+    author: 'Anonymous; commentary by Liu Hui', authorIds: ['liu-hui'], year: 'c. 1st century CE (commentary 263 CE)', originalLanguage: 'Chinese', region: 'Asia', kind: 'Mathematics',
+    summary: 'A collection of 246 problems with solutions covering fields, grain, proportion, geometry, simultaneous linear equations and right-angled triangles. Liu Hui wrote an influential commentary in 263 CE.',
+    whyItMatters: 'It is the foundation of the classical Chinese mathematical tradition.',
+    keyIdeas: ['Problem-and-algorithm method of teaching', 'Matrix-style elimination for linear systems', 'Negative numbers and the Gougu theorem'],
+    whereToStart: 'Shen Kangshen, Crossley and Lun’s English translation with Liu Hui’s commentary; begin with the first chapter on fields.',
+    caveat: 'The original text was compiled over time and its date is approximate. Parts of Liu Hui’s commentary contain arguments that go beyond the original.',
+    related: ['liu-hui'],
+    sources: [{ title: 'The Nine Chapters (Wikipedia)', url: W + 'The_Nine_Chapters_on_the_Mathematical_Art' }, { title: 'Liu Hui (MacTutor)', url: 'https://mathshistory.st-andrews.ac.uk/Biographies/Liu_Hui/' }]
+  },
+  {
+    id: 'dream-pool-essays', title: 'Dream Pool Essays', originalTitle: '夢溪筆談 (Mengxi bitan)',
+    author: 'Shen Kuo', authorIds: [], year: 'c. 1088', originalLanguage: 'Chinese', region: 'Asia', kind: 'Science',
+    summary: 'A collection of notes by a Song dynasty official and polymath on astronomy, mathematics, geology, magnetism, medicine, technology and the arts. It records observations and practical details of his time.',
+    whyItMatters: 'It is a major source for the history of science and technology in medieval China, including early descriptions of the magnetic needle compass.',
+    keyIdeas: ['Observations of magnetic declination and compass use', 'Geological reasoning about erosion and fossils', 'Record of craft and technical innovation such as movable type'],
+    whereToStart: 'Use a modern translation or selection; Joseph Needham’s Science and Civilisation in China draws on it heavily and is a useful guide.',
+    caveat: 'The work is a miscellany, not a systematic treatise. Many later claims about Shen Kuo’s priority need checking against the text.',
+    related: [],
+    sources: [{ title: 'Dream Pool Essays (Wikipedia)', url: W + 'Dream_Pool_Essays' }, { title: 'Shen Kuo (Wikipedia)', url: W + 'Shen_Kuo' }]
+  },
+  {
+    id: 'compendium-of-materia-medica', title: 'Compendium of Materia Medica', originalTitle: '本草綱目 (Bencao gangmu)',
+    author: 'Li Shizhen', authorIds: [], year: '1578 (printed 1596)', originalLanguage: 'Chinese', region: 'Asia', kind: 'Medicine',
+    summary: 'A large Ming dynasty encyclopaedia of medicinal substances from plants, animals and minerals, with descriptions, preparation and uses. It cites earlier works and corrects some errors.',
+    whyItMatters: 'It is one of the most important works of traditional Chinese pharmacology and natural history.',
+    keyIdeas: ['Systematic classification of natural substances', 'Compilation and critical correction of earlier sources', 'Link of drug use to clinical practice'],
+    whereToStart: 'Use a scholarly translation of selected entries, or the introduction in Paul Unschuld’s studies of Chinese medicine.',
+    caveat: 'It records historical remedies, many of which are not supported by modern evidence. Some entries mix practice with legend.',
+    related: [],
+    sources: [{ title: 'Compendium of Materia Medica (Wikipedia)', url: W + 'Compendium_of_Materia_Medica' }, { title: 'Li Shizhen (Wikipedia)', url: W + 'Li_Shizhen' }]
+  },
+  {
+    id: 'tiangong-kaiwu', title: 'The Exploitation of the Works of Nature', originalTitle: '天工開物 (Tiangong kaiwu)',
+    author: 'Song Yingxing', authorIds: [], year: '1637', originalLanguage: 'Chinese', region: 'Asia', kind: 'Technology & AI',
+    summary: 'A late Ming illustrated encyclopaedia of agriculture and craft technology, covering grain, textiles, salt, ceramics, metals, paper, ships and more. It describes how things were produced in Chinese workshops.',
+    whyItMatters: 'It is one of the best records of pre-industrial Chinese technology.',
+    keyIdeas: ['Illustrated account of agricultural and craft practices', 'Technology as the working of natural materials', 'Detailed processes in metallurgy and textiles'],
+    whereToStart: 'Sun and Sun’s English translation (1966) is the standard; browse the chapters on textiles and ceramics with the illustrations.',
+    caveat: 'It is a descriptive record and not a theoretical work. The work was long neglected in China and its textual history is complex.',
+    related: [],
+    sources: [{ title: 'Tiangong Kaiwu (Wikipedia)', url: W + 'Tiangong_Kaiwu' }, { title: 'Song Yingxing (Wikipedia)', url: W + 'Song_Yingxing' }]
+  },
+  {
+    id: 'kojiki', title: 'Kojiki', originalTitle: '古事記',
+    author: 'Ō no Yasumaro (compiler)', authorIds: [], year: '712', originalLanguage: 'Old Japanese / Classical Chinese', region: 'Asia', kind: 'Foundational text',
+    summary: 'The oldest surviving Japanese chronicle, presenting myths, genealogies and legendary history from the creation of the world to the early imperial court. It was compiled at the request of Empress Genmei.',
+    whyItMatters: 'It is a primary source for early Japanese myth, language and the self-presentation of the imperial house.',
+    keyIdeas: ['Creation myths and the origin of the islands', 'Genealogies that legitimise the imperial line', 'Early records of Japanese poetry and names'],
+    whereToStart: 'Donald Philippi’s or Gustav Heldt’s English translation; read the first part (the age of the gods) first.',
+    caveat: 'It is a mix of myth and court record, not a neutral history; its political purpose is widely discussed. Dates for the earliest rulers are not reliable.',
+    related: [],
+    sources: [{ title: 'Kojiki (Wikipedia)', url: W + 'Kojiki' }, { title: 'Nihon Shoki (Wikipedia)', url: W + 'Nihon_Shoki' }]
+  },
+  {
+    id: 'nihon-shoki', title: 'Nihon Shoki', originalTitle: '日本書紀',
+    author: 'Prince Toneri and court scholars (compilers)', authorIds: [], year: '720', originalLanguage: 'Classical Chinese', region: 'Asia', kind: 'History',
+    summary: 'A court history of Japan in thirty volumes, written in Classical Chinese, running from the age of the gods to the late 7th century. It includes variant versions of many myths and records of contact with Korea and China.',
+    whyItMatters: 'Together with the Kojiki, it is the main source for Japan’s early history and mythology.',
+    keyIdeas: ['Official chronicle in the Chinese historiographical style', 'Alternative versions of myths set side by side', 'Records of relations with the Korean peninsula'],
+    whereToStart: 'W. G. Aston’s 1896 translation is available online; read the later volumes for the best historical detail.',
+    caveat: 'Early chronology is legendary and was shaped by the compilers’ aims. It should be read with archaeological and external evidence.',
+    related: [],
+    sources: [{ title: 'Nihon Shoki (Wikipedia)', url: W + 'Nihon_Shoki' }, { title: 'Kojiki (Wikipedia)', url: W + 'Kojiki' }]
+  },
+  {
+    id: 'inquiry-into-the-good', title: 'An Inquiry into the Good', originalTitle: '善の研究 (Zen no kenkyū)',
+    author: 'Nishida Kitaro', authorIds: [], year: '1911', originalLanguage: 'Japanese', region: 'Asia', kind: 'Philosophy',
+    summary: 'Nishida’s first major book, which develops the idea of “pure experience” as the starting point before the split of subject and object. It then builds toward accounts of reality, the good and religion.',
+    whyItMatters: 'It is often seen as a founding work of modern Japanese philosophy and of the Kyoto School.',
+    keyIdeas: ['Pure experience as the basic reality', 'Unity of knowing and willing', 'The good as the realisation of the self'],
+    whereToStart: 'Abe Masao and Christopher Ives’s English translation; begin with Part I on pure experience.',
+    caveat: 'Nishida later revised his views, and the Kyoto School’s politics in the 1930s and 1940s remain debated. The Zen link is interpretive.',
+    related: [],
+    sources: [{ title: 'An Inquiry into the Good (Wikipedia)', url: W + 'An_Inquiry_into_the_Good' }, { title: 'Nishida Kitaro (Stanford Encyclopedia of Philosophy)', url: 'https://plato.stanford.edu/entries/nishida-kitaro/' }]
+  },
+  {
+    id: 'tarikh-al-sudan', title: 'Tarikh al-Sudan (Chronicle of the Sudan)', originalTitle: 'Taʾrīkh al-Sūdān',
+    author: 'Abd al-Rahman al-Sadi', authorIds: [], year: 'c. 1655', originalLanguage: 'Arabic', region: 'Africa', kind: 'History',
+    summary: 'A history of the Songhai Empire and the Niger bend written in Timbuktu in Arabic, covering the cities of Timbuktu and Djenné, the rulers of Mali and Songhai and the Moroccan conquest of 1591.',
+    whyItMatters: 'It is one of the principal written sources for the history of West Africa before the 17th century, and is an African-authored chronicle.',
+    keyIdeas: ['Chronicle of the Songhai rulers and their rise', 'Record of scholarly life in Timbuktu', 'Account of the Moroccan conquest and its aftermath'],
+    whereToStart: 'Use John Hunwick’s English translation, Timbuktu and the Songhay Empire, with its introduction.',
+    caveat: 'Written well after many of the events it describes, and shaped by al-Sadi’s Timbuktu perspective. Some dates and the early parts rest on oral tradition.',
+    related: [],
+    sources: [{ title: 'Tarikh al-Sudan (Wikipedia)', url: W + 'Tarikh_al-Sudan' }, { title: 'Songhai Empire (Wikipedia)', url: W + 'Songhai_Empire' }]
+  },
+  {
+    id: 'edwin-smith-papyrus', title: 'Edwin Smith Papyrus', originalTitle: 'Edwin Smith Surgical Papyrus',
+    author: 'Anonymous Egyptian scribe', authorIds: [], year: 'c. 1600 BCE (copy)', originalLanguage: 'Hieratic Egyptian', region: 'Africa', kind: 'Medicine',
+    summary: 'An ancient Egyptian medical text that mainly describes the examination and treatment of injuries, particularly of the head, neck and chest. Each case is arranged as title, examination, diagnosis and treatment.',
+    whyItMatters: 'It is the oldest known surgical treatise and shows a rational, case-based approach to trauma in ancient Egypt.',
+    keyIdeas: ['Case-based format of examination, diagnosis and treatment', 'Descriptions of the brain and head injuries', 'Verdicts that classify a case as treatable, uncertain or untreatable'],
+    whereToStart: 'James Breasted’s 1930 edition is public domain; start with the first case studies of head wounds.',
+    caveat: 'The surviving manuscript is a copy, probably of older material, and was bought by Edwin Smith in 1862. Some translations are old and interpretations have been revised.',
+    related: [],
+    sources: [{ title: 'Edwin Smith Papyrus (Wikipedia)', url: W + 'Edwin_Smith_Papyrus' }, { title: 'Ancient Egyptian medicine (Wikipedia)', url: W + 'Ancient_Egyptian_medicine' }]
+  },
+  {
+    id: 'rhind-mathematical-papyrus', title: 'Rhind Mathematical Papyrus', originalTitle: 'Ahmes Papyrus',
+    author: 'Ahmes (scribe)', authorIds: [], year: 'c. 1550 BCE', originalLanguage: 'Hieratic Egyptian', region: 'Africa', kind: 'Mathematics',
+    summary: 'An Egyptian mathematical text copied by the scribe Ahmes, containing tables and 84 problems on arithmetic, fractions, areas and volumes. It says it is copied from an older document.',
+    whyItMatters: 'It is among the best sources for ancient Egyptian mathematics and its methods for fractions.',
+    keyIdeas: ['Unit-fraction representation of rational numbers', 'Practical problems on bread, beer and measurement', 'An approximation for the area of a circle'],
+    whereToStart: 'Use Gay Robins and Charles Shute’s British Museum book or a modern translation; start with the 2/n table.',
+    caveat: 'It is a practical collection and does not contain proofs. The papyrus is now split between the British Museum and the Brooklyn Museum.',
+    related: [],
+    sources: [{ title: 'Rhind Mathematical Papyrus (Wikipedia)', url: W + 'Rhind_Mathematical_Papyrus' }, { title: 'Egyptian mathematics (MacTutor)', url: 'https://mathshistory.st-andrews.ac.uk/HistTopics/Egyptian_papyri/' }]
+  },
+  {
+    id: 'tabula-rogeriana', title: 'Tabula Rogeriana (Book of Roger)', originalTitle: 'Nuzhat al-mushtāq fī ikhtirāq al-āfāq',
+    author: 'Muhammad al-Idrisi', authorIds: [], year: '1154', originalLanguage: 'Arabic', region: 'Africa', kind: 'Science',
+    summary: 'A geographical work and world map made for King Roger II of Sicily, describing the known world in climatic zones with text on the regions, peoples and routes. It draws on earlier geographers and travellers’ reports.',
+    whyItMatters: 'It is one of the most important medieval geographies and shows exchange of knowledge between Islamic and Norman Sicily.',
+    keyIdeas: ['World divided into seven climate zones', 'Geographical description based on compiled reports', 'Map centred with south at the top'],
+    whereToStart: 'Look at reproductions of the map with a scholarly guide, then read selected regions in translation.',
+    caveat: 'Quality varies between regions, and the information is compiled and not all first hand. The map in common circulation is a reconstruction.',
+    related: [],
+    sources: [{ title: 'Tabula Rogeriana (Wikipedia)', url: W + 'Tabula_Rogeriana' }, { title: 'Muhammad al-Idrisi (Wikipedia)', url: W + 'Muhammad_al-Idrisi' }]
+  },
+  {
+    id: 'book-of-fixed-stars', title: 'Book of Fixed Stars', originalTitle: 'Kitāb ṣuwar al-kawākib',
+    author: 'Abd al-Rahman al-Sufi', authorIds: [], year: '964', originalLanguage: 'Arabic', region: 'Asia', kind: 'Science',
+    summary: 'An illustrated astronomical catalogue that revises Ptolemy’s star catalogue, giving positions, magnitudes and drawings of the constellations. It also includes Arabic star names and traditions.',
+    whyItMatters: 'It is a landmark of observational astronomy and includes an early record of what we now know as the Andromeda Galaxy.',
+    keyIdeas: ['Corrected positions and magnitudes of stars', 'Constellations shown from two points of view', 'Reconciliation of Greek and Arabic star traditions'],
+    whereToStart: 'Look at the illustrated manuscripts online with a scholarly commentary, then read the text for a single constellation.',
+    caveat: 'He relied heavily on Ptolemy’s positions in many cases. The Andromeda reference is a brief mention and not a recognition of a galaxy.',
+    related: [],
+    sources: [{ title: 'Book of Fixed Stars (Wikipedia)', url: W + 'Book_of_Fixed_Stars' }, { title: 'Abd al-Rahman al-Sufi (Wikipedia)', url: W + 'Abd_al-Rahman_al-Sufi' }]
+  },
+  {
+    id: 'al-tasrif', title: 'Al-Tasrif', originalTitle: 'Kitāb al-Taṣrīf li-man ʿajiza ʿan al-taʾlīf',
+    author: 'Abu al-Qasim al-Zahrawi (Albucasis)', authorIds: [], year: 'c. 1000', originalLanguage: 'Arabic', region: 'Europe', kind: 'Medicine',
+    summary: 'A 30-volume medical encyclopaedia from Islamic Spain, whose final volume on surgery describes operations, cautery and illustrated surgical instruments. It was compiled by a court physician in Córdoba.',
+    whyItMatters: 'Its surgical section, translated into Latin, influenced European surgery for several centuries.',
+    keyIdeas: ['Illustrated catalogue of surgical instruments', 'Techniques of cautery and wound care', 'Surgery treated as a distinct branch of medicine'],
+    whereToStart: 'Use M. S. Spink and G. L. Lewis’s English translation of the surgical book.',
+    caveat: 'Al-Zahrawi’s dates are approximate and his biography is poorly documented. Many procedures are drawn from earlier authors.',
+    related: [],
+    sources: [{ title: 'Al-Tasrif (Wikipedia)', url: W + 'Al-Tasrif' }, { title: 'Al-Zahrawi (Wikipedia)', url: W + 'Al-Zahrawi' }]
+  },
+  {
+    id: 'open-veins-of-latin-america', title: 'Open Veins of Latin America', originalTitle: 'Las venas abiertas de América Latina',
+    author: 'Eduardo Galeano', authorIds: [], year: '1971', originalLanguage: 'Spanish', region: 'South America', kind: 'Politics & society',
+    summary: 'A polemical history of the economic exploitation of Latin America from colonial extraction of silver and sugar to 20th-century foreign investment. It argues that the continent’s poverty is tied to the wealth of other regions.',
+    whyItMatters: 'It was hugely influential in Latin American debates about dependency and was banned by several military governments.',
+    keyIdeas: ['Exports of resources as a source of underdevelopment', 'Dependency of the region on external powers', 'History told as economic extraction'],
+    whereToStart: 'Cedric Belfrage’s English translation; read the first part on silver and sugar before the modern chapters.',
+    caveat: 'It is a polemic and not a neutral academic survey; historians dispute many of its generalisations. Galeano later said he could no longer read it.',
+    related: [],
+    sources: [{ title: 'Open Veins of Latin America (Wikipedia)', url: W + 'Open_Veins_of_Latin_America' }, { title: 'Eduardo Galeano (Wikipedia)', url: W + 'Eduardo_Galeano' }]
+  },
+  {
+    id: 'response-to-sor-filotea', title: 'Response to Sor Filotea', originalTitle: 'Respuesta a Sor Filotea de la Cruz',
+    author: 'Sor Juana Inés de la Cruz', authorIds: [], year: '1691', originalLanguage: 'Spanish', region: 'North America', kind: 'Philosophy',
+    summary: 'A long letter from a New Spain nun and scholar defending women’s right to study and write. It gives an autobiographical account of her intellectual life in answer to a bishop who criticised her.',
+    whyItMatters: 'It is an early and important defence of women’s education, and a key text of colonial Latin American thought.',
+    keyIdeas: ['Defence of women’s access to learning', 'Autobiographical account of her curiosity', 'Examples of learned women in history and scripture'],
+    whereToStart: 'Use Margaret Sayers Peden or Pamela Kirk Rappaport’s English translation; it is short and can be read at once.',
+    caveat: 'The letter was written in the context of church authority and her circumstances; it is partly rhetorical strategy. Her later silence is explained in different ways.',
+    related: [],
+    sources: [{ title: 'Sor Juana (Wikipedia)', url: W + 'Sor_Juana' }, { title: 'Sor Juana Inés de la Cruz (Wikipedia)', url: W + 'Juana_In%C3%A9s_de_la_Cruz' }]
+  },
+  {
+    id: 'humboldt-cosmos', title: 'Cosmos: A Sketch of a Physical Description of the Universe', originalTitle: 'Kosmos: Entwurf einer physischen Weltbeschreibung',
+    author: 'Alexander von Humboldt', authorIds: [], year: '1845–1862', originalLanguage: 'German', region: 'Europe', kind: 'Science',
+    summary: 'A multi-volume work that tries to present nature as an interconnected whole, from the stars to the Earth and living things. It draws on Humboldt’s travels in Latin America and on data from many fields.',
+    whyItMatters: 'It shaped 19th-century ideas of nature’s unity, and influenced scientists and writers including Darwin and Thoreau.',
+    keyIdeas: ['Nature as an interconnected whole', 'Cross-field comparison of data and measurement', 'Combination of scientific description and aesthetic response'],
+    whereToStart: 'Use the E. C. Otté English translation or a selection; begin with the introductory volume.',
+    caveat: 'The volumes were published over 17 years, and the last was completed after his death in 1859. Much of the science is out of date.',
+    related: [],
+    sources: [{ title: 'Kosmos (Humboldt) (Wikipedia)', url: W + 'Kosmos_(Humboldt)' }, { title: 'Alexander von Humboldt (Wikipedia)', url: W + 'Alexander_von_Humboldt' }]
+  },
+  {
+    id: 'the-discovery-of-india', title: 'The Discovery of India', originalTitle: 'The Discovery of India',
+    author: 'Jawaharlal Nehru', authorIds: [], year: '1946', originalLanguage: 'English', region: 'Asia', kind: 'History',
+    summary: 'A reflective history of India from ancient times to the colonial period, written in prison at Ahmednagar Fort in 1942–1945. It combines history, philosophy and personal reflection.',
+    whyItMatters: 'It is an influential statement of Indian nationalism and of Nehru’s view of a plural Indian civilisation.',
+    keyIdeas: ['India’s unity in diversity', 'A long view of Indian civilisation', 'Reflections on colonial rule and modernity'],
+    whereToStart: 'Read the Oxford India edition; start with the chapters on the prison years and then the historical chapters.',
+    caveat: 'It is a personal and political work and not a scholarly history; its interpretations are contested. It was written without a library in prison.',
+    related: [],
+    sources: [{ title: 'The Discovery of India (Wikipedia)', url: W + 'The_Discovery_of_India' }, { title: 'Jawaharlal Nehru (Wikipedia)', url: W + 'Jawaharlal_Nehru' }]
+  },
+  {
+    id: 'hind-swaraj', title: 'Hind Swaraj (Indian Home Rule)', originalTitle: 'હિંદ સ્વરાજ',
+    author: 'Mohandas K. Gandhi', authorIds: [], year: '1909', originalLanguage: 'Gujarati', region: 'Asia', kind: 'Politics & society',
+    summary: 'A short book written as a dialogue between an editor and a reader, written by Gandhi on a ship returning from London to South Africa. It criticises modern civilisation and violent politics and sets out his idea of self-rule.',
+    whyItMatters: 'It is the clearest early statement of Gandhi’s ideas on nonviolence, self-rule and critique of industrial modernity.',
+    keyIdeas: ['Swaraj as self-rule of the individual as well as the nation', 'Critique of modern civilisation and industrialism', 'Nonviolent resistance as a means'],
+    whereToStart: 'Anthony Parel’s annotated edition of Hind Swaraj; it is short and can be read in an afternoon.',
+    caveat: 'Gandhi later modified some of its views, and some positions are strongly contested. It was banned by the British government in India.',
+    related: [],
+    sources: [{ title: 'Hind Swaraj (Wikipedia)', url: W + 'Hind_Swaraj' }, { title: 'Mahatma Gandhi (Wikipedia)', url: W + 'Mahatma_Gandhi' }]
+  }
+];

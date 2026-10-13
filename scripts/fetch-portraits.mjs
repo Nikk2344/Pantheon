@@ -129,6 +129,9 @@ async function main() {
       const cred = await licence(file);
       existing[id] = { file: name, description, ...cred, wikipedia: `https://en.wikipedia.org/wiki/${title}` };
       console.log(`  ✓ ${id}  ${name}  ${(bytes / 1024).toFixed(0)} KB  [${cred.license}]`);
+      // Persist after every success so an interrupted run never loses credits.
+      await writeFile(DATA_FILE, `${JSON.stringify(existing, null, 2)}
+`);
     } catch (err) {
       failed = true;
       console.error(`  ✗ ${id}: ${err.message}`);
