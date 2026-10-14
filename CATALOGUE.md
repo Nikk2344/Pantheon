@@ -49,3 +49,12 @@ The static export retains schema version 2 with additive `innovations`, `counts.
 ## Mathematics wing
 
 October 2026: 145 profiles, comprising 74 philosophers, 41 scientists, and 30 mathematicians. Mathematicians have their own category and wing at `/mathematicians`. Add new ones with a row in `scripts/catalogue-mathematicians.mjs` (category `mathematician`), then run `npm run portraits <id>`. Coverage is still uneven: logic and applied mathematics, the Chinese, African, and Latin American traditions, and twentieth-century figures beyond the current selection all need more names. Disputed priority and legend are marked in each profile's reading note (for example Fermat's claimed proof, Gauss and Legendre on least squares, Hilbert and Einstein in 1915).
+
+## October 2026 expansion: global profiles, books, languages
+
+The catalogue grew from 145 to 307 profiles (batches by region: Africa, East Asia, South and Southeast Asia, Islamic world, Americas and Oceania, Europe and modern gaps) and added a Books library of 143 works (science and mathematics, philosophy, foundational texts and world literature, regional classics beyond the West, modern books). Batch sources live in `scripts/batches/*.mjs`; the format and editorial rules are in `scripts/batches/BRIEF.md`, the review procedure in `REVIEW.md`. Publish with `node scripts/publish-people.mjs <batch>` and `node scripts/publish-books.mjs <batch>`.
+
+Review status, stated plainly: every source URL was checked to load, and a second reviewer pass corrected a number of errors (for example Divine Comedy canto counts, Pedagogy of the Oppressed publication dates, Dussel's death date). That pass was done mostly from general knowledge; few cited pages were read line by line. The newest records are therefore provisional until someone reads their sources. `Outlook` records on `/philosophy/scientists` exist only for the original 51 scientists; the section is optional for later profiles.
+
+Interface translation covers navigation and the homepage in 21 languages (`src/data/i18n.ts`, tested by `scripts/test-i18n.mjs`). Profiles and book pages remain in English; the language menu links to machine translation of whole pages on public hosts.
+

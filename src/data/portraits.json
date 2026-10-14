@@ -990,5 +990,637 @@
     "license": "See source",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Phillips_-_Mary_Fairfax,_Mrs_William_Somerville,_1780_-_1872._Writer_on_science_-_Google_Art_Project.jpg",
     "wikipedia": "https://en.wikipedia.org/wiki/Mary_Somerville"
+  },
+  "abdus-salam": {
+    "file": "abdus-salam.jpg",
+    "description": "Pakistani theoretical physicist (1926–1996)",
+    "credit": "Molendijk, Bart / Anefo",
+    "license": "CC BY-SA 3.0 nl",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abdus_Salam_1987.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Abdus_Salam"
+  },
+  "heraclitus": {
+    "file": "heraclitus.jpg",
+    "description": "Ancient Greek philosopher (fl. c. 500 BC)",
+    "credit": "RoyFokker",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heraclitus_b_4_compressed.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Heraclitus"
+  },
+  "niccolo-machiavelli": {
+    "file": "niccolo-machiavelli.jpg",
+    "description": "Florentine statesman, diplomat, and political theorist (1469–1527)",
+    "credit": "Santi di Tito",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Niccol%C3%B2_Machiavelli_by_Santi_di_Tito.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Niccolò_Machiavelli"
+  },
+  "nikola-tesla": {
+    "file": "nikola-tesla.jpg",
+    "description": "Serbian-American engineer and inventor (1856–1943)",
+    "credit": "Napoleon Sarony",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Nikola_Tesla"
+  },
+  "srinivasa-ramanujan": {
+    "file": "srinivasa-ramanujan.jpg",
+    "description": "Indian mathematician (1887–1920)",
+    "credit": "Unknown authorUnknown author",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Srinivasa_Ramanujan-Add._MS_a94_version2_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Srinivasa_Ramanujan"
+  },
+  "katherine-johnson": {
+    "file": "katherine-johnson.jpg",
+    "description": "American mathematician (1918–2020)",
+    "credit": "NASA",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Katherine_Johnson_1983.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Katherine_Johnson"
+  },
+  "stephen-hawking": {
+    "file": "stephen-hawking.jpg",
+    "description": "English theoretical physicist (1942–2018)",
+    "credit": "NASA",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stephen_Hawking.StarChild.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Stephen_Hawking"
+  },
+  "jagadish-chandra-bose": {
+    "file": "jagadish-chandra-bose.jpg",
+    "description": "Physicist, biologist and botanist (1857–1937)",
+    "credit": "The Birth Centenary Committee, printed by P.C. Ray",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:J.C.Bose.JPG",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jagadish_Chandra_Bose"
+  },
+  "song-yingxing": {
+    "file": "song-yingxing.jpg",
+    "description": "Chinese scientist and writer (1587–1666)",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chinese_Fining_and_Blast_Furnace.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Song_Yingxing"
+  },
+  "li-shizhen": {
+    "file": "li-shizhen.jpg",
+    "description": "Chinese physician and pharmacologist (1517–1593)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Li_Shizhen_portrait.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Li_Shizhen"
+  },
+  "sin-itiro-tomonaga": {
+    "file": "sin-itiro-tomonaga.jpg",
+    "description": "Japanese physicist (1906-1979)",
+    "credit": "Nobel foundation",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomonaga.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Sin-Itiro_Tomonaga"
+  },
+  "chen-ning-yang": {
+    "file": "chen-ning-yang.jpg",
+    "description": "Chinese-American physicist (1922–2025)",
+    "credit": "ENERGY.GOV",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HD.3F.010_(11086446676)(Chen_Ning_Yang).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Yang_Chen-Ning"
+  },
+  "tsung-dao-lee": {
+    "file": "tsung-dao-lee.jpg",
+    "description": "Chinese-American physicist (1926–2024)",
+    "credit": "Nobel foundation",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TD_Lee.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Tsung-Dao_Lee"
+  },
+  "seki-takakazu": {
+    "file": "seki-takakazu.jpg",
+    "description": "Japanese mathematician (c. 1642–1708)",
+    "credit": "upload by AMorozov",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seki.jpeg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Seki_Takakazu"
+  },
+  "kunihiko-kodaira": {
+    "file": "kunihiko-kodaira.jpg",
+    "description": "Japanese mathematician (1915–1997)",
+    "credit": "Konrad Jacobs, MFO",
+    "license": "CC BY-SA 2.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kodaira_Kunihiko.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kunihiko_Kodaira"
+  },
+  "al-razi": {
+    "file": "al-razi.jpg",
+    "description": "10th-century Iranian physician and polymath",
+    "credit": "Hossein Behzad",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%B2%DA%A9%D8%B1%DB%8C%D8%A7%DB%8C_%D8%B1%D8%A7%D8%B2%DB%8C_%D8%A7%D8%AB%D8%B1_%D8%AD%D8%B3%DB%8C%D9%86_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Abu_Bakr_al-Razi"
+  },
+  "ibn-al-nafis": {
+    "file": "ibn-al-nafis.jpg",
+    "description": "Arab polymath and physician (1213–1288)",
+    "credit": "Unknown authorUnknown author",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_Al_Nafis_statue.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ibn_al-Nafis"
+  },
+  "nasir-al-din-al-tusi": {
+    "file": "nasir-al-din-al-tusi.jpg",
+    "description": "Persian astronomer (1201–1274)",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nasir_al-Din_Tusi.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Nasir_al-Din_al-Tusi"
+  },
+  "banu-musa": {
+    "file": "banu-musa.jpg",
+    "description": "9th-century Persian scholars",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banu_musa_mechanical.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Banū_Mūsā"
+  },
+  "al-samawal": {
+    "file": "al-samawal.jpg",
+    "description": "12th-century Muslim mathematician, astronomer and physician",
+    "credit": "Al-Samaw'al",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polyn%C3%B4me-Al-Samaw-al.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Al-Samawal_al-Maghribi"
+  },
+  "abu-al-wafa": {
+    "file": "abu-al-wafa.jpg",
+    "description": "Persian mathematician and astronomer (940–998)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buzjani,_the_Persian.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Abu_al-Wafa_Buzjani"
+  },
+  "al-kindi": {
+    "file": "al-kindi.jpg",
+    "description": "Muslim Arab philosopher, mathematician and physician (c. 801–873)",
+    "credit": "Iraqi Post",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stamp_IQ_1962_6f.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Al-Kindi"
+  },
+  "ibn-arabi": {
+    "file": "ibn-arabi.jpg",
+    "description": "Sufi scholar and Sunni philosopher (1165–1240)",
+    "credit": "Omar.Hafez",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D9%82%D8%A8%D8%B1_%D8%A7%D9%84%D8%B4%D9%8A%D8%AE_%D9%85%D8%AD%D9%8A%D9%8A_%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D8%A8%D9%86_%D8%B9%D8%B1%D8%A8%D9%8A.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ibn_Arabi"
+  },
+  "ibn-tufayl": {
+    "file": "ibn-tufayl.png",
+    "description": "Arab Andalusian Muslim polymath (c. 1105–1185)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_%E1%B9%ACufail,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ibn_Tufail"
+  },
+  "cesar-milstein": {
+    "file": "cesar-milstein.jpg",
+    "description": "Argentine biochemist (1927–2002)",
+    "credit": "original file: Diario La Nueva Provincia de Bahía Blanca derivative work: Rexmania",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Milstein_lnp_restauraci%C3%B3n.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/César_Milstein"
+  },
+  "carlos-chagas": {
+    "file": "carlos-chagas.jpg",
+    "description": "Brazilian doctor and scientist (1879–1934)",
+    "credit": "UnknownUnknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carlos_Chagas,_sem_data.tif",
+    "wikipedia": "https://en.wikipedia.org/wiki/Carlos_Chagas"
+  },
+  "elizabeth-blackburn": {
+    "file": "elizabeth-blackburn.jpg",
+    "description": "Australian-born American biological researcher",
+    "credit": "Christopher Michel",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Blackburn_in_2024_by_Christopher_Michel.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Elizabeth_Blackburn"
+  },
+  "howard-florey": {
+    "file": "howard-florey.jpg",
+    "description": "Australian pathologist (1898–1968)",
+    "credit": "Julian Smith",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_Howard_Florey.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Howard_Florey,_Baron_Florey"
+  },
+  "francisco-jose-de-caldas": {
+    "file": "francisco-jose-de-caldas.jpg",
+    "description": "Colombian lawyer and scientist (1768–1816)",
+    "credit": "José María Espinosa Prieto",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_Jos%C3%A9_de_Caldas,_ca._1836.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Francisco_José_de_Caldas"
+  },
+  "terence-tao": {
+    "file": "terence-tao.jpg",
+    "description": "Australian and American mathematician (born 1975)",
+    "credit": "Institute for Pure & Applied Mathematics",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terence_Tao_at_IPAM%27s_Fireside_Chat_2026_(50m16s)_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Terence_Tao"
+  },
+  "sor-juana": {
+    "file": "sor-juana.jpg",
+    "description": "Mexican Catholic nun, philosopher, composer and poet (1648–1695)",
+    "credit": "Miguel Cabrera",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sor_Juana_by_Miguel_Cabrera_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Juana_Inés_de_la_Cruz"
+  },
+  "paulo-freire": {
+    "file": "paulo-freire.jpg",
+    "description": "Brazilian educator (1921–1997)",
+    "credit": "Slobodan Dimitro",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paulo_Freire_1977.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Paulo_Freire"
+  },
+  "enrique-dussel": {
+    "file": "enrique-dussel.jpg",
+    "description": "Argentine philosopher (1934–2023)",
+    "credit": "Ralg23",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EnriqueDussel.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Enrique_Dussel"
+  },
+  "imhotep": {
+    "file": "imhotep.jpg",
+    "description": "Egyptian polymath, later deified",
+    "credit": "Unknown",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imhotep,_donated_by_Padisu_MET_DP164134.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Imhotep"
+  },
+  "eratosthenes": {
+    "file": "eratosthenes.png",
+    "description": "Greek librarian, mathematician, geographer, and poet",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Eratosthenes.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Eratosthenes"
+  },
+  "max-theiler": {
+    "file": "max-theiler.jpg",
+    "description": "South African-American virologist and physician",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Max_Theiler_nobel.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Max_Theiler"
+  },
+  "allan-cormack": {
+    "file": "allan-cormack.jpg",
+    "description": "South African and American physicist",
+    "credit": "Willy Pragher",
+    "license": "CC BY 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:34._Tagung_1984_Mediziner;_Verabschiedung_H.-H._Kunckel,_Allen_Cormack_-_W134Nr.123006_-_Willy_Pragher_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Allan_McLeod_Cormack"
+  },
+  "wangari-maathai": {
+    "file": "wangari-maathai.jpg",
+    "description": "Kenyan environmental activist (1940–2011)",
+    "credit": "Kingkongphoto & www.celebrity-photos.com from Laurel Maryland, USA",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wangari_Maathai_in_2001.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Wangari_Maathai"
+  },
+  "mae-jemison": {
+    "file": "mae-jemison.jpg",
+    "description": "American astronaut, doctor and engineer (born 1956)",
+    "credit": "NASA",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mae_Carol_Jemison.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mae_Jemison"
+  },
+  "ernest-everett-just": {
+    "file": "ernest-everett-just.jpg",
+    "description": "American biologist (1883–1941)",
+    "credit": "Unknown, but a different U Chicago post of the photo shows a caption dating the photo to 1925 https://www.uchicagomedicine.org/forefront/biological-sciences-articles/pioneering-biologist-ernest-everett-just",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ErnestEverettJust1925.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ernest_Everett_Just"
+  },
+  "kwame-nkrumah": {
+    "file": "kwame-nkrumah.jpg",
+    "description": "Ghanaian politician (1909–1972)",
+    "credit": "The National Archives UK - Flickr account",
+    "license": "OGL v1.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kwame_Nkrumah_Portrait,_The_National_Archives_UK.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kwame_Nkrumah"
+  },
+  "cheikh-anta-diop": {
+    "file": "cheikh-anta-diop.jpg",
+    "description": "Senegalese politician, historian and scientist (1923–1986)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cheikh_Anta_Diop,_late_1940s.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Cheikh_Anta_Diop"
+  },
+  "kwasi-wiredu": {
+    "file": "kwasi-wiredu.jpg",
+    "description": "Ghanaian philosopher, writer and author (1931–2022)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kwasi_Wiredu.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kwasi_Wiredu"
+  },
+  "har-gobind-khorana": {
+    "file": "har-gobind-khorana.jpg",
+    "description": "Indian-American molecular biologist (1922–2011)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Har_Gobind_Khorana_nobel.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Har_Gobind_Khorana"
+  },
+  "prasanta-chandra-mahalanobis": {
+    "file": "prasanta-chandra-mahalanobis.jpg",
+    "description": "Indian scientist and statistician (1893 –1972)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Prasanta_Chandra_Mahalanobis.webp",
+    "wikipedia": "https://en.wikipedia.org/wiki/Prasanta_Chandra_Mahalanobis"
+  },
+  "akshapada-gautama": {
+    "file": "akshapada-gautama.jpg",
+    "description": "Sanskrit text of the Nyaya school of Hindu philosophy",
+    "credit": "Ms Sarah Welch",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:4_Pramanas,_epistemology_according_to_ancient_Nyayasutras.svg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Akshapada_Gautama"
+  },
+  "dharmakirti": {
+    "file": "dharmakirti.jpg",
+    "description": "Indian Buddhist philosopher (fl.c.600–670)",
+    "credit": "Unknown",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tibet,_c._15th-16th_century_-_Portrait_of_Dharmakirti_-_2010.474_-_Cleveland_Museum_of_Art.tif",
+    "wikipedia": "https://en.wikipedia.org/wiki/Dharmakirti"
+  },
+  "madhva": {
+    "file": "madhva.jpg",
+    "description": "13th century Hindu Dvaita philosopher",
+    "credit": "AR767",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shri_Madhvacharya_Vigraha,_Pajaka,_Udupi.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Madhvacharya"
+  },
+  "kabir": {
+    "file": "kabir.jpg",
+    "description": "Indian poet and spiritual master",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kabir004.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kabir"
+  },
+  "swami-vivekananda": {
+    "file": "swami-vivekananda.jpg",
+    "description": "Indian monk and philosopher (1863–1902)",
+    "credit": "The original uploader was Dziewa at English Wikipedia.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Swami_Vivekananda-1893-09-signed.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Swami_Vivekananda"
+  },
+  "rabindranath-tagore": {
+    "file": "rabindranath-tagore.jpg",
+    "description": "Indian polymath (1861–1941)",
+    "credit": "Georges Chevalier",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1926_Rabindrath_Tagore.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Rabindranath_Tagore"
+  },
+  "sri-aurobindo": {
+    "file": "sri-aurobindo.jpg",
+    "description": "Indian yogi (1872–1950)",
+    "credit": "Rudolf 1922",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sri_aurobindo.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Sri_Aurobindo"
+  },
+  "jose-rizal": {
+    "file": "jose-rizal.jpg",
+    "description": "Filipino nationalist, writer, and polymath (1861–1896)",
+    "credit": "unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jose_Rizal_full.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/José_Rizal"
+  },
+  "hipparchus": {
+    "file": "hipparchus.jpg",
+    "description": "Greek astronomer, geographer and mathematician (c. 190 – c. 120 BCE)",
+    "credit": "William Henry Smyth",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Head_of_Hipparchus_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Hipparchus"
+  },
+  "tycho-brahe": {
+    "file": "tycho-brahe.jpg",
+    "description": "Danish astronomer (1546–1601)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portr%C3%A4tt_av_Tycho_Brahe_-_Skoklosters_slott_-_90153.tif",
+    "wikipedia": "https://en.wikipedia.org/wiki/Tycho_Brahe"
+  },
+  "robert-hooke": {
+    "file": "robert-hooke.jpg",
+    "description": "English polymath (1635–1703)",
+    "credit": "Mary Beale",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_Mathematician_1680c.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Robert_Hooke"
+  },
+  "carl-linnaeus": {
+    "file": "carl-linnaeus.jpg",
+    "description": "Swedish biologist and physician (1707–1778)",
+    "credit": "Alexander Roslin",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carl_von_Linn%C3%A9,_1707-1778,_botanist,_professor_(Alexander_Roslin)_-_Nationalmuseum_-_15723_(cropped).tif",
+    "wikipedia": "https://en.wikipedia.org/wiki/Carl_Linnaeus"
+  },
+  "james-hutton": {
+    "file": "james-hutton.jpg",
+    "description": "Scottish geologist, agriculturalist, chemical manufacturer (1726–1797)",
+    "credit": "Henry Raeburn",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_Henry_Raeburn_-_James_Hutton,_1726_-_1797._Geologist_-_PG_2686_-_National_Galleries_of_Scotland.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/James_Hutton"
+  },
+  "gregor-mendel": {
+    "file": "gregor-mendel.jpg",
+    "description": "Austrian biologist and friar (1822–1884)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gregor_Mendel_2.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Gregor_Mendel"
+  },
+  "louis-pasteur": {
+    "file": "louis-pasteur.jpg",
+    "description": "French chemist, pharmacist and microbiologist (1822–1895)",
+    "credit": "Paul Nadar",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louis_Pasteur,_foto_av_Paul_Nadar,_Crisco_edit.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Louis_Pasteur"
+  },
+  "dorothy-hodgkin": {
+    "file": "dorothy-hodgkin.jpg",
+    "description": "English chemist (1910–1994)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dorothy_Hodgkin_Nobel.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Dorothy_Hodgkin"
+  },
+  "rachel-carson": {
+    "file": "rachel-carson.jpg",
+    "description": "American marine biologist and conservationist (1907–1964)",
+    "credit": "U.S. Fish and Wildlife Service",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rachel-Carson.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Rachel_Carson"
+  },
+  "mary-anning": {
+    "file": "mary-anning.jpg",
+    "description": "English fossil collector and palaeontologist (1799–1847)",
+    "credit": "Credited to 'Mr. Grey' in Crispin Tickell's book 'Mary Anning of Lyme Regis' (1996)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Anning_painting.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mary_Anning"
+  },
+  "linus-pauling": {
+    "file": "linus-pauling.jpg",
+    "description": "American scientist and activist (1901–1994)",
+    "credit": "Unknown authorUnknown author",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Linus_Pauling_in_the_1940s.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Linus_Pauling"
+  },
+  "frederick-sanger": {
+    "file": "frederick-sanger.jpg",
+    "description": "British biochemist (1918–2013)",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frederick_Sanger2.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Frederick_Sanger"
+  },
+  "jennifer-doudna": {
+    "file": "jennifer-doudna.jpg",
+    "description": "American biochemist and Nobel laureate (born 1964)",
+    "credit": "Christopher Michel",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jennifer_Doudna_by_Christopher_Michel_in_2023_01.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jennifer_Doudna"
+  },
+  "thomas-bayes": {
+    "file": "thomas-bayes.jpg",
+    "description": "British statistician (c. 1701 – 1761)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Bayes.gif",
+    "wikipedia": "https://en.wikipedia.org/wiki/Thomas_Bayes"
+  },
+  "gottlob-frege": {
+    "file": "gottlob-frege.jpg",
+    "description": "German philosopher, logician, and mathematician (1848–1925)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Young_frege.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Gottlob_Frege"
+  },
+  "ronald-fisher": {
+    "file": "ronald-fisher.jpg",
+    "description": "British polymath (1890–1962)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Youngronaldfisher2.JPG",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ronald_Fisher"
+  },
+  "william-of-ockham": {
+    "file": "william-of-ockham.png",
+    "description": "English Franciscan friar and theologian (c. 1287–1347)",
+    "credit": "self-created (Moscarlop)",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:William_of_Ockham.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/William_of_Ockham"
+  },
+  "voltaire": {
+    "file": "voltaire.jpg",
+    "description": "French writer and philosopher (1694–1778)",
+    "credit": "Nicolas de Largillière",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicolas_de_Largilli%C3%A8re_-_Portrait_de_Voltaire_(1694-1778)_en_1718_-_P208_-_mus%C3%A9e_Carnavalet_-_5_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Voltaire"
+  },
+  "montesquieu": {
+    "file": "montesquieu.jpg",
+    "description": "French jurist, historian, and political philosopher (1689–1755)",
+    "credit": "After Jacques-Antoine Dassier",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles_Montesquieu.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Montesquieu"
+  },
+  "adam-smith": {
+    "file": "adam-smith.jpg",
+    "description": "Scottish economist and philosopher (1723–1790)",
+    "credit": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adam_Smith_The_Muir_portrait.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Adam_Smith"
+  },
+  "edmund-burke": {
+    "file": "edmund-burke.jpg",
+    "description": "Anglo-Irish politician and philosopher (1729–1797)",
+    "credit": "Unknown",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_Joshua_Reynolds_-_Edmund_Burke,_1729_-_1797._Statesman,_orator_and_author_-_PG_2362_-_National_Galleries_of_Scotland_(cropped).jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Edmund_Burke"
+  },
+  "william-james": {
+    "file": "william-james.jpg",
+    "description": "American philosopher and psychologist (1842–1910)",
+    "credit": "Notman Studios (photographer)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:William_James_b1842c.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/William_James"
+  },
+  "john-dewey": {
+    "file": "john-dewey.jpg",
+    "description": "American philosopher, psychologist, and activist (1859–1952)",
+    "credit": "Underwood & Underwood",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Dewey_cph.3a51565.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/John_Dewey"
+  },
+  "maurice-merleau-ponty": {
+    "file": "maurice-merleau-ponty.jpg",
+    "description": "French phenomenological philosopher (1908–1961)",
+    "credit": "http://www.philosophical-investigations.org/Users/PerigGouanvic",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maurice_Merleau-Ponty.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Maurice_Merleau-Ponty"
+  },
+  "iris-murdoch": {
+    "file": "iris-murdoch.png",
+    "description": "Irish-born British writer and philosopher (1919–1999)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iris_Murdoch.png",
+    "wikipedia": "https://en.wikipedia.org/wiki/Iris_Murdoch"
+  },
+  "philippa-foot": {
+    "file": "philippa-foot.jpg",
+    "description": "English philosopher (1920–2010)",
+    "credit": "Unknown",
+    "license": "See source",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:PhilippaFoot1939.jpg",
+    "wikipedia": "https://en.wikipedia.org/wiki/Philippa_Foot"
   }
 }

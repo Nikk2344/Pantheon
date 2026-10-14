@@ -4,11 +4,15 @@ import PersonCard from '../components/PersonCard.astro';
 import SolarSystem from '../components/SolarSystem';
 import { allPeople, verifyLinks } from '../lib/people';
 import { allInnovations } from '../lib/ideas';
+import { allBooks } from '../lib/books';
 import { verifyArguments } from '../arguments/kernel/registry';
 await verifyLinks(); await verifyArguments();
 const people = await allPeople();
 const spotlight = ['marie-curie', 'j-robert-oppenheimer', 'mary-wollstonecraft', 'br-ambedkar'].map(id => people.find(p => p.id === id)).filter(Boolean);
 const innovations = await allInnovations();
+const books = await allBooks();
+const bookSpotlight = ['principia-mathematica-newton','origin-of-species','republic','muqaddimah','daodejing','the-second-sex','nine-chapters-mathematical-art','book-of-optics'].map(id => books.find(b => b.id === id)).filter((b, i, a) => b && a.indexOf(b) === i).slice(0, 4);
+const bookRegions = new Set(books.map(b => b.data.region)).size;
 const contributions = people.reduce((total, person) => total + person.data.discoveries.length, 0) + innovations.length;
 const doorways = [
  { href: '/scientists', key: 'door.science', number: '01', label: 'SCIENCE', title: 'Understand the world.', text: 'Discoveries, experiments, and the people behind them.', detail: `${people.filter(p => p.data.category === 'scientist').length} scientists`, icon: '◎' },
@@ -34,12 +38,17 @@ const doorways = [
     <div class="question-board-bottom"><span class="question-orbit" aria-hidden="true">✳</span><span>Follow a question.<br/>See where it takes you.</span></div>
    </aside>
   </section>
-  <div class="home-proof shell" aria-label="Inside the archive"><p><strong>{people.length}</strong> sourced profiles</p><p><strong>{contributions}</strong> contributions</p><p><strong>15</strong> learning paths</p><a href="/about">A curated, growing collection <span aria-hidden="true">↗</span></a></div>
+  <div class="home-proof shell" aria-label="Inside the archive"><p><strong>{people.length}</strong> sourced profiles</p><p><strong>{books.length}</strong> books</p><p><strong>{contributions}</strong> contributions</p><p><strong>15</strong> learning paths</p><a href="/about">A curated, growing collection <span aria-hidden="true">↗</span></a></div>
   <section class="home-section shell" aria-labelledby="doorway-title">
    <div class="home-section-heading"><div><p class="eyebrow i18n-caps" data-i18n="home.pick">Pick a direction</p><h2 id="doorway-title" data-i18n="home.pickTitle">One curiosity. Many ways in.</h2></div><p>Read a story, follow an argument,<br/>or put an idea to the test.</p></div>
    <div class="home-doorways">{doorways.map(item => <a href={item.href} class={`home-doorway home-doorway-${item.number}`}><div class="doorway-top"><span class="eyebrow">{item.number} / {item.label}</span><span class="doorway-icon" aria-hidden="true">{item.icon}</span></div><h3 data-i18n={item.key}>{item.title}</h3><p>{item.text}</p><div class="doorway-bottom"><span>{item.detail}</span><span aria-hidden="true">↗</span></div></a>)}</div>
   </section>
   <section class="home-section shell" aria-labelledby="ai-title"><div class="home-next"><div><p class="eyebrow">NEW / MODERN DISCOVERIES & AI</p><h2 id="ai-title">The ideas behind<br/>the intelligent machine.</h2><p>Explore transformers, generative models, human feedback, and AI for science. Twelve detailed articles explain the mechanisms, research teams, evidence, and limits.</p></div><nav aria-label="Modern discoveries"><a href="/innovations"><span>Explore all 12 discoveries</span>↗</a><a href="/innovations/transformer"><span>How transformers connect ideas</span>↗</a><a href="/innovations/alphafold-3"><span>Predicting molecular structures</span>↗</a></nav></div></section>
+  <section class="home-section shell" aria-labelledby="library-title">
+   <div class="home-section-heading"><div><p class="eyebrow">THE LIBRARY</p><h2 id="library-title">Start with the book<br/>that started it.</h2></div><a href="/books" class="home-section-link">Browse all {books.length} books <span aria-hidden="true">↗</span></a></div>
+   <div class="atlas-grid">{bookSpotlight.map(b => b && <a class="atlas-card" href={`/books/${b.id}`}><span class="eyebrow">{b.data.kind} · {b.data.year}</span><h3>{b.data.title} <span aria-hidden="true">↗</span></h3><p><strong>{b.data.author}</strong></p><p>{b.data.summary}</p></a>)}</div>
+   <p class="home-editorial-note">From {bookRegions} regions and every era. Summaries are in our own words; free full texts are linked only where they are legal.</p>
+  </section>
   <section class="home-section shell" aria-labelledby="people-title">
    <div class="home-section-heading"><div><p class="eyebrow">THE PEOPLE BEHIND THE IDEAS</p><h2 id="people-title">Extraordinary minds.<br/>Human stories.</h2></div><a href="/explore" class="home-section-link">Meet all {people.length} minds <span aria-hidden="true">↗</span></a></div>
    <div class="home-people-grid">{spotlight.map(person => person && <PersonCard person={person}/>)}</div>
